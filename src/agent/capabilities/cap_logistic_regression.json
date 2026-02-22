@@ -1,0 +1,8 @@
+{
+  "capability_id": "logistic_regression",
+  "title": "Logistic regression",
+  "description": "Fit a logistic regression model for a binary outcome using specified covariates; report coefficients and basic performance metrics.",
+  "keywords": ["logistic regression", "classification", "binary outcome", "glm", "odds ratio"],
+  "required_fields": ["csv", "outcome", "covariates"],
+  "optional_fields": []
+}

@@ -1,0 +1,8 @@
+{
+  "capability_id": "linear_regression",
+  "title": "Linear regression",
+  "description": "Fit a linear regression model for a continuous outcome using specified covariates; report coefficients and R^2.",
+  "keywords": ["linear regression", "regression", "continuous outcome", "ols"],
+  "required_fields": ["csv", "outcome", "covariates"],
+  "optional_fields": []
+}

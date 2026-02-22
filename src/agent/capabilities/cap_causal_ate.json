@@ -1,0 +1,15 @@
+{
+  "capability_id": "causal_ate",
+  "title": "Average Treatment Effect (ATE)",
+  "description": "Estimate the causal effect of a binary treatment on an outcome using covariate adjustment.",
+  "keywords": [
+    "ate",
+    "average treatment effect",
+    "causal effect",
+    "ipw",
+    "propensity score",
+    "doubly robust"
+  ],
+  "required_fields": ["csv", "treatment", "outcome"],
+  "optional_fields": ["covariates"]
+}

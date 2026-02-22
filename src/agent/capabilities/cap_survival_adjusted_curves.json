@@ -1,0 +1,14 @@
+{
+  "capability_id": "survival_adjusted_curves",
+  "title": "Confounder-adjusted survival curves",
+  "description": "Estimate confounder-adjusted survival curves between groups (e.g., IPTW Kaplan–Meier).",
+  "keywords": [
+    "survival",
+    "adjusted curves",
+    "iptw",
+    "kaplan-meier",
+    "time-to-event"
+  ],
+  "required_fields": ["csv", "time", "event", "group"],
+  "optional_fields": ["covariates"]
+}

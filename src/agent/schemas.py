@@ -1,52 +1,49 @@
+# src/agent/schemas.py
 from __future__ import annotations
 
-from typing import Any, Dict, List, Literal, Optional
+from typing import Any, Dict, List, Optional, Literal
 from pydantic import BaseModel, Field
 
-TaskName = Literal["auto", "ate", "survival"]
-ToolName = Literal["causalmodels", "adjustedcurves"]
 
+# =========================
+# Run Request (FastAPI input)
+# =========================
 
 class RunRequest(BaseModel):
-    csv: str = Field(..., description="Path to CSV file (relative to repo root or absolute)")
-    task: TaskName = Field("auto", description="auto | ate | survival")
+    csv: str
 
-    # natural language requirement (optional)
-    request: Optional[str] = Field(
-        None,
-        description="Natural language requirement, e.g. 'Estimate causal effect of treatment on outcome'."
-    )
+    request: str = ""
+    capability_id: Optional[str] = None
+    use_llm_router: bool = True
+    llm_model: Optional[str] = None
 
-    # force a specific capability from pipeline_capabilities.json (optional)
-    capability_id: Optional[str] = Field(
-        None,
-        description="Capability id from pipeline_capabilities.json, e.g. 'causal_ate'."
-    )
+    # Explicit task shortcut
+    task: Optional[str] = None
 
     # ATE fields
-    outcome: Optional[str] = None
     treatment: Optional[str] = None
+    outcome: Optional[str] = None
+    covariates: Optional[List[str]] = None
 
     # Survival fields
     time: Optional[str] = None
     event: Optional[str] = None
     group: Optional[str] = None
 
-    covariates: Optional[List[str]] = None
-    max_covariates: int = 15
 
-    # Output directory for artifacts
-    out_dir: str = "out/api"
-
-    # Planner controls (optional) 
-    use_llm_router: bool = False
-    llm_model: str = "gpt-4o-mini"  # placeholder model name; change if you want
-
+# =========================
+# Run Result (FastAPI output)
+# =========================
 
 class RunResult(BaseModel):
     status: Literal["ok", "error"]
-    selected_tool: Optional[ToolName] = None
+
+    # 🔴 改动点：不要再用 Literal[...] 限死
+    selected_tool: Optional[str] = None
+
     stdout: str = ""
     stderr: str = ""
-    artifacts: Dict[str, Any] = {}
+
+    artifacts: Dict[str, Any] = Field(default_factory=dict)
+
     error: Optional[str] = None
