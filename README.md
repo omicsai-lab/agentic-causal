@@ -125,8 +125,11 @@ Estimate the causal effect (ATE) of treatment on 5-year survival
 Fill the input fields as follows:
 
 Field	Value
+
 treatment	trt01
+
 outcome	Y5y
+
 covariates	age,bili,albumin,protime,edema,platelet,ast
 
 ## Expected Behavior
@@ -169,11 +172,17 @@ Compare survival between groups
 ```
 
 Required Inputs
+
 Field	Value
+
 time	time
+
 event	event
+
 group	horTh01
+
 covariates	(leave empty)
+
 Expected Behavior
 
 The agent will:
