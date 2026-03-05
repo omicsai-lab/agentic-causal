@@ -75,131 +75,142 @@ survival
 
 --- 
 
-# Quickstart: End-to-End Demos
+# Quickstart: Web Interface Demo
 
-Below are two fully tested demo commands.
-Both have been run successfully end-to-end and generate structured JSON outputs under:
+The system is designed to be used through a Gradio web interface.
+
+Start the interface:
+
+```bash
+python gradio_ui.py
+```
+After launching, open the interface in your browser:
+
+```bash
+http://127.0.0.1:7860
+```
+The web interface allows users to:
+
+Upload a dataset (CSV)
+
+Provide a natural language request
+
+Specify required variables
+
+Execute the causal analysis
+
+All results will be automatically saved under:
+
 ```bash
 out/api/
 ```
 
----
+## Demo 1: Average Treatment Effect (ATE)
+Dataset
 
-# Demo 1: Average Treatment Effect (ATE)
-
-Estimate the causal effect of treatment on a binary 5-year outcome using doubly robust estimation.
-
-```bash
-curl -s -X POST "http://127.0.0.1:8000/run" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "csv": "data/PBC_ate5y_cc.csv",
-    "request": "Estimate the causal effect (ATE) of treatment on 5-year survival",
-    "use_llm_router": true,
-    "treatment": "trt01",
-    "outcome": "Y5y",
-    "covariates": ["age","bili","albumin","protime","edema","platelet","ast"]
-  }'
-```
-Expected behavior:
-
-Selected capability:
+Upload the example dataset:
 
 ```bash
-
-causal_ate
+data/PBC_ate5y_cc.csv
 ```
+## Request
 
-Backend method:
+Enter the following request in the interface:
+
 ```bash
-
-Doubly robust ATE estimation
+Estimate the causal effect (ATE) of treatment on 5-year survival
 ```
+## Required Inputs
 
-Output includes:
+Fill the input fields as follows:
 
-ATE
+Field	Value
+treatment	trt01
+outcome	Y5y
+covariates	age,bili,albumin,protime,edema,platelet,ast
+
+## Expected Behavior
+
+The agent will:
+
+Route the request to the causal_ate capability
+
+Execute doubly robust ATE estimation
+
+Produce a structured JSON result
+
+The output includes:
+
+ATE estimate
 
 Standard error
 
 95% confidence interval
 
-Structured JSON output written to:
-```bash
+Structured output file:
 
+```bash
 out/api/causalmodels.summary.json
 ```
+## Demo 2: Survival Adjusted Curves
+Dataset
 
-# Demo 2: Survival Adjusted Curves
-
-Compare survival between treatment groups using IPTW-adjusted Kaplan–Meier curves.
+Upload the example dataset:
 
 ```bash
-curl -s -X POST "http://127.0.0.1:8000/run" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "csv": "data/GBSG2_agent01.csv",
-    "request": "Compare survival between groups",
-    "use_llm_router": true,
-    "time": "time",
-    "event": "event",
-    "group": "horTh01",
-    "covariates": []
-  }'
+data/GBSG2_agent01.csv
 ```
+### Request
 
-Expected behavior:
+Enter the request:
 
-Selected capability:
 ```bash
-
-survival_adjusted_curves
+Compare survival between groups
 ```
 
-Backend method:
-```bash
+Required Inputs
+Field	Value
+time	time
+event	event
+group	horTh01
+covariates	(leave empty)
+Expected Behavior
 
-IPTW-adjusted Kaplan–Meier
-```
+The agent will:
 
-JSON summary written to:
+Route the request to survival_adjusted_curves
+
+Run IPTW-adjusted Kaplan–Meier analysis
+
+Generate a structured summary output
+
+Structured output file:
+
 ```bash
 
 out/api/adjustedcurves.summary.json
+
 ```
 
 ---
 
-# Output Format
+# Output
 
-Each API run returns structured JSON.
+Each analysis produces a structured JSON artifact.
 
-Example response:
+Example response summary:
 
 ```json
-
 {
   "status": "ok",
-  "selected_tool": "causalmodels",
-  "stdout": "...",
-  "stderr": "...",
+  "selected_tool": "adjustedcurves",
   "artifacts": {
-    "capability_id": "causal_ate",
-    "summary_json": "out/api/causalmodels.summary.json",
-    "router_reason": "LLM selected causal_ate"
+    "capability_id": "survival_adjusted_curves",
+    "summary_json": "out/api/adjustedcurves.summary.json"
   }
 }
 
 ```
-Key fields:
-
-Field	Description
-status	execution status
-selected_tool	executed backend tool
-stdout	human-readable logs
-stderr	warnings or messages
-artifacts	structured output metadata
-
 ---
 
 # Input Data Requirements
