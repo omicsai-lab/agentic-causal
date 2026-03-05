@@ -1,4 +1,4 @@
-#causal-agent-mvp
+# causal-agent-mvp
 
 An agent-based causal inference pipeline that automatically selects and executes appropriate causal analysis tools (e.g., Average Treatment Effect estimation and survival adjusted curves) based on user requests and dataset structure.
 
@@ -16,7 +16,7 @@ The framework is designed to ensure that causal analyses are executed reproducib
 
 ---
 
-#Features
+# Features
 
 Agentic workflow for causal inference
 
@@ -38,19 +38,26 @@ Confounder-adjusted survival curves
 
 ---
 
-#Repository Structure
+# Repository Structure
+
+```bash
 
 causal-agent-mvp/
 
 ├── data/                # Example datasets (PBC, GBSG2)
+
 ├── scripts/             # Demo and helper scripts
+
 ├── src/agent/           # Agent logic, router, schemas, tools
+
 ├── out/                 # Runtime outputs (gitignored)
+
 ├── README.md
+```
 
 ---
 
-#Requirements
+# Requirements
 
 Python 3.9+
 
@@ -64,14 +71,19 @@ WeightIt
 survival
 
 ```
-3Quickstart: End-to-End Demos
+
+--- 
+
+# Quickstart: End-to-End Demos
 
 Below are two fully tested demo commands.
 Both have been run successfully end-to-end and generate structured JSON outputs under:
-
+```bash
 out/api/
+```
+---
 
-#Demo 1: Average Treatment Effect (ATE)
+# Demo 1: Average Treatment Effect (ATE)
 
 Estimate the causal effect of treatment on a binary 5-year outcome using doubly robust estimation.
 
@@ -91,11 +103,16 @@ Expected behavior:
 
 Selected capability:
 
+```bash
+
 causal_ate
+```
 
 Backend method:
+```bash
 
 Doubly robust ATE estimation
+```
 
 Output includes:
 
@@ -106,10 +123,12 @@ Standard error
 95% confidence interval
 
 Structured JSON output written to:
+```bash
 
 out/api/causalmodels.summary.json
+```
 
-#Demo 2: Survival Adjusted Curves
+# Demo 2: Survival Adjusted Curves
 
 Compare survival between treatment groups using IPTW-adjusted Kaplan–Meier curves.
 
@@ -130,18 +149,25 @@ curl -s -X POST "http://127.0.0.1:8000/run" \
 Expected behavior:
 
 Selected capability:
+```bash
 
 survival_adjusted_curves
+```
 
 Backend method:
+```bash
 
 IPTW-adjusted Kaplan–Meier
+```
 
 JSON summary written to:
+```bash
 
 out/api/adjustedcurves.summary.json
+```
+---
 
-#Output Format
+# Output Format
 
 Each API run returns structured JSON.
 
@@ -170,13 +196,13 @@ stdout	human-readable logs
 stderr	warnings or messages
 artifacts	structured output metadata
 ---
-#Input Data Requirements
+# Input Data Requirements
 
 The framework assumes that the input dataset satisfies the following requirements.
 
 As long as these conditions are met, the pipeline can be executed end-to-end without modification to the core codebase.
-
-#CSV File Requirements
+---
+# CSV File Requirements
 
 Input data must be provided as a CSV file.
 
@@ -191,13 +217,13 @@ header row required
 each row represents one observational unit
 
 Example:
-
+```bash
 age,bili,albumin,protime,trt01,Y5y
 58,1.2,3.5,10.2,1,0
 62,2.1,3.1,11.0,0,1
-
-
-#Column Naming Rules
+```
+---
+# Column Naming Rules
 
 Column names must:
 
@@ -222,18 +248,20 @@ Avoid:
 Age (years)
 treatment group
 Outcome %
-Required Variables
 ```
-Required variables depend on the causal task.
+---
+# Required Variables
 
+Required variables depend on the causal task.
+---
 ##Treatment / Exposure
 
 A treatment variable must be provided.
 
 Treatment must be binary, represented as:
-
+```bash
 0 / 1
-
+```
 Example:
 ```bash
 trt01
@@ -241,6 +269,9 @@ trt01
 1 = treated
 
 ```
+
+--- 
+
 ##Outcome
 
 For ATE estimation
@@ -269,8 +300,8 @@ Where:
 event = 1  event occurred
 event = 0  censored
 ```
-
-Covariates (Confounders)
+---
+## Covariates (Confounders)
 
 Covariates may be provided to adjust for confounding.
 
@@ -290,26 +321,26 @@ albumin
 protime
 ```
 
-
-#Structural and Causal Assumptions
+---
+# Structural and Causal Assumptions
 
 The framework relies on standard causal inference assumptions:
 
-###Consistency
+### Consistency
 
 Observed outcomes correspond to the assigned treatment.
 
-###Positivity
+### Positivity
 
 Each covariate pattern has non-zero probability of receiving each treatment.
 
-###No unmeasured confounding
+### No unmeasured confounding
 
 All relevant confounders are included in the covariates.
 
 These assumptions are not automatically verified and must be justified by the user.
-
-#Preprocessing Expectations
+---
+# Preprocessing Expectations
 
 To ensure stable execution:
 
@@ -320,8 +351,8 @@ missing values must be removed or imputed
 categorical variables should be numerically encoded
 
 extremely rare treatment groups may lead to unstable estimates
-
-#Add Tool: Extending the System
+---
+# Add Tool: Extending the System
 
 The framework allows users to dynamically add new analysis tools.
 
@@ -330,12 +361,14 @@ Each tool requires:
 a Python tool file
 
 a capability JSON file
-
-#Capability JSON Format
+---
+# Capability JSON Format
 
 File naming convention:
+```bash
 
 cap_<tool_name>.json
+```
 
 Example:
 
@@ -399,7 +432,8 @@ class HelloWorldTool(BaseTool):
         }
 
 ```
-#Tool Output Requirements
+---
+# Tool Output Requirements
 
 The run() method must return a JSON-serializable dictionary containing:
 
@@ -410,8 +444,8 @@ stderr
 artifacts
 error
 ```
-
-#Tool Validation Pipeline
+---
+# Tool Validation Pipeline
 
 When a tool is uploaded, the system performs:
 
@@ -424,8 +458,8 @@ capability_id consistency check
 runtime execution validation
 
 If any stage fails, a structured error will be returned.
-
-#Notes
+---
+# Notes
 
 Informational messages from R packages may appear in stderr and can be safely ignored.
 
