@@ -14,6 +14,7 @@ and produces both human-readable outputs and structured JSON artifacts.
 
 The framework is designed to ensure that causal analyses are executed reproducibly and transparently, while preventing inappropriate use of causal methods.
 
+
 ---
 
 # Features
@@ -81,6 +82,7 @@ Both have been run successfully end-to-end and generate structured JSON outputs 
 ```bash
 out/api/
 ```
+
 ---
 
 # Demo 1: Average Treatment Effect (ATE)
@@ -165,6 +167,7 @@ JSON summary written to:
 
 out/api/adjustedcurves.summary.json
 ```
+
 ---
 
 # Output Format
@@ -186,6 +189,7 @@ Example response:
     "router_reason": "LLM selected causal_ate"
   }
 }
+
 ```
 Key fields:
 
@@ -195,13 +199,17 @@ selected_tool	executed backend tool
 stdout	human-readable logs
 stderr	warnings or messages
 artifacts	structured output metadata
+
 ---
+
 # Input Data Requirements
 
 The framework assumes that the input dataset satisfies the following requirements.
 
 As long as these conditions are met, the pipeline can be executed end-to-end without modification to the core codebase.
+
 ---
+
 # CSV File Requirements
 
 Input data must be provided as a CSV file.
@@ -217,12 +225,15 @@ header row required
 each row represents one observational unit
 
 Example:
+
 ```bash
 age,bili,albumin,protime,trt01,Y5y
 58,1.2,3.5,10.2,1,0
 62,2.1,3.1,11.0,0,1
 ```
+
 ---
+
 # Column Naming Rules
 
 Column names must:
@@ -236,6 +247,7 @@ avoid special characters
 avoid trailing spaces
 
 Recommended naming style:
+
 ```bash
 age
 treatment
@@ -244,21 +256,26 @@ covariate1
 covariate2
 ```
 Avoid:
+
 ```bash
 Age (years)
 treatment group
 Outcome %
 ```
 ---
+
 # Required Variables
 
 Required variables depend on the causal task.
+
 ---
-##Treatment / Exposure
+
+## Treatment / Exposure
 
 A treatment variable must be provided.
 
 Treatment must be binary, represented as:
+
 ```bash
 0 / 1
 ```
@@ -272,7 +289,7 @@ trt01
 
 --- 
 
-##Outcome
+## Outcome
 
 For ATE estimation
 
@@ -301,6 +318,7 @@ event = 1  event occurred
 event = 0  censored
 ```
 ---
+
 ## Covariates (Confounders)
 
 Covariates may be provided to adjust for confounding.
@@ -322,6 +340,7 @@ protime
 ```
 
 ---
+
 # Structural and Causal Assumptions
 
 The framework relies on standard causal inference assumptions:
@@ -339,7 +358,9 @@ Each covariate pattern has non-zero probability of receiving each treatment.
 All relevant confounders are included in the covariates.
 
 These assumptions are not automatically verified and must be justified by the user.
+
 ---
+
 # Preprocessing Expectations
 
 To ensure stable execution:
@@ -351,6 +372,7 @@ missing values must be removed or imputed
 categorical variables should be numerically encoded
 
 extremely rare treatment groups may lead to unstable estimates
+
 ---
 # Add Tool: Extending the System
 
@@ -361,7 +383,9 @@ Each tool requires:
 a Python tool file
 
 a capability JSON file
+
 ---
+
 # Capability JSON Format
 
 File naming convention:
@@ -403,6 +427,7 @@ tool_<tool_name>.py
 Each tool must inherit from BaseTool.
 
 Example template:
+
 ```python
 from typing import Tuple
 from src.agent.schemas_io import RunRequest
@@ -433,6 +458,7 @@ class HelloWorldTool(BaseTool):
 
 ```
 ---
+
 # Tool Output Requirements
 
 The run() method must return a JSON-serializable dictionary containing:
@@ -444,6 +470,7 @@ stderr
 artifacts
 error
 ```
+
 ---
 # Tool Validation Pipeline
 
@@ -458,6 +485,7 @@ capability_id consistency check
 runtime execution validation
 
 If any stage fails, a structured error will be returned.
+
 ---
 # Notes
 
