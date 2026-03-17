@@ -1,0 +1,14 @@
+{
+  "capability_id": "binary_edrip",
+  "title": "Binary outcome causal effect (EDRIP)",
+  "description": "Estimate causal effect for a binary outcome using the doubly robust EDRIP estimator.",
+  "keywords": [
+    "binary outcome",
+    "causal effect",
+    "edrip",
+    "doubly robust",
+    "treatment effect"
+  ],
+  "required_fields": ["csv", "treatment", "outcome"],
+  "optional_fields": ["covariates"]
+}
