@@ -41,7 +41,7 @@ class CausalModelsTool(BaseTool):
         stdout, stderr = p.stdout, p.stderr
 
         artifacts = {}
-        # If the demo prints a JSON line, parse it (optional)
+        # If the demo prints a JSON line, parse it
         for line in reversed(stdout.splitlines()):
             s = line.strip()
             if s.startswith("{") and s.endswith("}"):

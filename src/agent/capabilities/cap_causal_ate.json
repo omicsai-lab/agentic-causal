@@ -1,14 +1,18 @@
 {
   "capability_id": "causal_ate",
   "title": "Average Treatment Effect (ATE)",
-  "description": "Estimate the causal effect of a binary treatment on an outcome using covariate adjustment.",
+  "description": "General-purpose causal inference method for estimating the average treatment effect (ATE) of a treatment on an outcome using covariate adjustment. Best suited for requests that ask for an average causal effect, treatment-versus-control comparison, or standard treatment effect estimation. Applicable when the goal is a single overall causal effect estimate rather than a time-varying or survival-based analysis.",
   "keywords": [
     "ate",
     "average treatment effect",
+    "average causal effect",
+    "treatment effect",
+    "treatment vs control",
     "causal effect",
     "ipw",
     "propensity score",
-    "doubly robust"
+    "doubly robust",
+    "standard causal model"
   ],
   "required_fields": ["csv", "treatment", "outcome"],
   "optional_fields": ["covariates"]

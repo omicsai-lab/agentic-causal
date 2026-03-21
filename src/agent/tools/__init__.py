@@ -45,7 +45,7 @@ def _register_tools_from_module(mod) -> None:
         try:
             tool = tool_cls()  # MUST be no-arg init
         except TypeError:
-            # If you have a tool that requires init args, you can either:
+            # If we have a tool that requires init args, can either:
             # 1) give it defaults, or
             # 2) manually register it elsewhere.
             continue
@@ -65,7 +65,7 @@ def autodiscover_and_register_tools() -> None:
         try:
             mod = importlib.import_module(mod_name)
         except Exception:
-            # If a module fails to import, skip it (you can check logs when debugging).
+            # If a module fails to import, skip it.
             continue
         _register_tools_from_module(mod)
 

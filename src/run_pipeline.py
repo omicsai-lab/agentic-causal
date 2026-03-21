@@ -77,7 +77,7 @@ def run_script(script_path: Path, out_path: Path, extra_args: list[str] | None =
 
 def infer_outcome_type_from_csv(csv_path: Path, outcome_col: str | None) -> str:
     """
-    Keep your robust inference (used when planner needs outcome typing).
+    Keep robust inference (used when planner needs outcome typing).
     """
     df, _ = load_csv_robust(
         csv_path,
@@ -138,7 +138,7 @@ def main() -> None:
         print(f"CSV not found: {csv_path}")
         raise SystemExit(2)
 
-    # Load capability list (JSON is the "logic of what it can do")
+    # Load capability list
     caps_path = ROOT / "pipeline_capabilities.json"
     caps = load_capabilities(caps_path)
 

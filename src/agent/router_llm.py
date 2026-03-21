@@ -86,7 +86,7 @@ def llm_choose_capability(
         "Return valid JSON with keys: capability_id, reason. No extra keys."
     )
 
-    # Provide richer descriptions to help LLM choose correctly (optional but helpful)
+    # Provide richer descriptions to help LLM choose correctly 
     cap_lines = []
     for c in caps:
         cid = c.get("capability_id") or c.get("id")
@@ -107,7 +107,7 @@ def llm_choose_capability(
     )
 
     client = OpenAI(api_key=api_key)
-    use_model = model or os.environ.get("OPENAI_MODEL") or "gpt-4o-mini"
+    use_model = model or os.environ.get("OPENAI_MODEL") or "gpt-5.4"
 
     content = ""
     try:

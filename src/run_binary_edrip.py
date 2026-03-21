@@ -204,9 +204,7 @@ def main():
               cutoff = as.matrix(.[, c(covariates_name), drop = FALSE]) %*% opt_r,
               delta_pi = map_dbl(cutoff, ~ find_pi(hx_pi, hy_pi, .x))
             )
-
-          # NOTE:
-          # Keep the current implementation structure close to your locked version.
+  
           # include_m0 / include_m1 are both built from include_pi.
 
           include_m0 <- include_pi %>%
@@ -227,7 +225,7 @@ def main():
 
           include_m1 <- include_pi %>%
             mutate(
-              xr = as.matrix(.[, c(covariates_name), drop = FALSE]) %*% opt_beta_m1 / sqrt(sum(opt_beta_m1^2))
+              xr = as.matrix(.[, c(covariates_name), drop = FALSE]) %*% opt_beta_m1 
             ) %>%
             arrange(xr)
 
