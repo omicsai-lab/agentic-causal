@@ -27,7 +27,7 @@ def _router_fallback(req: RunRequest) -> Tuple[str, str, str]:
 
 def _try_llm_router(req: RunRequest) -> Optional[Tuple[str, str, str]]:
     """
-    Use your repo's router_llm.llm_choose_capability if available.
+    Use repo's router_llm.llm_choose_capability if available.
     Returns (capability_id, selected_by, router_reason) or None.
 
     NOTE: This function must never raise; failures fall back to rule-based routing.
@@ -202,7 +202,7 @@ def _normalize_tool_result(raw: Any, tool_name: str) -> Dict[str, Any]:
 # -----------------------------
 class SimpleGraph:
     """
-    Minimal graph compatible with your existing usage:
+    Minimal graph compatible with existing usage:
       out = graph.invoke({"req": req})
 
     Guarantees:

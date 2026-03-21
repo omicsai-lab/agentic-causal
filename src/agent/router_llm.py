@@ -107,7 +107,7 @@ def llm_choose_capability(
     )
 
     client = OpenAI(api_key=api_key)
-    use_model = model or os.environ.get("OPENAI_MODEL") or "gpt-4o-mini"
+    use_model = model or os.environ.get("OPENAI_MODEL") or "gpt-5.4"
 
     content = ""
     try:

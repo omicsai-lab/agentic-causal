@@ -38,7 +38,7 @@ class RunRequest(BaseModel):
 class RunResult(BaseModel):
     status: Literal["ok", "error"]
 
-    # 🔴 改动点：不要再用 Literal[...] 限死
+    
     selected_tool: Optional[str] = None
 
     stdout: str = ""

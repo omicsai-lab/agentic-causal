@@ -44,7 +44,7 @@ class SummaryStatsTool(BaseTool):
         miss_rate_by_col = (miss_by_col / max(n_rows, 1)).round(6)
 
         # Decide which columns to summarize
-        # - if user passed covariates: treat them as "columns of interest"
+        # - if user passed covariates: treat as "columns of interest"
         # - else summarize all numeric columns
         if req.covariates:
             target_cols = [c for c in req.covariates if c in df.columns]
@@ -63,7 +63,7 @@ class SummaryStatsTool(BaseTool):
                 row = desc.loc[col].to_dict()
                 numeric_summary[col] = {k: (float(v) if pd.notna(v) else None) for k, v in row.items()}
 
-        # Pretty stdout (short, human-readable)
+        # Pretty stdout 
         topk = 12
         top_missing_lines = []
         for c in miss_by_col.head(topk).index.tolist():

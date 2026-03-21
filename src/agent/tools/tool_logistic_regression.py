@@ -80,7 +80,7 @@ class LogisticRegressionTool(BaseTool):
         p = model.predict_proba(X)[:, 1]
         yhat = (p >= 0.5).astype(int)
 
-        # metrics (in-sample; for MVP)
+        # metrics 
         acc = float(accuracy_score(y, yhat))
         try:
             auc = float(roc_auc_score(y, p))

@@ -13,7 +13,7 @@ This version includes:
 1) Multiple encodings × multiple delimiters for standard CSV parsing
 2) A final fallback for whitespace-delimited data
 3) A recovery step: if whitespace fallback yields a single column containing commas,
-   parse that column as comma-separated data (common in "CSV-ish" files that break read_csv).
+   parse that column as comma-separated data.
 """
 
 from __future__ import annotations

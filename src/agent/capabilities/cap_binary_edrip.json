@@ -1,0 +1,19 @@
+{
+  "capability_id": "binary_edrip",
+  "title": "Binary outcome causal effect (EDRIP)",
+  "description": "Specialized causal inference method for estimating treatment effect when the outcome is binary, using a doubly robust semiparametric estimator. Best suited for binary-outcome settings where the request emphasizes robustness, flexibility, reduced parametric assumptions, or a specialized estimator beyond a standard average treatment effect workflow. Applicable to binary response causal analysis, but not to survival or time-to-event tasks.",
+  "keywords": [
+    "binary outcome",
+    "binary response",
+    "causal effect",
+    "treatment effect",
+    "edrip",
+    "doubly robust",
+    "robust estimator",
+    "flexible model",
+    "semiparametric",
+    "advanced causal method"
+  ],
+  "required_fields": ["csv", "treatment", "outcome"],
+  "optional_fields": ["covariates"]
+}
