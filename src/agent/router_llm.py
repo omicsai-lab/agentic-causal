@@ -132,7 +132,7 @@ def llm_choose_capability(
         )
         content = (resp.choices[0].message.content or "").strip()
 
-    # Parse robustly (in case the model wraps JSON in text)
+    # Parse robustly 
     m = re.search(r"\{.*\}", content, flags=re.DOTALL)
     if not m:
         return {"capability_id": fallback_id, "reason": "LLM returned non-JSON; defaulting to first capability."}
