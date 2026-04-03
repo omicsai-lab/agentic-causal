@@ -2,9 +2,11 @@ import gradio as gr
 import requests
 import json
 from pathlib import Path
-from typing import Dict, Any, List, Tuple
+from typing import Dict, Any, List, Optional
+import html
 
 BACKEND_URL = "http://127.0.0.1:8000/run"
+TOOLS_URL = "http://127.0.0.1:8000/tools"
 
 
 def REPO_ROOT() -> Path:
@@ -17,6 +19,16 @@ def CAP_DIR() -> Path:
 
 def TOOL_DIR() -> Path:
     return REPO_ROOT() / "src" / "agent" / "tools"
+
+
+def PLOT_DIR() -> Path:
+    return REPO_ROOT() / "src" / "agent" / "plots"
+
+
+def ensure_plugin_dirs():
+    CAP_DIR().mkdir(parents=True, exist_ok=True)
+    TOOL_DIR().mkdir(parents=True, exist_ok=True)
+    PLOT_DIR().mkdir(parents=True, exist_ok=True)
 
 
 def load_capability_json(capability_id: str) -> Dict[str, Any]:
@@ -115,6 +127,18 @@ def pick_value(required_value, optional_value):
     return optional_value
 
 
+def _find_raw_json_file(result: Dict[str, Any]) -> Optional[str]:
+    artifacts = result.get("artifacts", {}) or {}
+    out_dir = artifacts.get("out_dir")
+    if not out_dir:
+        return None
+
+    p = Path(out_dir) / "result.json"
+    if p.exists():
+        return str(p)
+    return None
+
+
 def run_backend(
     csv_file,
     request_text,
@@ -132,9 +156,17 @@ def run_backend(
     opt_group,
     extra_json_text,
 ):
+    hidden_updates = hide_all_param_boxes()
+
     if csv_file is None:
-        updates = hide_all_param_boxes()
-        return ("Please upload a CSV file.", "", *updates)
+        return (
+            "Please upload a CSV file.",
+            "",
+            None,
+            None,
+            None,
+            *hidden_updates,
+        )
 
     treatment = pick_value(req_treatment, opt_treatment)
     outcome = pick_value(req_outcome, opt_outcome)
@@ -173,19 +205,23 @@ def run_backend(
             if isinstance(extra, dict):
                 payload.update(extra)
             else:
-                updates = hide_all_param_boxes()
                 return (
                     "Invalid JSON: Extra Parameters must be a JSON object.",
                     "",
-                    *updates[:-1],
+                    None,
+                    None,
+                    None,
+                    *hidden_updates[:-1],
                     gr.update(visible=True),
                 )
         except Exception:
-            updates = hide_all_param_boxes()
             return (
                 "Invalid JSON in Extra Parameters.",
                 "",
-                *updates[:-1],
+                None,
+                None,
+                None,
+                *hidden_updates[:-1],
                 gr.update(visible=True),
             )
 
@@ -193,19 +229,41 @@ def run_backend(
         r = requests.post(BACKEND_URL, json=payload, timeout=180)
         result = r.json()
     except Exception as e:
-        updates = hide_all_param_boxes()
-        return (f"Backend error: {type(e).__name__}: {e}", "", *updates)
+        return (
+            f"Backend error: {type(e).__name__}: {e}",
+            "",
+            None,
+            None,
+            None,
+            *hidden_updates,
+        )
 
-    pretty = json.dumps(result, indent=2, ensure_ascii=False)
+    summary = result.get("user_summary", "")
+    graph_paths = result.get("graph_paths", []) or []
+    pdf_path = result.get("report_pdf")
+    plot_path = graph_paths[0] if graph_paths else None
+    raw_json_path = _find_raw_json_file(result)
 
     if result.get("status") == "ok":
-        updates = hide_all_param_boxes()
-        return ("Success ✅", pretty, *updates)
+        return (
+            "Success ✅",
+            summary,
+            plot_path,
+            pdf_path,
+            raw_json_path,
+            *hidden_updates,
+        )
 
     cap_id = result.get("artifacts", {}).get("capability_id")
     if not cap_id:
-        updates = hide_all_param_boxes()
-        return ("Error (no capability detected)", pretty, *updates)
+        return (
+            "Error (no capability detected)",
+            summary,
+            plot_path,
+            pdf_path,
+            raw_json_path,
+            *hidden_updates,
+        )
 
     cap = load_capability_json(cap_id)
     missing = missing_required_fields(cap, payload)
@@ -215,14 +273,21 @@ def run_backend(
         missing = ["(unknown required fields)"]
         optional = []
 
-    updates = updates_for_capability_fields(missing, optional)
+    field_updates = updates_for_capability_fields(missing, optional)
 
     if missing:
         msg = f"Need required parameters: {', '.join(missing)}"
     else:
         msg = "Optional parameters available."
 
-    return (msg, pretty, *updates)
+    return (
+        msg,
+        summary,
+        plot_path,
+        pdf_path,
+        raw_json_path,
+        *field_updates,
+    )
 
 
 def _extract_name_and_bytes(file_obj):
@@ -249,21 +314,112 @@ def _extract_name_and_bytes(file_obj):
     return name, data
 
 
-def add_tool(cap_file, tool_file):
+def fetch_tools_from_backend() -> List[Dict[str, str]]:
+    """
+    Get the real registered tool list from the backend.
+    """
+    try:
+        r = requests.get(TOOLS_URL, timeout=10)
+        r.raise_for_status()
+        data = r.json()
+        tools = data.get("tools", [])
+        if isinstance(tools, list):
+            out: List[Dict[str, str]] = []
+            for item in tools:
+                if isinstance(item, dict):
+                    out.append(
+                        {
+                            "tool": str(item.get("tool", "") or ""),
+                            "status": str(item.get("status", "") or ""),
+                            "plot": str(item.get("plot", "") or ""),
+                            "notes": str(item.get("notes", "") or ""),
+                        }
+                    )
+            return out
+    except Exception:
+        pass
+    return []
+
+
+def get_tool_summary_table_html() -> str:
+    rows = fetch_tools_from_backend()
+
+    if not rows:
+        return """
+        <div class="tool-table-scroll">
+          <div class="tool-empty">
+            Could not load tool list from backend. Make sure the FastAPI server is running and includes the /tools endpoint.
+          </div>
+        </div>
+        """
+
+    parts = [
+        '<div class="tool-table-scroll">',
+        '<table class="tool-table">',
+        "<thead>",
+        "<tr>",
+        "<th>Tool</th>",
+        "<th>Status</th>",
+        "<th>Plot</th>",
+        "<th>Notes</th>",
+        "</tr>",
+        "</thead>",
+        "<tbody>",
+    ]
+
+    for row in rows:
+        tool = html.escape(row["tool"])
+        status = html.escape(row["status"])
+        plot = html.escape(row["plot"])
+        notes = html.escape(row["notes"])
+
+        parts.extend(
+            [
+                "<tr>",
+                f"<td>{tool}</td>",
+                f"<td>{status}</td>",
+                f"<td>{plot}</td>",
+                f"<td>{notes}</td>",
+                "</tr>",
+            ]
+        )
+
+    parts.extend(
+        [
+            "</tbody>",
+            "</table>",
+            "</div>",
+        ]
+    )
+
+    return "\n".join(parts)
+
+
+def refresh_tool_table_html():
+    return get_tool_summary_table_html()
+
+
+def add_tool(cap_file, tool_file, plot_file=None):
     try:
         if cap_file is None or tool_file is None:
-            return "Please upload both cap_*.json and tool_*.py"
+            return "Please upload both cap_*.json and tool_*.py", get_tool_summary_table_html()
 
-        CAP_DIR().mkdir(parents=True, exist_ok=True)
-        TOOL_DIR().mkdir(parents=True, exist_ok=True)
+        ensure_plugin_dirs()
 
         cap_name, cap_bytes = _extract_name_and_bytes(cap_file)
         tool_name, tool_bytes = _extract_name_and_bytes(tool_file)
 
         if not cap_name.startswith("cap_") or not cap_name.endswith(".json"):
-            return f"Invalid capability file name: {cap_name} (expected cap_*.json)"
-        if not tool_name.startswith("tool_") or not tool_name.endswith(".py"):
-            return f"Invalid tool file name: {tool_name} (expected tool_*.py)"
+            return (
+                f"Invalid capability file name: {cap_name} (expected cap_*.json)",
+                get_tool_summary_table_html(),
+            )
+
+        if not tool_name.endswith(".py"):
+            return (
+                f"Invalid tool file name: {tool_name} (expected a .py file)",
+                get_tool_summary_table_html(),
+            )
 
         cap_path = CAP_DIR() / cap_name
         tool_path = TOOL_DIR() / tool_name
@@ -271,14 +427,35 @@ def add_tool(cap_file, tool_file):
         cap_path.write_bytes(cap_bytes)
         tool_path.write_bytes(tool_bytes)
 
-        return (
-            "Added successfully.\n"
-            f"- {cap_path}\n"
-            f"- {tool_path}\n\n"
-            "Restart backend to activate."
-        )
+        status_lines = [
+            "Added successfully.",
+            f"- capability: {cap_path}",
+            f"- tool: {tool_path}",
+        ]
+
+        if plot_file is not None:
+            plot_name, plot_bytes = _extract_name_and_bytes(plot_file)
+
+            if not plot_name.endswith(".py"):
+                return (
+                    f"Invalid plot file name: {plot_name} (expected a .py file)",
+                    get_tool_summary_table_html(),
+                )
+
+            plot_path = PLOT_DIR() / plot_name
+            plot_path.write_bytes(plot_bytes)
+            status_lines.append(f"- plot: {plot_path}")
+        else:
+            status_lines.append("- plot: not uploaded (optional)")
+
+        status_lines.append("")
+        status_lines.append("Restart backend to activate newly added tools.")
+        status_lines.append("After restart, click Refresh Tool List to re-read the backend registry.")
+
+        return "\n".join(status_lines), get_tool_summary_table_html()
+
     except Exception as e:
-        return f"Error while adding tool: {type(e).__name__}: {e}"
+        return f"Error while adding tool: {type(e).__name__}: {e}", get_tool_summary_table_html()
 
 
 CUSTOM_CSS = """
@@ -325,7 +502,6 @@ html, body {
     min-height: 120px !important;
 }
 
-.json-output textarea,
 .status-output textarea {
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
 }
@@ -348,10 +524,70 @@ button {
     align-self: stretch !important;
 }
 
-@media (min-width: 1200px) {
-    .result-box textarea {
-        min-height: 430px !important;
-    }
+.tool-table-scroll {
+    width: 100%;
+    height: 560px;
+    max-height: 560px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.tool-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 16px;
+    background: white;
+}
+
+.tool-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: white;
+}
+
+.tool-table th,
+.tool-table td {
+    text-align: left;
+    padding: 14px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+.tool-table th {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.tool-table th:nth-child(1),
+.tool-table td:nth-child(1) {
+    width: 24%;
+}
+
+.tool-table th:nth-child(2),
+.tool-table td:nth-child(2) {
+    width: 16%;
+}
+
+.tool-table th:nth-child(3),
+.tool-table td:nth-child(3) {
+    width: 10%;
+}
+
+.tool-table th:nth-child(4),
+.tool-table td:nth-child(4) {
+    width: 50%;
+}
+
+.tool-empty {
+    padding: 12px 14px;
+    color: #6b7280;
 }
 """
 
@@ -359,8 +595,8 @@ button {
 with gr.Blocks(css=CUSTOM_CSS) as demo:
     gr.Markdown(
         """
-# Causal Agent UI
-Upload a dataset, submit an analysis request, and receive structured results.
+# Causal Agent
+Upload a dataset, submit an analysis request, and receive user-friendly results.
 """
     )
 
@@ -491,11 +727,23 @@ Upload a dataset, submit an analysis request, and receive structured results.
                             elem_classes="status-output",
                         )
 
-                        result_output = gr.Textbox(
-                            label="Full JSON Output",
-                            lines=18,
+                        summary_output = gr.Textbox(
+                            label="Summary",
+                            lines=6,
                             interactive=False,
-                            elem_classes="json-output result-box",
+                        )
+
+                        plot_output = gr.Image(
+                            label="Figure",
+                            type="filepath",
+                        )
+
+                        pdf_output = gr.File(
+                            label="Download Project Report (PDF)",
+                        )
+
+                        raw_json_output = gr.File(
+                            label="Download Raw JSON Output",
                         )
 
             run_button.click(
@@ -519,7 +767,10 @@ Upload a dataset, submit an analysis request, and receive structured results.
                 ],
                 outputs=[
                     status_output,
-                    result_output,
+                    summary_output,
+                    plot_output,
+                    pdf_output,
+                    raw_json_output,
                     required_header,
                     req_treatment_input,
                     req_outcome_input,
@@ -556,23 +807,40 @@ Upload a dataset, submit an analysis request, and receive structured results.
                             elem_classes="compact-upload",
                         )
 
-                        add_button = gr.Button("Add Tool", variant="primary")
+                        plot_upload = gr.File(
+                            label="Upload plot_*.py (optional)",
+                            height=120,
+                            elem_classes="compact-upload",
+                        )
+
+                        with gr.Row():
+                            add_button = gr.Button("Add Tool", variant="primary")
+                            refresh_button = gr.Button("Refresh Tool List")
 
                 with gr.Column(scale=7):
+                    with gr.Group(elem_classes="card"):
+                        gr.Markdown("### Existing Tools")
+                        tool_table_html = gr.HTML(value=get_tool_summary_table_html())
+
                     with gr.Group(elem_classes="card"):
                         gr.Markdown("### Tool Status")
 
                         add_status = gr.Textbox(
                             label="Status",
-                            lines=18,
+                            lines=14,
                             interactive=False,
                         )
 
             add_button.click(
                 add_tool,
-                inputs=[cap_upload, tool_upload],
-                outputs=[add_status],
+                inputs=[cap_upload, tool_upload, plot_upload],
+                outputs=[add_status, tool_table_html],
             )
 
+            refresh_button.click(
+                refresh_tool_table_html,
+                inputs=[],
+                outputs=[tool_table_html],
+            )
 
 demo.launch()
