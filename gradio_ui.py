@@ -135,8 +135,49 @@ def _find_raw_json_file(result: Dict[str, Any]) -> Optional[str]:
 
     p = Path(out_dir) / "result.json"
     if p.exists():
-        return str(p)
+        return str(p.resolve())
     return None
+
+
+def _safe_existing_path(p: Optional[str]) -> Optional[str]:
+    if not p:
+        return None
+    try:
+        path = Path(str(p)).expanduser()
+        if path.exists():
+            return str(path.resolve())
+    except Exception:
+        return None
+    return None
+
+
+def _build_media_updates(result: Dict[str, Any]):
+    graph_paths = result.get("graph_paths", []) or []
+    pdf_path = result.get("report_pdf")
+    raw_json_path = _find_raw_json_file(result)
+
+    plot_path = None
+    if isinstance(graph_paths, list) and len(graph_paths) > 0:
+        plot_path = _safe_existing_path(graph_paths[0])
+    elif isinstance(graph_paths, str):
+        plot_path = _safe_existing_path(graph_paths)
+
+    pdf_path = _safe_existing_path(pdf_path)
+    raw_json_path = _safe_existing_path(raw_json_path)
+
+    plot_update = gr.update(value=plot_path, visible=bool(plot_path))
+    pdf_update = gr.update(value=pdf_path, visible=bool(pdf_path))
+    raw_json_update = gr.update(value=raw_json_path, visible=bool(raw_json_path))
+
+    return plot_update, pdf_update, raw_json_update
+
+
+def _empty_media_updates():
+    return (
+        gr.update(value=None, visible=False),
+        gr.update(value=None, visible=False),
+        gr.update(value=None, visible=False),
+    )
 
 
 def run_backend(
@@ -157,14 +198,15 @@ def run_backend(
     extra_json_text,
 ):
     hidden_updates = hide_all_param_boxes()
+    empty_plot_update, empty_pdf_update, empty_raw_json_update = _empty_media_updates()
 
     if csv_file is None:
         return (
             "Please upload a CSV file.",
             "",
-            None,
-            None,
-            None,
+            empty_plot_update,
+            empty_pdf_update,
+            empty_raw_json_update,
             *hidden_updates,
         )
 
@@ -179,6 +221,7 @@ def run_backend(
         "csv": str(csv_file.name),
         "request": request_text or "",
         "use_llm_router": True,
+        "generate_plots": True,
     }
 
     if treatment:
@@ -208,60 +251,68 @@ def run_backend(
                 return (
                     "Invalid JSON: Extra Parameters must be a JSON object.",
                     "",
-                    None,
-                    None,
-                    None,
+                    empty_plot_update,
+                    empty_pdf_update,
+                    empty_raw_json_update,
                     *hidden_updates[:-1],
                     gr.update(visible=True),
                 )
-        except Exception:
+        except Exception as e:
             return (
-                "Invalid JSON in Extra Parameters.",
+                f"Invalid JSON in Extra Parameters: {e}",
                 "",
-                None,
-                None,
-                None,
+                empty_plot_update,
+                empty_pdf_update,
+                empty_raw_json_update,
                 *hidden_updates[:-1],
                 gr.update(visible=True),
             )
 
     try:
         r = requests.post(BACKEND_URL, json=payload, timeout=180)
-        result = r.json()
+        try:
+            result = r.json()
+        except Exception:
+            return (
+                f"Backend returned non-JSON response (HTTP {r.status_code}).",
+                r.text[:2000] if hasattr(r, "text") else "",
+                empty_plot_update,
+                empty_pdf_update,
+                empty_raw_json_update,
+                *hidden_updates,
+            )
     except Exception as e:
         return (
             f"Backend error: {type(e).__name__}: {e}",
             "",
-            None,
-            None,
-            None,
+            empty_plot_update,
+            empty_pdf_update,
+            empty_raw_json_update,
             *hidden_updates,
         )
 
-    summary = result.get("user_summary", "")
-    graph_paths = result.get("graph_paths", []) or []
-    pdf_path = result.get("report_pdf")
-    plot_path = graph_paths[0] if graph_paths else None
-    raw_json_path = _find_raw_json_file(result)
+    summary = result.get("user_summary", "") or ""
+    plot_update, pdf_update, raw_json_update = _build_media_updates(result)
 
     if result.get("status") == "ok":
         return (
             "Success ✅",
             summary,
-            plot_path,
-            pdf_path,
-            raw_json_path,
+            plot_update,
+            pdf_update,
+            raw_json_update,
             *hidden_updates,
         )
 
     cap_id = result.get("artifacts", {}).get("capability_id")
     if not cap_id:
+        error_msg = result.get("error") or "Error (no capability detected)"
         return (
-            "Error (no capability detected)",
+            error_msg,
             summary,
-            plot_path,
-            pdf_path,
-            raw_json_path,
+            plot_update,
+            pdf_update,
+            raw_json_update,
             *hidden_updates,
         )
 
@@ -278,14 +329,14 @@ def run_backend(
     if missing:
         msg = f"Need required parameters: {', '.join(missing)}"
     else:
-        msg = "Optional parameters available."
+        msg = result.get("error") or "Optional parameters available."
 
     return (
         msg,
         summary,
-        plot_path,
-        pdf_path,
-        raw_json_path,
+        plot_update,
+        pdf_update,
+        raw_json_update,
         *field_updates,
     )
 
@@ -331,7 +382,6 @@ def fetch_tools_from_backend() -> List[Dict[str, str]]:
                         {
                             "tool": str(item.get("tool", "") or ""),
                             "status": str(item.get("status", "") or ""),
-                            "plot": str(item.get("plot", "") or ""),
                             "notes": str(item.get("notes", "") or ""),
                         }
                     )
@@ -360,7 +410,6 @@ def get_tool_summary_table_html() -> str:
         "<tr>",
         "<th>Tool</th>",
         "<th>Status</th>",
-        "<th>Plot</th>",
         "<th>Notes</th>",
         "</tr>",
         "</thead>",
@@ -370,7 +419,6 @@ def get_tool_summary_table_html() -> str:
     for row in rows:
         tool = html.escape(row["tool"])
         status = html.escape(row["status"])
-        plot = html.escape(row["plot"])
         notes = html.escape(row["notes"])
 
         parts.extend(
@@ -378,7 +426,6 @@ def get_tool_summary_table_html() -> str:
                 "<tr>",
                 f"<td>{tool}</td>",
                 f"<td>{status}</td>",
-                f"<td>{plot}</td>",
                 f"<td>{notes}</td>",
                 "</tr>",
             ]
@@ -428,9 +475,10 @@ def add_tool(cap_file, tool_file, plot_file=None):
         tool_path.write_bytes(tool_bytes)
 
         status_lines = [
-            "Added successfully.",
-            f"- capability: {cap_path}",
-            f"- tool: {tool_path}",
+            "✅ Tool added successfully.",
+            "",
+            f"Capability file: {cap_path}",
+            f"Tool file: {tool_path}",
         ]
 
         if plot_file is not None:
@@ -444,18 +492,20 @@ def add_tool(cap_file, tool_file, plot_file=None):
 
             plot_path = PLOT_DIR() / plot_name
             plot_path.write_bytes(plot_bytes)
-            status_lines.append(f"- plot: {plot_path}")
+            status_lines.append(f"Plot file: {plot_path}")
         else:
-            status_lines.append("- plot: not uploaded (optional)")
+            status_lines.append("Plot file: not uploaded (optional)")
 
         status_lines.append("")
-        status_lines.append("Restart backend to activate newly added tools.")
-        status_lines.append("After restart, click Refresh Tool List to re-read the backend registry.")
+        status_lines.append("Next step:")
+        status_lines.append("1. Restart backend to activate the new tool.")
+        status_lines.append("2. Click Refresh Tool List.")
+        status_lines.append("3. Confirm the new tool appears in Existing Tools.")
 
         return "\n".join(status_lines), get_tool_summary_table_html()
 
     except Exception as e:
-        return f"Error while adding tool: {type(e).__name__}: {e}", get_tool_summary_table_html()
+        return f"❌ Error while adding tool: {type(e).__name__}: {e}", get_tool_summary_table_html()
 
 
 CUSTOM_CSS = """
@@ -479,6 +529,14 @@ html, body {
     padding: 12px;
     background: white;
     box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.success-card {
+    border: 2px solid #f59e0b;
+    border-radius: 14px;
+    padding: 12px;
+    background: #fff7ed;
+    box-shadow: 0 2px 6px rgba(245, 158, 11, 0.12);
 }
 
 .section-label {
@@ -506,6 +564,13 @@ html, body {
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
 }
 
+.tool-status-output textarea {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+}
+
 button {
     min-height: 44px !important;
 }
@@ -526,8 +591,8 @@ button {
 
 .tool-table-scroll {
     width: 100%;
-    height: 560px;
-    max-height: 560px;
+    height: 760px;
+    max-height: 760px;
     overflow-y: auto;
     overflow-x: auto;
     border: 1px solid #e5e7eb;
@@ -567,22 +632,17 @@ button {
 
 .tool-table th:nth-child(1),
 .tool-table td:nth-child(1) {
-    width: 24%;
+    width: 26%;
 }
 
 .tool-table th:nth-child(2),
 .tool-table td:nth-child(2) {
-    width: 16%;
+    width: 18%;
 }
 
 .tool-table th:nth-child(3),
 .tool-table td:nth-child(3) {
-    width: 10%;
-}
-
-.tool-table th:nth-child(4),
-.tool-table td:nth-child(4) {
-    width: 50%;
+    width: 56%;
 }
 
 .tool-empty {
@@ -735,15 +795,17 @@ Upload a dataset, submit an analysis request, and receive user-friendly results.
 
                         plot_output = gr.Image(
                             label="Figure",
-                            type="filepath",
+                            visible=False,
                         )
 
                         pdf_output = gr.File(
                             label="Download Project Report (PDF)",
+                            visible=False,
                         )
 
                         raw_json_output = gr.File(
                             label="Download Raw JSON Output",
+                            visible=False,
                         )
 
             run_button.click(
@@ -817,19 +879,21 @@ Upload a dataset, submit an analysis request, and receive user-friendly results.
                             add_button = gr.Button("Add Tool", variant="primary")
                             refresh_button = gr.Button("Refresh Tool List")
 
+                    with gr.Group(elem_classes="success-card"):
+                        gr.Markdown("## Tool Added Status")
+
+                        add_status = gr.Textbox(
+                            label="Status",
+                            lines=12,
+                            interactive=False,
+                            elem_classes="tool-status-output",
+                            value="No tool has been added yet.",
+                        )
+
                 with gr.Column(scale=7):
                     with gr.Group(elem_classes="card"):
                         gr.Markdown("### Existing Tools")
                         tool_table_html = gr.HTML(value=get_tool_summary_table_html())
-
-                    with gr.Group(elem_classes="card"):
-                        gr.Markdown("### Tool Status")
-
-                        add_status = gr.Textbox(
-                            label="Status",
-                            lines=14,
-                            interactive=False,
-                        )
 
             add_button.click(
                 add_tool,
