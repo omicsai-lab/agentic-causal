@@ -12,8 +12,9 @@ from fastapi.responses import JSONResponse
 from .schemas import RunRequest, RunResult
 from .graph import graph
 from .report_utils import create_user_outputs
+from .planner_llm import llm_generate_analysis_plan
 
-# import the *capability* router (returns {"capability_id", "reason"})
+# import the capability router (returns {"capability_id", "reason"})
 try:
     from .router_llm import llm_choose_capability  # type: ignore
 except Exception:
@@ -77,6 +78,17 @@ def _load_capability_specs() -> List[Dict[str, Any]]:
     return _load_capabilities_fallback()
 
 
+def _capability_spec_map() -> Dict[str, Dict[str, Any]]:
+    out: Dict[str, Dict[str, Any]] = {}
+    for cap in _load_capability_specs():
+        if not isinstance(cap, dict):
+            continue
+        cid = str(cap.get("capability_id") or cap.get("id") or "").strip()
+        if cid:
+            out[cid] = cap
+    return out
+
+
 def _allowed_capability_ids() -> List[str]:
     """
     Return allowed capability ids from cap specs.
@@ -90,7 +102,6 @@ def _allowed_capability_ids() -> List[str]:
         if cid:
             ids.append(cid)
 
-    # de-dup while preserving order
     seen = set()
     uniq: List[str] = []
     for x in ids:
@@ -127,18 +138,6 @@ def _unique_preserve_order(items: List[str]) -> List[str]:
 def _candidate_plot_names_for_capability(cap: Dict[str, Any]) -> List[str]:
     """
     Build flexible plot candidates so newly added tools can work with minimal config.
-
-    Priority:
-      1) explicit capability fields
-      2) capability_id-based defaults
-      3) tool_name-based defaults
-
-    Supported examples:
-      - plot_module = "plot_binary_edrip"
-      - plot_name = "plot_binary_edrip"
-      - plot_file = "plot_binary_edrip.py"
-      - capability_id = "binary_edrip" -> try plot_binary_edrip, binary_edrip
-      - tool_name = "binary_edrip" -> try plot_binary_edrip, binary_edrip
     """
     capability_id = str(cap.get("capability_id") or cap.get("id") or "").strip()
     tool_name = str(cap.get("tool_name") or "").strip()
@@ -162,13 +161,6 @@ def _tool_rows_from_capabilities() -> List[Dict[str, str]]:
     """
     Build the Manage Tools table directly from the same capability source
     used by the backend.
-
-    Design goals:
-    - Never second-guess backend capability existence using guessed tool filenames.
-    - Newly added tools should appear automatically as long as a valid cap_*.json exists.
-    - Plot support should work for both:
-        1) explicit capability metadata
-        2) conventional files in src/agent/plots/
     """
     rows: List[Dict[str, str]] = []
     plot_stems = _existing_plot_stems()
@@ -186,14 +178,10 @@ def _tool_rows_from_capabilities() -> List[Dict[str, str]]:
         candidate_plot_names = _candidate_plot_names_for_capability(cap)
         matched_plot = next((name for name in candidate_plot_names if name in plot_stems), None)
 
-        # Consider plot support true if:
-        # - a plot file is explicitly declared in capability metadata, or
-        # - a matching plot file exists in the plots folder.
         explicit_plot_declared = any(
             _normalize_module_name(cap.get(k))
             for k in ["plot_module", "plot_name", "plot_file"]
         )
-        plot_supported = explicit_plot_declared or (matched_plot is not None)
 
         notes_parts: List[str] = []
         if description:
@@ -201,13 +189,14 @@ def _tool_rows_from_capabilities() -> List[Dict[str, str]]:
         if matched_plot:
             notes_parts.append(f"Matched plot: {matched_plot}.py")
         elif explicit_plot_declared:
-            notes_parts.append("Declared plot metadata found, but matching plot file was not found in src/agent/plots.")
+            notes_parts.append(
+                "Declared plot metadata found, but matching plot file was not found in src/agent/plots."
+            )
 
         rows.append(
             {
                 "tool": display_name,
                 "status": "Registered",
-                "plot": "Yes" if plot_supported else "No",
                 "notes": " ".join(notes_parts).strip(),
             }
         )
@@ -216,17 +205,113 @@ def _tool_rows_from_capabilities() -> List[Dict[str, str]]:
     return rows
 
 
+def build_analysis_plan(req: RunRequest) -> Dict[str, Any]:
+    """
+    Build a user-facing analysis plan from the natural-language request.
+    This plan is for explanation/display, not for final tool routing.
+    """
+    request_text = (req.request or "").strip()
+
+    if not request_text:
+        return {
+            "analysis_goal": "",
+            "task_type": "unknown",
+            "target_estimand": "",
+            "outcome_type": "unknown",
+            "required_fields": [],
+            "optional_fields": [],
+            "assumptions": [],
+            "reasoning": "No natural-language request was provided.",
+        }
+
+    try:
+        plan = llm_generate_analysis_plan(
+            request=request_text,
+            model=req.llm_model,
+        )
+        if isinstance(plan, dict):
+            return {
+                "analysis_goal": str(plan.get("analysis_goal", "")).strip(),
+                "task_type": str(plan.get("task_type", "unknown")).strip() or "unknown",
+                "target_estimand": str(plan.get("target_estimand", "")).strip(),
+                "outcome_type": str(plan.get("outcome_type", "unknown")).strip() or "unknown",
+                "required_fields": [],
+                "optional_fields": [],
+                "assumptions": [
+                    str(x).strip()
+                    for x in (plan.get("assumptions", []) or [])
+                    if str(x).strip()
+                ],
+                "reasoning": str(plan.get("reasoning", "")).strip(),
+            }
+    except Exception:
+        pass
+
+    return {
+        "analysis_goal": "",
+        "task_type": "unknown",
+        "target_estimand": "",
+        "outcome_type": "unknown",
+        "required_fields": [],
+        "optional_fields": [],
+        "assumptions": [],
+        "reasoning": "Planner failed; no structured plan was produced.",
+    }
+
+
+def finalize_analysis_plan(
+    plan: Dict[str, Any],
+    capability_id: str,
+    router_reason: str,
+) -> Dict[str, Any]:
+    """
+    Make the displayed analysis plan consistent with the actually selected tool.
+    Capability JSON is the source of truth for required/optional fields.
+    """
+    cap = _capability_spec_map().get(capability_id, {})
+
+    merged = dict(plan or {})
+    merged["recommended_tool"] = capability_id
+
+    required_fields = cap.get("required_fields", [])
+    optional_fields = cap.get("optional_fields", [])
+
+    if isinstance(required_fields, list):
+        merged["required_fields"] = [
+            str(x).strip()
+            for x in required_fields
+            if str(x).strip() and str(x).strip() != "csv"
+        ]
+    else:
+        merged["required_fields"] = []
+
+    if isinstance(optional_fields, list):
+        merged["optional_fields"] = [
+            str(x).strip()
+            for x in optional_fields
+            if str(x).strip()
+        ]
+    else:
+        merged["optional_fields"] = []
+
+    # Prefer router reason as the displayed justification for the selected tool.
+    merged["reasoning"] = router_reason or str(merged.get("reasoning", "")).strip()
+
+    return merged
+
+
 def select_capability(req: RunRequest) -> Tuple[str, str, str]:
     """
-    Minimal routing (LLM-first):
+    Tool routing only. Analysis plan is handled separately for display.
 
-      Priority:
-        1) req.capability_id (force)
-        2) LLM router if use_llm_router + request
-        3) req.task (explicit)
-        4) rule-based auto
+    Priority:
+      1) req.capability_id (force)
+      2) LLM router if use_llm_router + request
+      3) req.task (explicit)
+      4) rule-based auto
 
-    Returns: (capability_id, selected_by, router_reason)
+    Returns:
+      (capability_id, selected_by, router_reason)
     """
     # 1) forced
     if req.capability_id:
@@ -240,8 +325,8 @@ def select_capability(req: RunRequest) -> Tuple[str, str, str]:
                 csv_columns=None,
                 model=req.llm_model,
             )
-            cap_id = (obj.get("capability_id") or "").strip()
-            reason = (obj.get("reason") or "").strip() or "LLM selected capability."
+            cap_id = str(obj.get("capability_id", "")).strip()
+            reason = str(obj.get("reason", "")).strip() or "LLM selected capability."
             if cap_id:
                 return cap_id, "llm", reason
         except Exception:
@@ -256,6 +341,7 @@ def select_capability(req: RunRequest) -> Tuple[str, str, str]:
     # 4) rule-based auto
     if req.time and req.event and req.group:
         return "survival_adjusted_curves", "auto", "Auto: time/event/group detected."
+
     return "causal_ate", "auto", "Auto: defaulting to causal_ate."
 
 
@@ -309,7 +395,6 @@ def _persist_api_outputs(
             encoding="utf-8",
         )
     except Exception:
-        # Never break the API response because of file I/O.
         pass
 
     return run_id, str(out_dir)
@@ -322,13 +407,6 @@ def health():
 
 @app.get("/tools")
 def list_tools():
-    """
-    Return the tools that the backend currently knows about.
-
-    This is the source of truth for the Manage Tools UI.
-    It is intentionally capability-driven so that newly added tools
-    appear automatically after the backend reloads capability files.
-    """
     rows = _tool_rows_from_capabilities()
     return {
         "status": "ok",
@@ -339,23 +417,22 @@ def list_tools():
 
 @app.post("/run", response_model=RunResult)
 def run(req: RunRequest):
-    # --- capability selection ---
+    # --- tool selection only ---
     cap_id, selected_by, router_reason = select_capability(req)
+
+    # --- user-facing analysis plan ---
+    raw_analysis_plan = build_analysis_plan(req)
+    analysis_plan = finalize_analysis_plan(raw_analysis_plan, cap_id, router_reason)
 
     allowed = _allowed_capability_ids()
     allowed_set = set(allowed)
 
-    # Build payload early so even errors can be persisted.
     payload = req.model_dump()
-
-    # Keep user-facing output controls in payload for downstream use / persistence
     generate_plots = req.generate_plots
 
     # Force graph to use the already-selected capability and avoid re-routing
     payload["capability_id"] = cap_id
     payload["use_llm_router"] = False
-
-    # Preserve generate_plots explicitly
     payload["generate_plots"] = generate_plots
 
     # --- reject unknown capability_id ---
@@ -364,6 +441,7 @@ def run(req: RunRequest):
             "capability_id": cap_id,
             "selected_by": selected_by,
             "router_reason": router_reason,
+            "analysis_plan": analysis_plan,
             "allowed_capabilities": allowed,
             "generate_plots": generate_plots,
         }
@@ -409,23 +487,21 @@ def run(req: RunRequest):
     if not isinstance(base_artifacts, dict):
         base_artifacts = {}
 
-    # Always attach router metadata (app-level router)
     artifacts: Dict[str, Any] = {
         **base_artifacts,
         "capability_id": cap_id,
         "selected_by": selected_by,
         "router_reason": router_reason,
+        "analysis_plan": analysis_plan,
         "generate_plots": generate_plots,
     }
 
     stdout = str(tool_result.get("stdout", "")) if isinstance(tool_result, dict) else ""
     stderr = str(tool_result.get("stderr", "")) if isinstance(tool_result, dict) else ""
 
-    # Tool exit handling
     code = tool_result.get("exit_code", 1) if isinstance(tool_result, dict) else 1
     status = out.get("status") if isinstance(out, dict) else "error"
 
-    # Determine final API status/error
     if status != "ok" or code != 0:
         api_status = "error"
         api_error: Any = f"Tool failed (status={status}, exit_code={code})"
@@ -435,7 +511,6 @@ def run(req: RunRequest):
         api_error = None
         http_code = 200
 
-    # --- persist to out/api/<run_id>/ ---
     run_id, out_dir = _persist_api_outputs(
         payload=payload,
         status=api_status,
@@ -448,7 +523,6 @@ def run(req: RunRequest):
     artifacts["run_id"] = run_id
     artifacts["out_dir"] = out_dir
 
-    # --- create user-friendly outputs ---
     try:
         user_outputs = create_user_outputs(
             out_dir=Path(out_dir),
@@ -464,7 +538,6 @@ def run(req: RunRequest):
     except Exception as e:
         artifacts["user_output_error"] = str(e)
 
-    # --- return ---
     if api_status != "ok":
         return JSONResponse(
             status_code=http_code,

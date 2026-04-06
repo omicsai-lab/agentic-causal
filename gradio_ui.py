@@ -180,6 +180,46 @@ def _empty_media_updates():
     )
 
 
+def _extract_analysis_plan(result: Dict[str, Any]) -> Dict[str, Any]:
+    artifacts = result.get("artifacts", {}) or {}
+    plan = artifacts.get("analysis_plan", {}) or {}
+    if isinstance(plan, dict):
+        return plan
+    return {}
+
+
+def _format_analysis_plan(plan: Dict[str, Any]) -> str:
+    if not plan:
+        return ""
+
+    def _fmt_list(items):
+        if not items:
+            return "- None"
+        return "\n".join(f"- {str(x)}" for x in items)
+
+    goal = str(plan.get("analysis_goal", "")).strip() or "N/A"
+    task_type = str(plan.get("task_type", "")).strip() or "N/A"
+    estimand = str(plan.get("target_estimand", "")).strip() or "N/A"
+    outcome_type = str(plan.get("outcome_type", "")).strip() or "N/A"
+    recommended_tool = str(plan.get("recommended_tool", "")).strip() or "N/A"
+    required_fields = plan.get("required_fields", []) or []
+    optional_fields = plan.get("optional_fields", []) or []
+    assumptions = plan.get("assumptions", []) or []
+    reasoning = str(plan.get("reasoning", "")).strip() or "N/A"
+
+    return (
+        f"Goal: {goal}\n\n"
+        f"Planned Analysis Type: {task_type}\n"
+        f"Outcome Type: {outcome_type}\n"
+        f"Target Estimand: {estimand}\n"
+        f"Recommended Tool: {recommended_tool}\n\n"
+        f"Required Inputs:\n{_fmt_list(required_fields)}\n\n"
+        f"Optional Inputs:\n{_fmt_list(optional_fields)}\n\n"
+        f"Key Assumptions:\n{_fmt_list(assumptions)}\n\n"
+        f"Why this tool:\n{reasoning}"
+    )
+
+
 def run_backend(
     csv_file,
     request_text,
@@ -203,6 +243,7 @@ def run_backend(
     if csv_file is None:
         return (
             "Please upload a CSV file.",
+            "",
             "",
             empty_plot_update,
             empty_pdf_update,
@@ -251,6 +292,7 @@ def run_backend(
                 return (
                     "Invalid JSON: Extra Parameters must be a JSON object.",
                     "",
+                    "",
                     empty_plot_update,
                     empty_pdf_update,
                     empty_raw_json_update,
@@ -260,6 +302,7 @@ def run_backend(
         except Exception as e:
             return (
                 f"Invalid JSON in Extra Parameters: {e}",
+                "",
                 "",
                 empty_plot_update,
                 empty_pdf_update,
@@ -275,6 +318,7 @@ def run_backend(
         except Exception:
             return (
                 f"Backend returned non-JSON response (HTTP {r.status_code}).",
+                "",
                 r.text[:2000] if hasattr(r, "text") else "",
                 empty_plot_update,
                 empty_pdf_update,
@@ -285,11 +329,15 @@ def run_backend(
         return (
             f"Backend error: {type(e).__name__}: {e}",
             "",
+            "",
             empty_plot_update,
             empty_pdf_update,
             empty_raw_json_update,
             *hidden_updates,
         )
+
+    plan = _extract_analysis_plan(result)
+    plan_text = _format_analysis_plan(plan)
 
     summary = result.get("user_summary", "") or ""
     plot_update, pdf_update, raw_json_update = _build_media_updates(result)
@@ -297,6 +345,7 @@ def run_backend(
     if result.get("status") == "ok":
         return (
             "Success ✅",
+            plan_text,
             summary,
             plot_update,
             pdf_update,
@@ -309,6 +358,7 @@ def run_backend(
         error_msg = result.get("error") or "Error (no capability detected)"
         return (
             error_msg,
+            plan_text,
             summary,
             plot_update,
             pdf_update,
@@ -333,6 +383,7 @@ def run_backend(
 
     return (
         msg,
+        plan_text,
         summary,
         plot_update,
         pdf_update,
@@ -564,6 +615,11 @@ html, body {
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
 }
 
+.analysis-plan-output textarea {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+}
+
 .tool-status-output textarea {
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
     font-size: 14px !important;
@@ -787,6 +843,13 @@ Upload a dataset, submit an analysis request, and receive user-friendly results.
                             elem_classes="status-output",
                         )
 
+                        plan_output = gr.Textbox(
+                            label="Analysis Plan",
+                            lines=14,
+                            interactive=False,
+                            elem_classes="analysis-plan-output",
+                        )
+
                         summary_output = gr.Textbox(
                             label="Summary",
                             lines=6,
@@ -829,6 +892,7 @@ Upload a dataset, submit an analysis request, and receive user-friendly results.
                 ],
                 outputs=[
                     status_output,
+                    plan_output,
                     summary_output,
                     plot_output,
                     pdf_output,
