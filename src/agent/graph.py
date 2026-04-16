@@ -27,8 +27,10 @@ def _router_fallback(req: RunRequest) -> Tuple[str, str, str]:
 
 def _try_llm_router(req: RunRequest) -> Optional[Tuple[str, str, str]]:
     """
-    Use your repo's router_llm.llm_choose_capability if available.
+    Use repo's router_llm.llm_choose_capability if available.
     Returns (capability_id, selected_by, router_reason) or None.
+
+    NOTE: This function must never raise; failures fall back to rule-based routing.
     """
     try:
         from src.agent import router_llm
@@ -107,16 +109,92 @@ def _coerce_req(obj: Any) -> RunRequest:
     raise TypeError(f"Unsupported req type: {type(obj)}")
 
 
-def _toolresult_to_dict(tr: ToolResult) -> Dict[str, Any]:
+def _toolresult_to_dict(tr: Any) -> Dict[str, Any]:
+    """
+    Convert a ToolResult-like object to a JSON-friendly dict.
+
+    Supports:
+      - ToolResult dataclass
+      - dict (already JSON-friendly)
+      - any object with __dict__ (best-effort)
+    """
+    if tr is None:
+        return {
+            "status": "error",
+            "selected_tool": "none",
+            "stdout": "",
+            "stderr": "Tool returned None",
+            "exit_code": 2,
+            "artifacts": {},
+            "warnings": ["Tool returned None"],
+        }
+
+    if isinstance(tr, dict):
+        return {
+            "status": tr.get("status", "ok"),
+            "selected_tool": tr.get("selected_tool") or tr.get("tool") or "none",
+            "stdout": tr.get("stdout", ""),
+            "stderr": tr.get("stderr", ""),
+            "exit_code": tr.get("exit_code", 0 if tr.get("status", "ok") == "ok" else 2),
+            "artifacts": tr.get("artifacts") or {},
+            "warnings": tr.get("warnings") or [],
+            "error": tr.get("error"),
+        }
+
+    if isinstance(tr, ToolResult):
+        return {
+            "status": tr.status,
+            "selected_tool": tr.selected_tool,
+            "stdout": tr.stdout,
+            "stderr": tr.stderr,
+            "exit_code": tr.exit_code,
+            "artifacts": tr.artifacts or {},
+            "warnings": tr.warnings or [],
+        }
+
+    d = getattr(tr, "__dict__", None)
+    if isinstance(d, dict):
+        return {
+            "status": d.get("status", "ok"),
+            "selected_tool": d.get("selected_tool") or d.get("tool") or "none",
+            "stdout": d.get("stdout", ""),
+            "stderr": d.get("stderr", ""),
+            "exit_code": d.get("exit_code", 0 if d.get("status", "ok") == "ok" else 2),
+            "artifacts": d.get("artifacts") or {},
+            "warnings": d.get("warnings") or [],
+            "error": d.get("error"),
+        }
+
     return {
-        "status": tr.status,
-        "selected_tool": tr.selected_tool,
-        "stdout": tr.stdout,
-        "stderr": tr.stderr,
-        "exit_code": tr.exit_code,
-        "artifacts": tr.artifacts or {},
-        "warnings": tr.warnings or [],
+        "status": "ok",
+        "selected_tool": "none",
+        "stdout": str(tr),
+        "stderr": "",
+        "exit_code": 0,
+        "artifacts": {},
+        "warnings": [],
     }
+
+
+def _normalize_tool_result(raw: Any, tool_name: str) -> Dict[str, Any]:
+    """Normalize the raw tool output into the ToolResult dict shape we return."""
+    trd = _toolresult_to_dict(raw)
+
+    # Ensure selected_tool is set
+    if not trd.get("selected_tool") or trd.get("selected_tool") == "none":
+        trd["selected_tool"] = tool_name
+
+    # Ensure artifacts is a dict
+    if trd.get("artifacts") is None:
+        trd["artifacts"] = {}
+    if not isinstance(trd["artifacts"], dict):
+        trd["artifacts"] = dict(trd["artifacts"])
+
+    # Ensure warnings is a list
+    if trd.get("warnings") is None:
+        trd["warnings"] = []
+
+    return trd
 
 
 # -----------------------------
@@ -126,6 +204,10 @@ class SimpleGraph:
     """
     Minimal graph compatible with existing usage:
       out = graph.invoke({"req": req})
+
+    Guarantees:
+      - Never assumes tool results are objects with attributes.
+      - Always returns JSON-serializable dict output.
     """
 
     def invoke(self, state: Dict[str, Any]) -> Dict[str, Any]:
@@ -157,13 +239,14 @@ class SimpleGraph:
                 artifacts=artifacts,
                 warnings=[str(e)],
             )
+            tool_result = _toolresult_to_dict(tr)
             return {
-                "status": "error",
-                "selected_tool": "none",
-                "stdout": tr.stdout,
-                "stderr": tr.stderr,
-                "artifacts": tr.artifacts,
-                "tool_result": _toolresult_to_dict(tr),
+                "status": tool_result["status"],
+                "selected_tool": tool_result["selected_tool"],
+                "stdout": tool_result["stdout"],
+                "stderr": tool_result["stderr"],
+                "artifacts": tool_result["artifacts"],
+                "tool_result": tool_result,
             }
 
         ok, reason = tool.validate(req)
@@ -182,20 +265,22 @@ class SimpleGraph:
                 artifacts=artifacts,
                 warnings=[reason],
             )
+            tool_result = _toolresult_to_dict(tr)
             return {
-                "status": "error",
-                "selected_tool": tool.name,
-                "stdout": tr.stdout,
-                "stderr": tr.stderr,
-                "artifacts": tr.artifacts,
-                "tool_result": _toolresult_to_dict(tr),
+                "status": tool_result["status"],
+                "selected_tool": tool_result["selected_tool"],
+                "stdout": tool_result["stdout"],
+                "stderr": tool_result["stderr"],
+                "artifacts": tool_result["artifacts"],
+                "tool_result": tool_result,
             }
 
         # Run tool
-        tr = tool.run(req)
+        raw_tr = tool.run(req)
+        tool_result = _normalize_tool_result(raw_tr, tool.name)
 
         # Ensure router info is always present in artifacts
-        artifacts = dict(tr.artifacts or {})
+        artifacts = dict(tool_result.get("artifacts") or {})
         artifacts.update(
             {
                 "capability_id": cap_id,
@@ -203,15 +288,15 @@ class SimpleGraph:
                 "router_reason": router_reason,
             }
         )
-        tr.artifacts = artifacts
+        tool_result["artifacts"] = artifacts
 
         return {
-            "status": tr.status,
-            "selected_tool": tr.selected_tool,
-            "stdout": tr.stdout,
-            "stderr": tr.stderr,
+            "status": tool_result.get("status", "ok"),
+            "selected_tool": tool_result.get("selected_tool", tool.name),
+            "stdout": tool_result.get("stdout", ""),
+            "stderr": tool_result.get("stderr", ""),
             "artifacts": artifacts,
-            "tool_result": _toolresult_to_dict(tr),
+            "tool_result": tool_result,
         }
 
 

@@ -1,0 +1,17 @@
+{
+  "capability_id": "survival_adjusted_curves",
+  "title": "Confounder-adjusted survival curves",
+  "description": "Use ONLY when the user explicitly requests survival curves or visualization of time-to-event outcomes, such as Kaplan–Meier curves or adjusted survival curves. This method estimates confounder-adjusted survival curves using IPTW and produces curve outputs over time. It does NOT estimate a single causal effect such as ATE. Do NOT use this tool for causal effect estimation, even if the outcome is survival or time-to-event.",
+  "keywords": [
+    "survival curve",
+    "adjusted survival curve",
+    "kaplan-meier",
+    "km curve",
+    "iptw survival curve",
+    "plot survival",
+    "visualize survival",
+    "event-free probability curve"
+  ],
+  "required_fields": ["csv", "time", "event", "group"],
+  "optional_fields": ["covariates"]
+}

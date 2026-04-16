@@ -1,0 +1,7 @@
+{
+  "capability_id": "hello_world",
+  "description": "A simple demo tool that prints hello world.",
+  "required_fields": [],
+  "optional_fields": [],
+  "tool": "tool_hello_world"
+}

@@ -210,7 +210,7 @@ withCallingHandlers({{
   init_params("{yvar}", "{avar}", covariates = confounders, data = dat)
 }}, warning = .capture_warning)
 
-# Optional: safer formulas to avoid separation/overfit (package may or may not honor these globals)
+# safer formulas to avoid separation/overfit 
 if ({complex_flag} == 0) {{
   try({{
     outcome_formula <- as.formula(paste("{yvar}", "~", paste(c("{avar}", confounders), collapse=" + ")))
@@ -271,7 +271,7 @@ if (ate_is_na) {{
                                     sprintf("%.4f", max(ps, na.rm=TRUE))))
   }}
 
-  # near-zero variance (note: binary vars will have unique=2; this just reports small unique count)
+  # near-zero variance 
   nzv <- c()
   for (cc in confounders) {{
     v <- dat[[cc]]

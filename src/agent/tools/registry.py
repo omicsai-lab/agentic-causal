@@ -1,22 +1,13 @@
 # src/agent/tools/registry.py
-from __future__ import annotations
+_REGISTRY = {}
 
-from typing import Dict
+def register(tool):
+    cid = tool.capability_id
+    # 
+    _REGISTRY[cid] = tool
 
-from src.agent.tools.base import BaseTool
-
-_REGISTRY: Dict[str, BaseTool] = {}
-
-
-def register(tool: BaseTool) -> None:
-    _REGISTRY[tool.capability_id] = tool
-
-
-def get_tool(capability_id: str) -> BaseTool:
-    if capability_id not in _REGISTRY:
-        raise KeyError(f"No tool registered for capability_id={capability_id}")
+def get_tool(capability_id: str):
     return _REGISTRY[capability_id]
 
-
-def list_tools() -> Dict[str, str]:
-    return {k: v.name for k, v in _REGISTRY.items()}
+def list_tools():
+    return {k: getattr(v, "name", type(v).__name__) for k, v in _REGISTRY.items()}

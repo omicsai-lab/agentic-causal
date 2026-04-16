@@ -1,228 +1,514 @@
 # causal-agent-mvp
 
-An agent-based causal inference pipeline that automatically selects and executes appropriate causal analysis tools (e.g., ATE estimation, survival adjusted curves) based on user requests and dataset structure.
+An agent-based causal inference pipeline that automatically selects and executes appropriate causal analysis tools (e.g., Average Treatment Effect estimation and survival adjusted curves) based on user requests and dataset structure.
 
-The system combines LLM-assisted routing, rule-based safeguards, and
-deterministic statistical backends, and produces both human-readable outputs
-and structured JSON artifacts for downstream use.
+The system combines:
 
----
+rule-based checks
 
-## Key Features
+LLM-assisted routing
 
-- Agentic workflow for causal inference
-- LLM-based capability routing with deterministic fallback
-- Plugin-based, extensible tool architecture
-- Support for:
-  - Average Treatment Effect (ATE) estimation
-  - Survival analysis with confounder-adjusted curves
-- End-to-end reproducible demos on real-world datasets
-- Standardized JSON artifacts for inspection and reuse
+deterministic statistical backends
+
+and produces both human-readable outputs and structured JSON artifacts.
+
+The framework is designed to ensure that causal analyses are executed reproducibly and transparently, while preventing inappropriate use of causal methods.
+
 
 ---
 
-## Repository Structure
+# Features
+
+Agentic workflow for causal inference
+
+Automatic capability selection via an LLM router
+
+Deterministic execution of statistical tools
+
+Structured JSON outputs for downstream use
+
+Dynamic Add Tool capability for extending the system
+
+End-to-end reproducible demos using real datasets
+
+Currently supported causal capabilities include:
+
+Average Treatment Effect (ATE) estimation
+
+Confounder-adjusted survival curves
+
+---
+
+# Repository Structure
+
+```bash
 
 causal-agent-mvp/
 
-├── data/ # Example datasets (PBC, GBSG2)
+├── data/                # Example datasets (PBC, GBSG2)
 
-├── scripts/ # Demo and helper scripts
+├── scripts/             # Demo and helper scripts
 
-├── src/agent/ # Agent logic, router, schemas, and tools
+├── src/agent/           # Agent logic, router, schemas, tools
 
-├── out/ # Runtime outputs (gitignored)
+├── out/                 # Runtime outputs (gitignored)
 
 ├── README.md
-
-## Requirements
-
-- Python 3.9+
-- R (required for survival adjusted curves)
-- Required R packages:
-  - adjustedCurves
-  - WeightIt
-  - survival
+```
 
 ---
 
-## Quickstart: End-to-End Demos
+# Requirements
 
-Below are two fully tested demo commands illustrating the complete
-LLM-routed causal analysis pipeline.
+Python 3.9+
 
-Both demos have been run successfully end-to-end and return structured
-JSON outputs.
+R (required for survival adjusted curves)
+
+Required R packages:
+
+```bash
+adjustedCurves
+WeightIt
+survival
+
+```
+
+--- 
+
+# Quickstart: Web Interface Demo
+
+The system is designed to be used through a Gradio web interface.
+
+Start the interface:
+
+```bash
+python gradio_ui.py
+```
+After launching, open the interface in your browser:
+
+```bash
+http://127.0.0.1:7860
+```
+The web interface allows users to:
+
+Upload a dataset (CSV)
+
+Provide a natural language request
+
+Specify required variables
+
+Execute the causal analysis
+
+All results will be automatically saved under:
+
+```bash
+out/api/
+```
+
+## Demo 1: Average Treatment Effect (ATE)
+Dataset
+
+Upload the example dataset:
+
+```bash
+data/PBC_ate5y_cc.csv
+```
+## Request
+
+Enter the following request in the interface:
+
+```bash
+Estimate the causal effect (ATE) of treatment on 5-year survival
+```
+## Required Inputs
+
+Fill the input fields as follows:
+
+Field	Value
+
+treatment	trt01
+
+outcome	Y5y
+
+covariates	age,bili,albumin,protime,edema,platelet,ast
+
+## Expected Behavior
+
+The agent will:
+
+Route the request to the causal_ate capability
+
+Execute doubly robust ATE estimation
+
+Produce a structured JSON result
+
+The output includes:
+
+ATE estimate
+
+Standard error
+
+95% confidence interval
+
+Structured output file:
+
+```bash
+out/api/causalmodels.summary.json
+```
+## Demo 2: Survival Adjusted Curves
+Dataset
+
+Upload the example dataset:
+
+```bash
+data/GBSG2_agent01.csv
+```
+### Request
+
+Enter the request:
+
+```bash
+Compare survival between groups
+```
+
+Required Inputs
+
+Field	Value
+
+time	time
+
+event	event
+
+group	horTh01
+
+covariates	(leave empty)
+
+Expected Behavior
+
+The agent will:
+
+Route the request to survival_adjusted_curves
+
+Run IPTW-adjusted Kaplan–Meier analysis
+
+Generate a structured summary output
+
+Structured output file:
+
+```bash
+
+out/api/adjustedcurves.summary.json
+
+```
 
 ---
 
-### Demo 1: Average Treatment Effect (ATE)
+# Output
 
-Estimate the causal effect of treatment on a binary 5-year outcome using doubly robust estimation.
-```bash
-curl -s -X POST "http://127.0.0.1:8000/run" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "csv": "data/PBC_ate5y_cc.csv",
-    "request": "Estimate the causal effect (ATE) of treatment on 5-year survival",
-    "use_llm_router": true,
-    "treatment": "trt01",
-    "outcome": "Y5y",
-    "covariates": ["age","bili","albumin","protime","edema","platelet","ast"]
-  }'
-```
+Each analysis produces a structured JSON artifact.
 
-#### Expected behavior:
-
-Selected capability: causal_ate
-
-Backend: doubly robust ATE estimation
-
-Output includes ATE, standard error, and 95% confidence interval
-
-
-### Demo 2: Survival Adjusted Curves
-
-Compare survival between treatment groups using inverse probability weighted Kaplan–Meier curves.
-
-```bash
-curl -s -X POST "http://127.0.0.1:8000/run" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "csv": "data/GBSG2_agent01.csv",
-    "request": "Compare survival between groups",
-    "use_llm_router": true,
-    "time": "time",
-    "event": "event",
-    "group": "horTh01",
-    "covariates": []
-  }'
-
-
-```
-
-#### Expected behavior:
-
-Selected capability: survival_adjusted_curves
-
-Method: IPTW-adjusted Kaplan–Meier
-
-### Output Format
-
-Each API call returns a structured response containing:
-
-selected_tool: the executed backend tool
-
-stdout / stderr: human-readable logs
-
-artifacts:
-
-capability_id: selected causal capability
-
-selected_by: llm or auto
-
-router_reason: explanation of the routing decision
-
-optional paths to serialized JSON summaries
-
-#### Example response:
+Example response summary:
 
 ```json
 {
   "status": "ok",
-  "selected_tool": "causalmodels",
+  "selected_tool": "adjustedcurves",
   "artifacts": {
-    "capability_id": "causal_ate",
-    "selected_by": "llm",
-    "router_reason": "The request explicitly asks for ATE estimation."
+    "capability_id": "survival_adjusted_curves",
+    "summary_json": "out/api/adjustedcurves.summary.json"
   }
 }
+
 ```
+---
 
+# Input Data Requirements
 
-## Input Data Requirements
+The framework assumes that the input dataset satisfies the following requirements.
 
-The framework assumes that the input dataset satisfies the following conditions.
-If these conditions are met, the pipeline can be executed end-to-end without
-modification to the core codebase.
+As long as these conditions are met, the pipeline can be executed end-to-end without modification to the core codebase.
 
 ---
 
-### General Format
+# CSV File Requirements
 
 Input data must be provided as a CSV file.
 
-Each row corresponds to one observational unit.
+General rules:
 
-Column names must be explicitly referenced in the API request.
+UTF-8 encoding
 
----
+comma-separated
 
-### Required Variables
+header row required
 
-#### Treatment / Exposure
+each row represents one observational unit
 
-A treatment (or exposure) variable must be specified.
+Example:
 
-The treatment variable must be binary:
-
-0 / 1, or
-
-two distinct values encoding treated vs. control groups.
-
-Treatment assignment is assumed to be observed at baseline.
+```bash
+age,bili,albumin,protime,trt01,Y5y
+58,1.2,3.5,10.2,1,0
+62,2.1,3.1,11.0,0,1
+```
 
 ---
 
-#### Outcome
+# Column Naming Rules
 
-For ATE estimation:
+Column names must:
 
-The outcome may be binary or continuous.
+be unique
 
-For survival analysis:
+contain no empty values
 
-A time-to-event variable is required.
+avoid special characters
 
-An event indicator must be provided (1 = event, 0 = censored).
+avoid trailing spaces
 
-Outcome variables must not contain missing values after preprocessing.
+Recommended naming style:
+
+```bash
+age
+treatment
+outcome
+covariate1
+covariate2
+```
+Avoid:
+
+```bash
+Age (years)
+treatment group
+Outcome %
+```
+---
+
+# Required Variables
+
+Required variables depend on the causal task.
 
 ---
 
-#### Covariates (Confounders)
+## Treatment / Exposure
 
-One or more covariates may be supplied for confounding adjustment.
+A treatment variable must be provided.
 
-Covariates must:
+Treatment must be binary, represented as:
 
-Be measured prior to treatment assignment
+```bash
+0 / 1
+```
+Example:
+```bash
+trt01
+0 = control
+1 = treated
 
-Be numeric or numerically encoded
+```
 
-Missing values must be handled before execution.
+--- 
+
+## Outcome
+
+For ATE estimation
+
+Outcome may be:
+
+binary
+
+continuous
+
+Example:
+```bash
+
+Y5y
+```
+For survival analysis
+
+Two variables are required:
+```bash
+time
+event
+```
+Where:
+
+```bash
+event = 1  event occurred
+event = 0  censored
+```
 ---
 
-### Structural and Causal Assumptions
+## Covariates (Confounders)
+
+Covariates may be provided to adjust for confounding.
+
+Requirements:
+
+measured before treatment
+
+numeric or numerically encoded
+
+no missing values
+
+Example:
+```bash
+age
+bili
+albumin
+protime
+```
+
+---
+
+# Structural and Causal Assumptions
 
 The framework relies on standard causal inference assumptions:
 
-Consistency
+### Consistency
 
-Positivity
+Observed outcomes correspond to the assigned treatment.
 
-No unmeasured confounding, conditional on supplied covariates
+### Positivity
 
-These assumptions are not automatically verified and must be justified
-by the user.
+Each covariate pattern has non-zero probability of receiving each treatment.
+
+### No unmeasured confounding
+
+All relevant confounders are included in the covariates.
+
+These assumptions are not automatically verified and must be justified by the user.
 
 ---
 
-### Notes on Robustness
+# Preprocessing Expectations
 
-Informational messages from underlying statistical packages may appear
-during execution and do not necessarily indicate failure.
+To ensure stable execution:
 
-Severe violations of positivity or covariate overlap may lead to unstable
-estimates.
+all required variables must be present
 
+missing values must be removed or imputed
+
+categorical variables should be numerically encoded
+
+extremely rare treatment groups may lead to unstable estimates
+
+---
+# Add Tool: Extending the System
+
+The framework allows users to dynamically add new analysis tools.
+
+Each tool requires:
+
+a Python tool file
+
+a capability JSON file
+
+---
+
+# Capability JSON Format
+
+File naming convention:
+```bash
+
+cap_<tool_name>.json
+```
+
+Example:
+
+```json
+
+{
+  "capability_id": "hello_world",
+  "description": "A simple demo tool that prints hello world.",
+  "required_fields": [],
+  "optional_fields": [],
+  "tool": "tool_hello_world"
+}
+```
+Field definitions:
+
+Field	Description
+capability_id	unique capability identifier
+description	description used by the LLM router
+required_fields	required request parameters
+optional_fields	optional parameters
+tool	python module name
+Python Tool File Format
+
+File naming convention:
+
+```bash
+
+tool_<tool_name>.py
+
+```
+
+Each tool must inherit from BaseTool.
+
+Example template:
+
+```python
+from typing import Tuple
+from src.agent.schemas_io import RunRequest
+from src.agent.tools.base import BaseTool
+
+
+class HelloWorldTool(BaseTool):
+
+    @property
+    def name(self):
+        return "hello_world"
+
+    @property
+    def capability_id(self):
+        return "hello_world"
+
+    def validate(self, req: RunRequest) -> Tuple[bool, str]:
+        return True, ""
+
+    def run(self, req: RunRequest):
+        return {
+            "status": "ok",
+            "stdout": "Hello World",
+            "stderr": "",
+            "artifacts": {"message": "tool executed"},
+            "error": None
+        }
+
+```
+---
+
+# Tool Output Requirements
+
+The run() method must return a JSON-serializable dictionary containing:
+
+```json
+status
+stdout
+stderr
+artifacts
+error
+```
+
+---
+# Tool Validation Pipeline
+
+When a tool is uploaded, the system performs:
+
+JSON schema validation
+
+Python interface validation
+
+capability_id consistency check
+
+runtime execution validation
+
+If any stage fails, a structured error will be returned.
+
+---
+# Notes
+
+Informational messages from R packages may appear in stderr and can be safely ignored.
+
+Runtime outputs under out/ are not tracked by git.

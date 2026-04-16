@@ -1,0 +1,8 @@
+{
+  "capability_id": "summary_stats",
+  "title": "Dataset summary statistics (EDA)",
+  "description": "Summarize a CSV dataset: shape, columns, missingness, and numeric summary stats. Use for describe/summary/EDA/debug.",
+  "keywords": ["summary", "describe", "eda", "statistics", "missing", "dataset overview", "columns", "shape"],
+  "required_fields": ["csv"],
+  "optional_fields": ["covariates"]
+}

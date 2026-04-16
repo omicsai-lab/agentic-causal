@@ -1,4 +1,3 @@
-# src/agent/tools/tool_causalmodels.py
 from __future__ import annotations
 
 import json
@@ -10,27 +9,29 @@ from src.agent.schemas_io import RunRequest, ToolResult
 from src.agent.tools.base import BaseTool
 
 
-class CausalModelsTool(BaseTool):
+class BinaryEDRIPTool(BaseTool):
     @property
     def name(self) -> str:
-        return "causalmodels"
+        return "binary_edrip"
 
     @property
     def capability_id(self) -> str:
-        return "causal_ate"
+        return "binary_edrip"
 
     def validate(self, req: RunRequest) -> Tuple[bool, str]:
         if not req.csv:
-            return False, "ATE requires csv."
+            return False, "binary_edrip requires csv."
         if not req.treatment or not req.outcome:
-            return False, "ATE requires treatment and outcome."
+            return False, "binary_edrip requires treatment and outcome."
+        covs = getattr(req, "covariates", None)
+        if not covs or not isinstance(covs, list) or len(covs) == 0:
+            return False, "binary_edrip requires covariates."
         return True, "ok"
 
     def run(self, req: RunRequest) -> ToolResult:
-        # call existing script: src/run_causalmodels_demo.py
         cmd = [
             sys.executable,
-            "src/run_causalmodels_demo.py",
+            "src/run_binary_edrip.py",
             "--csv", req.csv,
             "--treatment", req.treatment or "",
             "--outcome", req.outcome or "",
@@ -41,7 +42,6 @@ class CausalModelsTool(BaseTool):
         stdout, stderr = p.stdout, p.stderr
 
         artifacts = {}
-        # If the demo prints a JSON line, parse it (optional)
         for line in reversed(stdout.splitlines()):
             s = line.strip()
             if s.startswith("{") and s.endswith("}"):
@@ -52,6 +52,7 @@ class CausalModelsTool(BaseTool):
                     pass
 
         status = "ok" if p.returncode == 0 else "error"
+
         return ToolResult(
             status=status,
             selected_tool=self.name,
@@ -60,3 +61,5 @@ class CausalModelsTool(BaseTool):
             exit_code=p.returncode,
             artifacts=artifacts,
         )
+    
+    
