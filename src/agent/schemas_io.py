@@ -1,4 +1,3 @@
-# src/agent/schemas_io.py
 from __future__ import annotations
 
 from dataclasses import dataclass, field
@@ -11,6 +10,9 @@ class RunRequest:
     request: str = ""
     capability_id: Optional[str] = None
     use_llm_router: bool = True
+
+    # User-facing output controls
+    generate_plots: bool = True
 
     # ATE
     treatment: Optional[str] = None

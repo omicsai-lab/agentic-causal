@@ -1,4 +1,4 @@
-# src/agent/tools/tool_adjustedcurves.py
+# src/agent/tools/tool_causal_ate.py
 from __future__ import annotations
 
 import json
@@ -10,31 +10,30 @@ from src.agent.schemas_io import RunRequest, ToolResult
 from src.agent.tools.base import BaseTool
 
 
-class AdjustedCurvesTool(BaseTool):
+class CausalModelsTool(BaseTool):
     @property
     def name(self) -> str:
-        return "adjustedcurves"
+        return "causalmodels"
 
     @property
     def capability_id(self) -> str:
-        return "survival_adjusted_curves"
+        return "causal_ate"
 
     def validate(self, req: RunRequest) -> Tuple[bool, str]:
         if not req.csv:
-            return False, "Survival requires csv."
-        if not (req.time and req.event and req.group):
-            return False, "Survival requires time, event, and group."
+            return False, "ATE requires csv."
+        if not req.treatment or not req.outcome:
+            return False, "ATE requires treatment and outcome."
         return True, "ok"
 
     def run(self, req: RunRequest) -> ToolResult:
-        # call existing script: src/run_adjustedcurves_demo.py
+        # call existing script: src/run_causalmodels_demo.py
         cmd = [
             sys.executable,
-            "src/run_adjustedcurves_demo.py",
+            "src/run_causalmodels_demo.py",
             "--csv", req.csv,
-            "--time", req.time or "",
-            "--event", req.event or "",
-            "--group", req.group or "",
+            "--treatment", req.treatment or "",
+            "--outcome", req.outcome or "",
             "--covariates", ",".join(req.covariates or []),
         ]
 
@@ -42,6 +41,7 @@ class AdjustedCurvesTool(BaseTool):
         stdout, stderr = p.stdout, p.stderr
 
         artifacts = {}
+        # If the demo prints a JSON line, parse it
         for line in reversed(stdout.splitlines()):
             s = line.strip()
             if s.startswith("{") and s.endswith("}"):
