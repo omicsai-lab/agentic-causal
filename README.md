@@ -107,6 +107,38 @@ out/api/
 
 ## Run With Docker
 
+### Pull from Docker Hub
+
+A pre-built image is available on Docker Hub:
+
+```bash
+docker pull docker.io/gepcath/agentic-causal:latest
+```
+
+Available tags: `latest`, `20260512`, `301c981`
+
+Immutable digest (pinned reference):
+
+```
+docker.io/gepcath/agentic-causal@sha256:a45f2490c2bebc904969fea21f044f43b4f4a58f050fecabcaf37ec31480cabf
+```
+
+Run directly from the hub image:
+
+```bash
+docker run -d \
+  -p 8000:8000 -p 7860:7860 \
+  -e OPENAI_API_KEY=your_key \
+  -e OPENAI_MODEL=gpt-4o \
+  docker.io/gepcath/agentic-causal:latest
+```
+
+Then open `http://127.0.0.1:7860`.
+
+---
+
+### Build Locally
+
 This repository includes a Docker setup that runs both services in one container:
 
 - FastAPI backend on port `8000`
