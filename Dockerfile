@@ -30,6 +30,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip && pip install -r /app/requirements.txt
 
+# Keep the final image on the Gradio-compatible hub version even if upstream
+# dependency resolution changes.
+RUN pip install --no-cache-dir huggingface_hub==0.25.2
+
 # R packages used by this repository
 RUN Rscript -e "install.packages(c('CausalModels','adjustedCurves','WeightIt','survival'), repos='https://cloud.r-project.org')"
 

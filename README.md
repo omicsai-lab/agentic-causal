@@ -133,6 +133,10 @@ docker run -d \
   docker.io/gepcath/agentic-causal:latest
 ```
 
+If you see `ImportError: cannot import name 'HfFolder' from 'huggingface_hub'`,
+the published image tag is stale. Use `docker compose up --build` from this repo
+or rebuild the image from the current Dockerfile.
+
 Then open `http://127.0.0.1:7860`.
 
 ---
