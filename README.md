@@ -105,6 +105,103 @@ All results will be automatically saved under:
 out/api/
 ```
 
+## Run With Docker
+
+### Pull from Docker Hub
+
+A pre-built image is available on Docker Hub:
+
+```bash
+docker pull docker.io/gepcath/agentic-causal:latest
+```
+
+Available tags: `latest`, `20260512`, `301c981`
+
+Immutable digest (pinned reference):
+
+```
+docker.io/gepcath/agentic-causal@sha256:a45f2490c2bebc904969fea21f044f43b4f4a58f050fecabcaf37ec31480cabf
+```
+
+Run directly from the hub image:
+
+```bash
+docker run -d \
+  -p 8000:8000 -p 7860:7860 \
+  -e OPENAI_API_KEY=your_key \
+  -e OPENAI_MODEL=gpt-4o \
+  docker.io/gepcath/agentic-causal:latest
+```
+
+If you see `ImportError: cannot import name 'HfFolder' from 'huggingface_hub'`,
+the published image tag is stale. Use `docker compose up --build` from this repo
+or rebuild the image from the current Dockerfile.
+
+Then open `http://127.0.0.1:7860`.
+
+---
+
+### Build Locally
+
+This repository includes a Docker setup that runs both services in one container:
+
+- FastAPI backend on port `8000`
+- Gradio UI on port `7860`
+
+Build and start:
+
+```bash
+docker compose up --build
+```
+
+Compatibility note:
+
+- To avoid a known Gradio/huggingface_hub mismatch, `docker-compose.yml` applies
+  `huggingface_hub==0.25.2` at container startup.
+- This makes startup reliable, but can add a short delay on first launch.
+
+Recommended run flow:
+
+```bash
+# First time or after Dockerfile/requirements changes
+docker compose up --build -d
+
+# Later runs
+docker compose up -d
+```
+
+Open:
+
+```bash
+http://127.0.0.1:7860
+```
+
+Optional environment variables:
+
+```bash
+OPENAI_API_KEY=your_key
+OPENAI_MODEL=gpt-5.4
+```
+
+Run with env vars:
+
+```bash
+OPENAI_API_KEY=your_key OPENAI_MODEL=gpt-5.4 docker compose up --build
+```
+
+Stop and remove container:
+
+```bash
+docker compose down
+```
+
+Quick health checks:
+
+```bash
+curl -sS -o /dev/null -w 'API:%{http_code}\n' http://127.0.0.1:8000/openapi.json
+curl -sS -o /dev/null -w 'UI:%{http_code}\n' http://127.0.0.1:7860
+```
+
 ## Demo 1: Average Treatment Effect (ATE)
 Dataset
 

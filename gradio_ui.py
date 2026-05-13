@@ -1,12 +1,14 @@
 import gradio as gr
 import requests
 import json
+import os
+import argparse
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 import html
 
-BACKEND_URL = "http://127.0.0.1:8000/run"
-TOOLS_URL = "http://127.0.0.1:8000/tools"
+BACKEND_URL = os.environ.get("BACKEND_URL", "http://127.0.0.1:8000/run")
+TOOLS_URL = os.environ.get("TOOLS_URL", "http://127.0.0.1:8000/tools")
 
 
 def REPO_ROOT() -> Path:
@@ -971,4 +973,10 @@ Upload a dataset, submit an analysis request, and receive user-friendly results.
                 outputs=[tool_table_html],
             )
 
-demo.launch()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--host", default=os.environ.get("UI_HOST", "127.0.0.1"))
+    parser.add_argument("--port", type=int, default=int(os.environ.get("UI_PORT", "7860")))
+    args = parser.parse_args()
+
+    demo.launch(server_name=args.host, server_port=args.port)

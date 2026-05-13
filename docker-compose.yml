@@ -1,0 +1,22 @@
+services:
+  causal-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: causal-agent
+    command: bash -lc "pip install --no-cache-dir huggingface_hub==0.25.2 >/tmp/hf_fix.log 2>&1 && /app/docker/start.sh"
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-}
+      BACKEND_URL: http://127.0.0.1:8000/run
+      TOOLS_URL: http://127.0.0.1:8000/tools
+      API_HOST: 0.0.0.0
+      API_PORT: 8000
+      UI_HOST: 0.0.0.0
+      UI_PORT: 7860
+    ports:
+      - "8000:8000"
+      - "7860:7860"
+    volumes:
+      - ./out:/app/out
+    restart: unless-stopped

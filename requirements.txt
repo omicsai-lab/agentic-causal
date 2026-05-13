@@ -1,0 +1,14 @@
+fastapi==0.115.2
+uvicorn[standard]==0.32.0
+pydantic==2.9.2
+gradio==5.5.0
+huggingface_hub==0.25.2
+requests==2.32.3
+openai==1.52.2
+numpy==2.1.2
+pandas==2.2.3
+scipy==1.14.1
+scikit-learn==1.5.2
+matplotlib==3.9.2
+reportlab==4.2.5
+rpy2==3.5.16
