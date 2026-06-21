@@ -89,6 +89,14 @@ After launching, open the interface in your browser:
 ```bash
 http://127.0.0.1:7860
 ```
+
+Subpath startup (for reverse proxy deployments):
+
+```bash
+GRADIO_ROOT_PATH=/agentic-causal python gradio_ui.py
+```
+
+When hosted under /agentic-causal, the reverse proxy must preserve the /agentic-causal prefix when forwarding requests to Gradio.
 The web interface allows users to:
 
 Upload a dataset (CSV)
@@ -181,6 +189,7 @@ Optional environment variables:
 ```bash
 OPENAI_API_KEY=your_key
 OPENAI_MODEL=gpt-5.4
+GRADIO_ROOT_PATH=
 ```
 
 Run with env vars:
@@ -188,6 +197,15 @@ Run with env vars:
 ```bash
 OPENAI_API_KEY=your_key OPENAI_MODEL=gpt-5.4 docker compose up --build
 ```
+
+Run on a subpath:
+
+```bash
+OPENAI_API_KEY=your_key OPENAI_MODEL=gpt-5.4 GRADIO_ROOT_PATH=/agentic-causal docker compose up --build
+```
+
+For subpath hosting, ensure your reverse proxy preserves the /agentic-causal prefix.
+In production, keep port 8000 private (not publicly exposed) and only publish the reverse proxy entrypoint.
 
 Stop and remove container:
 

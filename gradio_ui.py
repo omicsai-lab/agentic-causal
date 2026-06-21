@@ -978,5 +978,6 @@ if __name__ == "__main__":
     parser.add_argument("--host", default=os.environ.get("UI_HOST", "127.0.0.1"))
     parser.add_argument("--port", type=int, default=int(os.environ.get("UI_PORT", "7860")))
     args = parser.parse_args()
+    root_path = os.environ.get("GRADIO_ROOT_PATH", "")
 
-    demo.launch(server_name=args.host, server_port=args.port)
+    demo.launch(server_name=args.host, server_port=args.port, root_path=root_path)
