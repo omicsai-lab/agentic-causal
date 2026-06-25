@@ -609,3 +609,12 @@ If any stage fails, a structured error will be returned.
 Informational messages from R packages may appear in stderr and can be safely ignored.
 
 Runtime outputs under out/ are not tracked by git.
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20842247.svg)](https://doi.org/10.5281/zenodo.20842247)
+
+## Availability
+
+Agentic-Causal is available as open-source software.
+
+- Source code: https://github.com/omicsai-lab/agentic-causal
+- Archived release: https://doi.org/10.5281/zenodo.20842247
