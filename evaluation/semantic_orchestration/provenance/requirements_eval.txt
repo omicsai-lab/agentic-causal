@@ -1,0 +1,23 @@
+# Additional packages required to run the semantic-orchestration
+# evaluation harness, analysis, and tests, on top of the packages already
+# used by src/agent/router_llm.py and src/agent/planner_llm.py (openai,
+# pydantic -- see the repo's top-level requirements.txt).
+#
+# This file is intentionally separate from the top-level requirements.txt
+# (which is a production/application manifest, out of scope to edit here).
+# Installed-vs-pinned mismatches are recorded in ENVIRONMENT.md at freeze
+# time; see AUDIT.md Finding 6.
+#
+# Required for Step 1 (benchmark freeze, deterministic baseline, static
+# tests) -- installed in this environment:
+scipy>=1.14
+pytest>=8.0
+
+# Required for Step 2 (live GPT-5.4 evaluation) and analysis/figure
+# generation -- NOT installed in this Step 1 environment; install before
+# running harness/run_router_eval.py, harness/run_planner_eval.py,
+# harness/run_challenge_eval.py, or analysis/run_all.py:
+pandas>=2.2
+matplotlib>=3.9
+
+# numpy is already present (pulled in transitively as a scipy dependency).

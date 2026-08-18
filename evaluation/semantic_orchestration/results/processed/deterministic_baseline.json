@@ -1,0 +1,1947 @@
+{
+  "router_supported": {
+    "summary": {
+      "n": 120,
+      "n_correct": 0,
+      "accuracy": 0.0
+    },
+    "rows": [
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_01",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_02",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_03",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_04",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_05",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_06",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_07",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_08",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_09",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_10",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_01",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_02",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_03",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_04",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_05",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_06",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_07",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_08",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_09",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_10",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_01",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_02",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_03",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_04",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_05",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_06",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_07",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_08",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_09",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_10",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_01",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_02",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_03",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_04",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_05",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_06",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_07",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_08",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_09",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_10",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_01",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_02",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_03",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_04",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_05",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_06",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_07",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_08",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_09",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_10",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_01",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_02",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_03",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_04",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_05",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_06",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_07",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_08",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_09",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_10",
+        "gold_capability_id": "causal_ate",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_01",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_02",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_03",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_04",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_05",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_06",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_07",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_08",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_09",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_10",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_01",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_02",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_03",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_04",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_05",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_06",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_07",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_08",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_09",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_10",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_01",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_02",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_03",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_04",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_05",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_06",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_07",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_08",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_09",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_10",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_01",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_02",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_03",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_04",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_05",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_06",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_07",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_08",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_09",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_10",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_01",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_02",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_03",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_04",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_05",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_06",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_07",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_08",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_09",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_10",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_01",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_02",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_03",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_04",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_05",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_06",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_07",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_08",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_09",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_10",
+        "gold_capability_id": "survival_adjusted_curves",
+        "predicted_capability_id": "binary_edrip",
+        "reason": "OPENAI_API_KEY not set; defaulting to first capability.",
+        "correct": false
+      }
+    ]
+  },
+  "planner_supported": {
+    "summary": {
+      "n": 120,
+      "n_correct": 89,
+      "accuracy": 0.7416666666666667
+    },
+    "rows": [
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_01",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_02",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_03",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_04",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_05",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_06",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_07",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_08",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_09",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_10",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_01",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_02",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_03",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_04",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_05",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_06",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_07",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_08",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_09",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_10",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_01",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_02",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_03",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_04",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_05",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_06",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_07",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_08",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_09",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_10",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_01",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_02",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_03",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_04",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_05",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_06",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_07",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_08",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_09",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_10",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_01",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_02",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_03",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_04",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_05",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_06",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_07",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_08",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_09",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_10",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_01",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_02",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_03",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "binary",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_04",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "binary",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_05",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_06",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "binary",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_07",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "binary",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_08",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_09",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "binary",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_10",
+        "gold_capability_id": "causal_ate",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "continuous",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_01",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_02",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_03",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_04",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_05",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_06",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_07",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_08",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_09",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_10",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_01",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_02",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_03",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_04",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_05",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_06",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_07",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_08",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_09",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_10",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_01",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_02",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_03",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_04",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_05",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_06",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_07",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_08",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_09",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_10",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_01",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_02",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_03",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_04",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_05",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_06",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_07",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_08",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_09",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_10",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_01",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_02",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_03",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_04",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_05",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_06",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_07",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_08",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_09",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_10",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_01",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_02",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_03",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_04",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_05",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_06",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_07",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_08",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_09",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_10",
+        "gold_capability_id": "survival_adjusted_curves",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "gold_outcome_type": "time_to_event",
+        "recommended_tool_correct": true
+      }
+    ]
+  },
+  "router_challenge_predicted_capability_distribution": {
+    "binary_edrip": 30
+  },
+  "planner_challenge_recommended_tool_distribution": {
+    "summary_stats": 16,
+    "causal_ate": 14
+  }
+}

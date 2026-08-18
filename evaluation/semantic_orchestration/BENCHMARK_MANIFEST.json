@@ -1,0 +1,65 @@
+{
+  "frozen_at_utc": "2026-08-18T22:13:03.561343+00:00",
+  "git_commit_at_freeze": "150f50ed8b555a896378f25b13d9cf40bdec6e1d",
+  "benchmark_version": "1.0.0",
+  "counts": {
+    "supported_total": 120,
+    "supported_causal_ate": 60,
+    "supported_survival_adjusted_curves": 60,
+    "supported_by_capability_category": {
+      "causal_ate::explicit_method": 10,
+      "causal_ate::formal_estimand": 10,
+      "causal_ate::biomedical_domain": 10,
+      "causal_ate::indirect_colloquial": 10,
+      "causal_ate::noisy_verbose": 10,
+      "causal_ate::near_boundary": 10,
+      "survival_adjusted_curves::explicit_method": 10,
+      "survival_adjusted_curves::formal_estimand": 10,
+      "survival_adjusted_curves::biomedical_domain": 10,
+      "survival_adjusted_curves::indirect_colloquial": 10,
+      "survival_adjusted_curves::noisy_verbose": 10,
+      "survival_adjusted_curves::near_boundary": 10
+    },
+    "challenge_total": 30,
+    "challenge_by_type": {
+      "underspecified": 10,
+      "unsupported_method": 10,
+      "out_of_scope_mixed": 10
+    }
+  },
+  "categories": [
+    "explicit_method",
+    "formal_estimand",
+    "biomedical_domain",
+    "indirect_colloquial",
+    "noisy_verbose",
+    "near_boundary"
+  ],
+  "challenge_types": [
+    "underspecified",
+    "unsupported_method",
+    "out_of_scope_mixed"
+  ],
+  "files": {
+    "benchmark/prompts_supported.py": {
+      "sha256": "6abbe02ff6939c514af7a6b819bbc4b8234db6964580bb1f643532ee060e82eb",
+      "bytes": 61788
+    },
+    "benchmark/prompts_challenge.py": {
+      "sha256": "8a1ec0b02f4ce58ddc09538a53fb7fb2ce4db6439743a6ba5ae566fe8e04de44",
+      "bytes": 16788
+    },
+    "benchmark/build_benchmark.py": {
+      "sha256": "5673bbcaf7f50192ef667fa4313cda485dff2c664f3b0ebdafbb1dcc66ac50ef",
+      "bytes": 2683
+    },
+    "benchmark/prompts_supported.jsonl": {
+      "sha256": "7e1aafa8e16dbbb6f8a84edf4e09d6964dae41bb395ccf6a7fe9a95beb587b85",
+      "bytes": 54279
+    },
+    "benchmark/prompts_challenge.jsonl": {
+      "sha256": "a3891aed9cf59d6541a004200937b94694638bfd25c2518b5b090221facd89dd",
+      "bytes": 12199
+    }
+  }
+}
