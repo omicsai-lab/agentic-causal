@@ -2,12 +2,19 @@
 Render analysis results (plain dicts, as produced by router_accuracy.py /
 planner_accuracy.py / consistency.py / agreement.py) into Markdown tables
 suitable for pasting into EVALUATION_REPORT.md / MANUSCRIPT_FACTS.md.
+
+Also provides generic flat-row-list writers (CSV / Markdown / LaTeX) used
+by `analysis/publication_tables.py` to emit the same underlying data in
+all three publication formats from a single row-list representation, so
+the numbers in each format are guaranteed identical (built from the same
+rows, not re-derived per format).
 """
 
 from __future__ import annotations
 
+import csv
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, List, Sequence
 
 
 def _fmt_pct(x: float) -> str:
@@ -68,6 +75,63 @@ def confusion_matrix_table(cm: Dict[str, Any]) -> str:
         row = cm["matrix"].get(g, {})
         lines.append("| " + g + " | " + " | ".join(str(row.get(p, 0)) for p in labels) + " |")
     return "\n".join(lines)
+
+
+def write_csv_table(rows: Sequence[Dict[str, Any]], path: Path, fieldnames: List[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=fieldnames)
+        w.writeheader()
+        for row in rows:
+            w.writerow({k: row.get(k, "") for k in fieldnames})
+
+
+def _latex_escape(s: Any) -> str:
+    s = str(s)
+    for a, b in [("\\", r"\textbackslash{}"), ("_", r"\_"), ("%", r"\%"), ("&", r"\&"), ("#", r"\#")]:
+        s = s.replace(a, b)
+    return s
+
+
+def write_markdown_table(rows: Sequence[Dict[str, Any]], path: Path, fieldnames: List[str]) -> None:
+    header = "| " + " | ".join(fieldnames) + " |"
+    sep = "|" + "|".join(["---"] * len(fieldnames)) + "|"
+    lines = [header, sep]
+    for row in rows:
+        lines.append("| " + " | ".join(str(row.get(k, "")) for k in fieldnames) + " |")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def write_latex_table(rows: Sequence[Dict[str, Any]], path: Path, fieldnames: List[str], caption: str = "", label: str = "") -> None:
+    lines = ["\\begin{table}[ht]", "\\centering"]
+    if caption:
+        lines.append(f"\\caption{{{_latex_escape(caption)}}}")
+    if label:
+        lines.append(f"\\label{{{label}}}")
+    lines.append("\\begin{tabular}{" + "l" * len(fieldnames) + "}")
+    lines.append("\\toprule")
+    lines.append(" & ".join(_latex_escape(f) for f in fieldnames) + " \\\\")
+    lines.append("\\midrule")
+    for row in rows:
+        lines.append(" & ".join(_latex_escape(row.get(k, "")) for k in fieldnames) + " \\\\")
+    lines.append("\\bottomrule")
+    lines.append("\\end{tabular}")
+    lines.append("\\end{table}")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def write_table_all_formats(rows: Sequence[Dict[str, Any]], out_dir: Path, basename: str, fieldnames: List[str], caption: str = "", label: str = "") -> Dict[str, Path]:
+    """Write the same row-list to <basename>.{csv,md,tex} and return the
+    three paths, keyed by format."""
+    csv_path = out_dir / f"{basename}.csv"
+    md_path = out_dir / f"{basename}.md"
+    tex_path = out_dir / f"{basename}.tex"
+    write_csv_table(rows, csv_path, fieldnames)
+    write_markdown_table(rows, md_path, fieldnames)
+    write_latex_table(rows, tex_path, fieldnames, caption=caption or basename.replace("_", " "), label=f"tab:{basename}" if not label else label)
+    return {"csv": csv_path, "md": md_path, "tex": tex_path}
 
 
 def write_all_tables(out_dir: Path, **reports: Dict[str, Any]) -> None:

@@ -1,0 +1,10 @@
+cell,n_prompts,mean_pairwise_agreement,full_consistency_rate,pair_1_agreement,pair_2_agreement,pair_3_agreement
+overall,120,1.0,1.0,1.0,1.0,1.0
+capability=causal_ate,60,1.0,1.0,1.0,1.0,1.0
+capability=survival_adjusted_curves,60,1.0,1.0,1.0,1.0,1.0
+category=explicit_method,20,1.0,1.0,1.0,1.0,1.0
+category=formal_estimand,20,1.0,1.0,1.0,1.0,1.0
+category=biomedical_domain,20,1.0,1.0,1.0,1.0,1.0
+category=indirect_colloquial,20,1.0,1.0,1.0,1.0,1.0
+category=noisy_verbose,20,1.0,1.0,1.0,1.0,1.0
+category=near_boundary,20,1.0,1.0,1.0,1.0,1.0

@@ -1,0 +1,64 @@
+{
+  "note": "Snapshot of the completed live GPT-5.4 evaluation call outcomes, extracted from results/raw/*.jsonl (read-only). See EVALUATION_REPORT.md for the full analysis.",
+  "live_run_summaries": {
+    "router_supported": {
+      "n_calls": 360,
+      "n_api_success": 360,
+      "n_api_failure": 0,
+      "n_fallback_or_likely_fallback": 0,
+      "n_model_substituted": 0,
+      "requested_models": [
+        "gpt-5.4"
+      ],
+      "returned_models_observed": [
+        "gpt-5.4-2026-03-05"
+      ],
+      "n_duplicate_prompt_repeat_keys": 0
+    },
+    "planner_supported": {
+      "n_calls": 360,
+      "n_api_success": 360,
+      "n_api_failure": 0,
+      "n_fallback_or_likely_fallback": 0,
+      "n_model_substituted": 0,
+      "requested_models": [
+        "gpt-5.4"
+      ],
+      "returned_models_observed": [
+        "gpt-5.4-2026-03-05"
+      ],
+      "n_duplicate_prompt_repeat_keys": 0
+    },
+    "router_challenge": {
+      "n_calls": 30,
+      "n_api_success": 30,
+      "n_api_failure": 0,
+      "n_fallback_or_likely_fallback": 0,
+      "n_model_substituted": 0,
+      "requested_models": [
+        "gpt-5.4"
+      ],
+      "returned_models_observed": [
+        "gpt-5.4-2026-03-05"
+      ]
+    },
+    "planner_challenge": {
+      "n_calls": 30,
+      "n_api_success": 30,
+      "n_api_failure": 0,
+      "n_fallback_or_likely_fallback": 0,
+      "n_model_substituted": 0,
+      "requested_models": [
+        "gpt-5.4"
+      ],
+      "returned_models_observed": [
+        "gpt-5.4-2026-03-05"
+      ]
+    }
+  },
+  "total_calls": 780,
+  "total_api_failures": 0,
+  "total_fallback_or_likely_fallback_events": 0,
+  "total_model_substitutions": 0,
+  "total_duplicate_prompt_repeat_keys_retries": 0
+}

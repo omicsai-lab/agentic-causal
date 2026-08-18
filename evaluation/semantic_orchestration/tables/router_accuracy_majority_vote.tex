@@ -1,0 +1,20 @@
+\begin{table}[ht]
+\centering
+\caption{Router accuracy, prompt-level majority vote (n=120 prompts)}
+\label{tab:router_accuracy_majority_vote}
+\begin{tabular}{llllll}
+\toprule
+cell & n & n\_correct & accuracy & wilson\_ci\_lower & wilson\_ci\_upper \\
+\midrule
+overall & 120 & 118 & 0.983333 & 0.941264 & 0.995417 \\
+capability=causal\_ate & 60 & 58 & 0.966667 & 0.886362 & 0.990811 \\
+capability=survival\_adjusted\_curves & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=explicit\_method & 20 & 20 & 1.0 & 0.838875 & 1.0 \\
+category=formal\_estimand & 20 & 20 & 1.0 & 0.838875 & 1.0 \\
+category=biomedical\_domain & 20 & 19 & 0.95 & 0.763869 & 0.991119 \\
+category=indirect\_colloquial & 20 & 19 & 0.95 & 0.763869 & 0.991119 \\
+category=noisy\_verbose & 20 & 20 & 1.0 & 0.838875 & 1.0 \\
+category=near\_boundary & 20 & 20 & 1.0 & 0.838875 & 1.0 \\
+\bottomrule
+\end{tabular}
+\end{table}

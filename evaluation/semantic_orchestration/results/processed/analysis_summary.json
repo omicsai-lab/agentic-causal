@@ -1,0 +1,4232 @@
+{
+  "router_accuracy": {
+    "overall": {
+      "n": 360,
+      "n_correct": 354,
+      "accuracy": 0.9833333333333333,
+      "wilson_ci_lower": 0.9641208412232218,
+      "wilson_ci_upper": 0.9923397037843743
+    },
+    "by_capability": {
+      "causal_ate": {
+        "n": 180,
+        "n_correct": 174,
+        "accuracy": 0.9666666666666667,
+        "wilson_ci_lower": 0.9291956595913273,
+        "wilson_ci_upper": 0.9846352090151672
+      },
+      "survival_adjusted_curves": {
+        "n": 180,
+        "n_correct": 180,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.9791045020783868,
+        "wilson_ci_upper": 1.0
+      }
+    },
+    "by_category": {
+      "biomedical_domain": {
+        "n": 60,
+        "n_correct": 57,
+        "accuracy": 0.95,
+        "wilson_ci_lower": 0.8629948352365148,
+        "wilson_ci_upper": 0.9828504978356043
+      },
+      "explicit_method": {
+        "n": 60,
+        "n_correct": 60,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.93982814785791,
+        "wilson_ci_upper": 0.9999999999999998
+      },
+      "formal_estimand": {
+        "n": 60,
+        "n_correct": 60,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.93982814785791,
+        "wilson_ci_upper": 0.9999999999999998
+      },
+      "indirect_colloquial": {
+        "n": 60,
+        "n_correct": 57,
+        "accuracy": 0.95,
+        "wilson_ci_lower": 0.8629948352365148,
+        "wilson_ci_upper": 0.9828504978356043
+      },
+      "near_boundary": {
+        "n": 60,
+        "n_correct": 60,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.93982814785791,
+        "wilson_ci_upper": 0.9999999999999998
+      },
+      "noisy_verbose": {
+        "n": 60,
+        "n_correct": 60,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.93982814785791,
+        "wilson_ci_upper": 0.9999999999999998
+      }
+    },
+    "by_capability_category": {
+      "causal_ate::biomedical_domain": {
+        "n": 30,
+        "n_correct": 27,
+        "accuracy": 0.9,
+        "wilson_ci_lower": 0.7437891742081592,
+        "wilson_ci_upper": 0.9654001112526658
+      },
+      "causal_ate::explicit_method": {
+        "n": 30,
+        "n_correct": 30,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8864866068260312,
+        "wilson_ci_upper": 1.0
+      },
+      "causal_ate::formal_estimand": {
+        "n": 30,
+        "n_correct": 30,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8864866068260312,
+        "wilson_ci_upper": 1.0
+      },
+      "causal_ate::indirect_colloquial": {
+        "n": 30,
+        "n_correct": 27,
+        "accuracy": 0.9,
+        "wilson_ci_lower": 0.7437891742081592,
+        "wilson_ci_upper": 0.9654001112526658
+      },
+      "causal_ate::near_boundary": {
+        "n": 30,
+        "n_correct": 30,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8864866068260312,
+        "wilson_ci_upper": 1.0
+      },
+      "causal_ate::noisy_verbose": {
+        "n": 30,
+        "n_correct": 30,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8864866068260312,
+        "wilson_ci_upper": 1.0
+      },
+      "survival_adjusted_curves::biomedical_domain": {
+        "n": 30,
+        "n_correct": 30,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8864866068260312,
+        "wilson_ci_upper": 1.0
+      },
+      "survival_adjusted_curves::explicit_method": {
+        "n": 30,
+        "n_correct": 30,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8864866068260312,
+        "wilson_ci_upper": 1.0
+      },
+      "survival_adjusted_curves::formal_estimand": {
+        "n": 30,
+        "n_correct": 30,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8864866068260312,
+        "wilson_ci_upper": 1.0
+      },
+      "survival_adjusted_curves::indirect_colloquial": {
+        "n": 30,
+        "n_correct": 30,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8864866068260312,
+        "wilson_ci_upper": 1.0
+      },
+      "survival_adjusted_curves::near_boundary": {
+        "n": 30,
+        "n_correct": 30,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8864866068260312,
+        "wilson_ci_upper": 1.0
+      },
+      "survival_adjusted_curves::noisy_verbose": {
+        "n": 30,
+        "n_correct": 30,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8864866068260312,
+        "wilson_ci_upper": 1.0
+      }
+    },
+    "by_repeat": {
+      "1": {
+        "n": 120,
+        "n_correct": 118,
+        "accuracy": 0.9833333333333333,
+        "wilson_ci_lower": 0.9412640370278411,
+        "wilson_ci_upper": 0.9954174354340789
+      },
+      "2": {
+        "n": 120,
+        "n_correct": 118,
+        "accuracy": 0.9833333333333333,
+        "wilson_ci_lower": 0.9412640370278411,
+        "wilson_ci_upper": 0.9954174354340789
+      },
+      "3": {
+        "n": 120,
+        "n_correct": 118,
+        "accuracy": 0.9833333333333333,
+        "wilson_ci_lower": 0.9412640370278411,
+        "wilson_ci_upper": 0.9954174354340789
+      }
+    },
+    "fallback_rate": 0.0,
+    "n_fallback": 0,
+    "n_unexplained_api_failure": 0
+  },
+  "planner_accuracy": {
+    "overall_by_field": {
+      "recommended_tool": {
+        "n": 360,
+        "n_correct": 354,
+        "accuracy": 0.9833333333333333,
+        "wilson_ci_lower": 0.9641208412232218,
+        "wilson_ci_upper": 0.9923397037843743
+      },
+      "task_type": {
+        "n": 360,
+        "n_correct": 354,
+        "accuracy": 0.9833333333333333,
+        "wilson_ci_lower": 0.9641208412232218,
+        "wilson_ci_upper": 0.9923397037843743
+      },
+      "outcome_type": {
+        "n": 360,
+        "n_correct": 357,
+        "accuracy": 0.9916666666666667,
+        "wilson_ci_lower": 0.9757892964950321,
+        "wilson_ci_upper": 0.9971619475644193
+      }
+    },
+    "overall_all_fields_correct": {
+      "n": 360,
+      "n_correct": 351,
+      "accuracy": 0.975,
+      "wilson_ci_lower": 0.9531770785533229,
+      "wilson_ci_upper": 0.9867927674024182
+    },
+    "by_capability": {
+      "causal_ate": {
+        "recommended_tool": {
+          "n": 180,
+          "n_correct": 174,
+          "accuracy": 0.9666666666666667,
+          "wilson_ci_lower": 0.9291956595913273,
+          "wilson_ci_upper": 0.9846352090151672
+        },
+        "task_type": {
+          "n": 180,
+          "n_correct": 174,
+          "accuracy": 0.9666666666666667,
+          "wilson_ci_lower": 0.9291956595913273,
+          "wilson_ci_upper": 0.9846352090151672
+        },
+        "outcome_type": {
+          "n": 180,
+          "n_correct": 177,
+          "accuracy": 0.9833333333333333,
+          "wilson_ci_lower": 0.952151771962928,
+          "wilson_ci_upper": 0.9943159133795125
+        }
+      },
+      "survival_adjusted_curves": {
+        "recommended_tool": {
+          "n": 180,
+          "n_correct": 180,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.9791045020783868,
+          "wilson_ci_upper": 1.0
+        },
+        "task_type": {
+          "n": 180,
+          "n_correct": 180,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.9791045020783868,
+          "wilson_ci_upper": 1.0
+        },
+        "outcome_type": {
+          "n": 180,
+          "n_correct": 180,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.9791045020783868,
+          "wilson_ci_upper": 1.0
+        }
+      }
+    },
+    "by_category": {
+      "biomedical_domain": {
+        "recommended_tool": {
+          "n": 60,
+          "n_correct": 57,
+          "accuracy": 0.95,
+          "wilson_ci_lower": 0.8629948352365148,
+          "wilson_ci_upper": 0.9828504978356043
+        },
+        "task_type": {
+          "n": 60,
+          "n_correct": 57,
+          "accuracy": 0.95,
+          "wilson_ci_lower": 0.8629948352365148,
+          "wilson_ci_upper": 0.9828504978356043
+        },
+        "outcome_type": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        }
+      },
+      "explicit_method": {
+        "recommended_tool": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        },
+        "task_type": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        },
+        "outcome_type": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        }
+      },
+      "formal_estimand": {
+        "recommended_tool": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        },
+        "task_type": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        },
+        "outcome_type": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        }
+      },
+      "indirect_colloquial": {
+        "recommended_tool": {
+          "n": 60,
+          "n_correct": 57,
+          "accuracy": 0.95,
+          "wilson_ci_lower": 0.8629948352365148,
+          "wilson_ci_upper": 0.9828504978356043
+        },
+        "task_type": {
+          "n": 60,
+          "n_correct": 57,
+          "accuracy": 0.95,
+          "wilson_ci_lower": 0.8629948352365148,
+          "wilson_ci_upper": 0.9828504978356043
+        },
+        "outcome_type": {
+          "n": 60,
+          "n_correct": 57,
+          "accuracy": 0.95,
+          "wilson_ci_lower": 0.8629948352365148,
+          "wilson_ci_upper": 0.9828504978356043
+        }
+      },
+      "near_boundary": {
+        "recommended_tool": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        },
+        "task_type": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        },
+        "outcome_type": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        }
+      },
+      "noisy_verbose": {
+        "recommended_tool": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        },
+        "task_type": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        },
+        "outcome_type": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        }
+      }
+    },
+    "n_likely_fallback_by_content_match": 0,
+    "likely_fallback_rate": 0.0
+  },
+  "router_consistency": {
+    "n_prompts_with_all_repeats": 120,
+    "repeats_present": [
+      1,
+      2,
+      3
+    ],
+    "agreement": {
+      "mean_pairwise_agreement": 1.0,
+      "pairwise_rates": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_consistency_rate": 1.0,
+      "n_items": 120,
+      "n_runs": 3
+    },
+    "majority_vote_accuracy": {
+      "n": 120,
+      "n_correct": 118,
+      "accuracy": 0.9833333333333333,
+      "wilson_ci_lower": 0.9412640370278411,
+      "wilson_ci_upper": 0.9954174354340789
+    },
+    "majority_vote_clean_rate": 1.0
+  },
+  "planner_consistency": {
+    "field": "recommended_tool",
+    "n_prompts_with_all_repeats": 120,
+    "repeats_present": [
+      1,
+      2,
+      3
+    ],
+    "agreement": {
+      "mean_pairwise_agreement": 1.0,
+      "pairwise_rates": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_consistency_rate": 1.0,
+      "n_items": 120,
+      "n_runs": 3
+    },
+    "majority_vote_accuracy": {
+      "n": 120,
+      "n_correct": 118,
+      "accuracy": 0.9833333333333333,
+      "wilson_ci_lower": 0.9412640370278411,
+      "wilson_ci_upper": 0.9954174354340789
+    }
+  },
+  "planner_router_agreement": {
+    "n_matched_calls": 360,
+    "n_agree": 354,
+    "agreement_rate": 0.9833333333333333,
+    "wilson_ci_lower": 0.9641208412232218,
+    "wilson_ci_upper": 0.9923397037843743
+  },
+  "planner_vs_router_mcnemar": {
+    "n_matched_calls": 360,
+    "mcnemar": {
+      "b": 3,
+      "c": 3,
+      "n_discordant": 6,
+      "p_value": 1.0
+    },
+    "bootstrap_accuracy_diff": {
+      "mean_diff": 0.0,
+      "ci_lower": -0.013888888888888888,
+      "ci_upper": 0.013888888888888888,
+      "n": 360,
+      "n_resamples": 10000,
+      "seed": 20260818,
+      "alpha": 0.05
+    }
+  },
+  "router_confusion_matrix": {
+    "labels": [
+      "binary_edrip",
+      "causal_ate",
+      "hello_world",
+      "linear_regression",
+      "logistic_regression",
+      "summary_stats",
+      "survival_adjusted_curves"
+    ],
+    "matrix": {
+      "binary_edrip": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "causal_ate": {
+        "binary_edrip": 0,
+        "causal_ate": 174,
+        "hello_world": 0,
+        "linear_regression": 6,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "hello_world": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "linear_regression": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "logistic_regression": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "summary_stats": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "survival_adjusted_curves": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 180
+      }
+    }
+  },
+  "router_confusion_pairs": {
+    "causal_ate -> linear_regression": 6
+  },
+  "router_accuracy_majority_vote": {
+    "overall": {
+      "n": 120,
+      "n_correct": 118,
+      "accuracy": 0.9833333333333333,
+      "wilson_ci_lower": 0.9412640370278411,
+      "wilson_ci_upper": 0.9954174354340789
+    },
+    "by_capability": {
+      "causal_ate": {
+        "n": 60,
+        "n_correct": 58,
+        "accuracy": 0.9666666666666667,
+        "wilson_ci_lower": 0.886362257256914,
+        "wilson_ci_upper": 0.990810680743802
+      },
+      "survival_adjusted_curves": {
+        "n": 60,
+        "n_correct": 60,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.93982814785791,
+        "wilson_ci_upper": 0.9999999999999998
+      }
+    },
+    "by_category": {
+      "explicit_method": {
+        "n": 20,
+        "n_correct": 20,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8388748419471806,
+        "wilson_ci_upper": 1.0
+      },
+      "formal_estimand": {
+        "n": 20,
+        "n_correct": 20,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8388748419471806,
+        "wilson_ci_upper": 1.0
+      },
+      "biomedical_domain": {
+        "n": 20,
+        "n_correct": 19,
+        "accuracy": 0.95,
+        "wilson_ci_lower": 0.763868806553258,
+        "wilson_ci_upper": 0.9911185511992047
+      },
+      "indirect_colloquial": {
+        "n": 20,
+        "n_correct": 19,
+        "accuracy": 0.95,
+        "wilson_ci_lower": 0.763868806553258,
+        "wilson_ci_upper": 0.9911185511992047
+      },
+      "noisy_verbose": {
+        "n": 20,
+        "n_correct": 20,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8388748419471806,
+        "wilson_ci_upper": 1.0
+      },
+      "near_boundary": {
+        "n": 20,
+        "n_correct": 20,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8388748419471806,
+        "wilson_ci_upper": 1.0
+      }
+    },
+    "clean_majority_rate": 1.0
+  },
+  "planner_accuracy_majority_vote": {
+    "overall": {
+      "n": 120,
+      "n_correct": 118,
+      "accuracy": 0.9833333333333333,
+      "wilson_ci_lower": 0.9412640370278411,
+      "wilson_ci_upper": 0.9954174354340789
+    },
+    "by_capability": {
+      "causal_ate": {
+        "n": 60,
+        "n_correct": 58,
+        "accuracy": 0.9666666666666667,
+        "wilson_ci_lower": 0.886362257256914,
+        "wilson_ci_upper": 0.990810680743802
+      },
+      "survival_adjusted_curves": {
+        "n": 60,
+        "n_correct": 60,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.93982814785791,
+        "wilson_ci_upper": 0.9999999999999998
+      }
+    },
+    "by_category": {
+      "explicit_method": {
+        "n": 20,
+        "n_correct": 20,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8388748419471806,
+        "wilson_ci_upper": 1.0
+      },
+      "formal_estimand": {
+        "n": 20,
+        "n_correct": 20,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8388748419471806,
+        "wilson_ci_upper": 1.0
+      },
+      "biomedical_domain": {
+        "n": 20,
+        "n_correct": 19,
+        "accuracy": 0.95,
+        "wilson_ci_lower": 0.763868806553258,
+        "wilson_ci_upper": 0.9911185511992047
+      },
+      "indirect_colloquial": {
+        "n": 20,
+        "n_correct": 19,
+        "accuracy": 0.95,
+        "wilson_ci_lower": 0.763868806553258,
+        "wilson_ci_upper": 0.9911185511992047
+      },
+      "noisy_verbose": {
+        "n": 20,
+        "n_correct": 20,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8388748419471806,
+        "wilson_ci_upper": 1.0
+      },
+      "near_boundary": {
+        "n": 20,
+        "n_correct": 20,
+        "accuracy": 1.0,
+        "wilson_ci_lower": 0.8388748419471806,
+        "wilson_ci_upper": 1.0
+      }
+    },
+    "clean_majority_rate": 1.0
+  },
+  "router_consistency_stratified": {
+    "repeats_present": [
+      1,
+      2,
+      3
+    ],
+    "n_prompts_with_all_repeats": 120,
+    "overall": {
+      "mean_pairwise_agreement": 1.0,
+      "pairwise_rates": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_consistency_rate": 1.0,
+      "n_items": 120,
+      "n_runs": 3,
+      "n_prompts": 120
+    },
+    "by_capability": {
+      "causal_ate": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 60,
+        "n_runs": 3,
+        "n_prompts": 60
+      },
+      "survival_adjusted_curves": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 60,
+        "n_runs": 3,
+        "n_prompts": 60
+      }
+    },
+    "by_category": {
+      "explicit_method": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 20,
+        "n_runs": 3,
+        "n_prompts": 20
+      },
+      "formal_estimand": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 20,
+        "n_runs": 3,
+        "n_prompts": 20
+      },
+      "biomedical_domain": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 20,
+        "n_runs": 3,
+        "n_prompts": 20
+      },
+      "indirect_colloquial": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 20,
+        "n_runs": 3,
+        "n_prompts": 20
+      },
+      "noisy_verbose": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 20,
+        "n_runs": 3,
+        "n_prompts": 20
+      },
+      "near_boundary": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 20,
+        "n_runs": 3,
+        "n_prompts": 20
+      }
+    }
+  },
+  "planner_consistency_stratified": {
+    "repeats_present": [
+      1,
+      2,
+      3
+    ],
+    "n_prompts_with_all_repeats": 120,
+    "overall": {
+      "mean_pairwise_agreement": 1.0,
+      "pairwise_rates": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "full_consistency_rate": 1.0,
+      "n_items": 120,
+      "n_runs": 3,
+      "n_prompts": 120
+    },
+    "by_capability": {
+      "causal_ate": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 60,
+        "n_runs": 3,
+        "n_prompts": 60
+      },
+      "survival_adjusted_curves": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 60,
+        "n_runs": 3,
+        "n_prompts": 60
+      }
+    },
+    "by_category": {
+      "explicit_method": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 20,
+        "n_runs": 3,
+        "n_prompts": 20
+      },
+      "formal_estimand": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 20,
+        "n_runs": 3,
+        "n_prompts": 20
+      },
+      "biomedical_domain": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 20,
+        "n_runs": 3,
+        "n_prompts": 20
+      },
+      "indirect_colloquial": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 20,
+        "n_runs": 3,
+        "n_prompts": 20
+      },
+      "noisy_verbose": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 20,
+        "n_runs": 3,
+        "n_prompts": 20
+      },
+      "near_boundary": {
+        "mean_pairwise_agreement": 1.0,
+        "pairwise_rates": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "full_consistency_rate": 1.0,
+        "n_items": 20,
+        "n_runs": 3,
+        "n_prompts": 20
+      }
+    }
+  },
+  "router_confusion_matrix_majority_vote": {
+    "labels": [
+      "binary_edrip",
+      "causal_ate",
+      "hello_world",
+      "linear_regression",
+      "logistic_regression",
+      "summary_stats",
+      "survival_adjusted_curves"
+    ],
+    "matrix": {
+      "binary_edrip": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "causal_ate": {
+        "binary_edrip": 0,
+        "causal_ate": 58,
+        "hello_world": 0,
+        "linear_regression": 2,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "hello_world": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "linear_regression": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "logistic_regression": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "summary_stats": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "survival_adjusted_curves": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 60
+      }
+    }
+  },
+  "planner_confusion_matrix_majority_vote": {
+    "labels": [
+      "binary_edrip",
+      "causal_ate",
+      "hello_world",
+      "linear_regression",
+      "logistic_regression",
+      "summary_stats",
+      "survival_adjusted_curves"
+    ],
+    "matrix": {
+      "binary_edrip": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "causal_ate": {
+        "binary_edrip": 0,
+        "causal_ate": 58,
+        "hello_world": 0,
+        "linear_regression": 2,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "hello_world": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "linear_regression": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "logistic_regression": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "summary_stats": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 0
+      },
+      "survival_adjusted_curves": {
+        "binary_edrip": 0,
+        "causal_ate": 0,
+        "hello_world": 0,
+        "linear_regression": 0,
+        "logistic_regression": 0,
+        "summary_stats": 0,
+        "survival_adjusted_curves": 60
+      }
+    }
+  },
+  "planner_vs_deterministic_baseline": {
+    "description": "GPT-5.4 planner recommended_tool, prompt-level majority vote across 3 repeats, vs. the repository's existing deterministic _fallback_plan() baseline, on the same 120 supported prompts. NOT the same comparison as planner-vs-router agreement/McNemar (see analysis/agreement.py).",
+    "overall": {
+      "n": 120,
+      "gpt_majority_vote_accuracy": {
+        "n": 120,
+        "n_correct": 118,
+        "accuracy": 0.9833333333333333,
+        "wilson_ci_lower": 0.9412640370278411,
+        "wilson_ci_upper": 0.9954174354340789
+      },
+      "deterministic_baseline_accuracy": {
+        "n": 120,
+        "n_correct": 89,
+        "accuracy": 0.7416666666666667,
+        "wilson_ci_lower": 0.6567146994175665,
+        "wilson_ci_upper": 0.8116260368133935
+      },
+      "absolute_difference_percentage_points": 24.166666666666657,
+      "mcnemar": {
+        "b": 29,
+        "c": 0,
+        "n_discordant": 29,
+        "p_value": 3.725290298461919e-09
+      },
+      "paired_bootstrap_accuracy_diff": {
+        "mean_diff": 0.24166666666666667,
+        "ci_lower": 0.16666666666666666,
+        "ci_upper": 0.31666666666666665,
+        "n": 120,
+        "n_resamples": 10000,
+        "seed": 20260818,
+        "alpha": 0.05
+      }
+    },
+    "by_capability": {
+      "causal_ate": {
+        "n": 60,
+        "gpt_majority_vote_accuracy": {
+          "n": 60,
+          "n_correct": 58,
+          "accuracy": 0.9666666666666667,
+          "wilson_ci_lower": 0.886362257256914,
+          "wilson_ci_upper": 0.990810680743802
+        },
+        "deterministic_baseline_accuracy": {
+          "n": 60,
+          "n_correct": 38,
+          "accuracy": 0.6333333333333333,
+          "wilson_ci_lower": 0.5068300063010303,
+          "wilson_ci_upper": 0.7437908331277457
+        },
+        "absolute_difference_percentage_points": 33.333333333333336,
+        "mcnemar": {
+          "b": 20,
+          "c": 0,
+          "n_discordant": 20,
+          "p_value": 1.907348632812501e-06
+        },
+        "paired_bootstrap_accuracy_diff": {
+          "mean_diff": 0.3333333333333333,
+          "ci_lower": 0.21666666666666667,
+          "ci_upper": 0.45,
+          "n": 60,
+          "n_resamples": 10000,
+          "seed": 20260818,
+          "alpha": 0.05
+        }
+      },
+      "survival_adjusted_curves": {
+        "n": 60,
+        "gpt_majority_vote_accuracy": {
+          "n": 60,
+          "n_correct": 60,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.93982814785791,
+          "wilson_ci_upper": 0.9999999999999998
+        },
+        "deterministic_baseline_accuracy": {
+          "n": 60,
+          "n_correct": 51,
+          "accuracy": 0.85,
+          "wilson_ci_lower": 0.7388541093022145,
+          "wilson_ci_upper": 0.9190255941983225
+        },
+        "absolute_difference_percentage_points": 15.000000000000002,
+        "mcnemar": {
+          "b": 9,
+          "c": 0,
+          "n_discordant": 9,
+          "p_value": 0.003906250000000001
+        },
+        "paired_bootstrap_accuracy_diff": {
+          "mean_diff": 0.15,
+          "ci_lower": 0.06666666666666667,
+          "ci_upper": 0.25,
+          "n": 60,
+          "n_resamples": 10000,
+          "seed": 20260818,
+          "alpha": 0.05
+        }
+      }
+    },
+    "by_category": {
+      "explicit_method": {
+        "n": 20,
+        "gpt_majority_vote_accuracy": {
+          "n": 20,
+          "n_correct": 20,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.8388748419471806,
+          "wilson_ci_upper": 1.0
+        },
+        "deterministic_baseline_accuracy": {
+          "n": 20,
+          "n_correct": 20,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.8388748419471806,
+          "wilson_ci_upper": 1.0
+        },
+        "absolute_difference_percentage_points": 0.0,
+        "mcnemar": {
+          "b": 0,
+          "c": 0,
+          "n_discordant": 0,
+          "p_value": 1.0
+        },
+        "paired_bootstrap_accuracy_diff": {
+          "mean_diff": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "n": 20,
+          "n_resamples": 10000,
+          "seed": 20260818,
+          "alpha": 0.05
+        }
+      },
+      "formal_estimand": {
+        "n": 20,
+        "gpt_majority_vote_accuracy": {
+          "n": 20,
+          "n_correct": 20,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.8388748419471806,
+          "wilson_ci_upper": 1.0
+        },
+        "deterministic_baseline_accuracy": {
+          "n": 20,
+          "n_correct": 19,
+          "accuracy": 0.95,
+          "wilson_ci_lower": 0.763868806553258,
+          "wilson_ci_upper": 0.9911185511992047
+        },
+        "absolute_difference_percentage_points": 5.000000000000004,
+        "mcnemar": {
+          "b": 1,
+          "c": 0,
+          "n_discordant": 1,
+          "p_value": 0.9999999999999999
+        },
+        "paired_bootstrap_accuracy_diff": {
+          "mean_diff": 0.05,
+          "ci_lower": 0.0,
+          "ci_upper": 0.15,
+          "n": 20,
+          "n_resamples": 10000,
+          "seed": 20260818,
+          "alpha": 0.05
+        }
+      },
+      "biomedical_domain": {
+        "n": 20,
+        "gpt_majority_vote_accuracy": {
+          "n": 20,
+          "n_correct": 19,
+          "accuracy": 0.95,
+          "wilson_ci_lower": 0.763868806553258,
+          "wilson_ci_upper": 0.9911185511992047
+        },
+        "deterministic_baseline_accuracy": {
+          "n": 20,
+          "n_correct": 8,
+          "accuracy": 0.4,
+          "wilson_ci_lower": 0.2188065323728171,
+          "wilson_ci_upper": 0.6134184992377469
+        },
+        "absolute_difference_percentage_points": 54.99999999999999,
+        "mcnemar": {
+          "b": 11,
+          "c": 0,
+          "n_discordant": 11,
+          "p_value": 0.0009765625
+        },
+        "paired_bootstrap_accuracy_diff": {
+          "mean_diff": 0.55,
+          "ci_lower": 0.35,
+          "ci_upper": 0.75,
+          "n": 20,
+          "n_resamples": 10000,
+          "seed": 20260818,
+          "alpha": 0.05
+        }
+      },
+      "indirect_colloquial": {
+        "n": 20,
+        "gpt_majority_vote_accuracy": {
+          "n": 20,
+          "n_correct": 19,
+          "accuracy": 0.95,
+          "wilson_ci_lower": 0.763868806553258,
+          "wilson_ci_upper": 0.9911185511992047
+        },
+        "deterministic_baseline_accuracy": {
+          "n": 20,
+          "n_correct": 5,
+          "accuracy": 0.25,
+          "wilson_ci_lower": 0.11186170140766569,
+          "wilson_ci_upper": 0.46870087761874407
+        },
+        "absolute_difference_percentage_points": 70.0,
+        "mcnemar": {
+          "b": 14,
+          "c": 0,
+          "n_discordant": 14,
+          "p_value": 0.00012207031250000003
+        },
+        "paired_bootstrap_accuracy_diff": {
+          "mean_diff": 0.7,
+          "ci_lower": 0.5,
+          "ci_upper": 0.9,
+          "n": 20,
+          "n_resamples": 10000,
+          "seed": 20260818,
+          "alpha": 0.05
+        }
+      },
+      "noisy_verbose": {
+        "n": 20,
+        "gpt_majority_vote_accuracy": {
+          "n": 20,
+          "n_correct": 20,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.8388748419471806,
+          "wilson_ci_upper": 1.0
+        },
+        "deterministic_baseline_accuracy": {
+          "n": 20,
+          "n_correct": 20,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.8388748419471806,
+          "wilson_ci_upper": 1.0
+        },
+        "absolute_difference_percentage_points": 0.0,
+        "mcnemar": {
+          "b": 0,
+          "c": 0,
+          "n_discordant": 0,
+          "p_value": 1.0
+        },
+        "paired_bootstrap_accuracy_diff": {
+          "mean_diff": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "n": 20,
+          "n_resamples": 10000,
+          "seed": 20260818,
+          "alpha": 0.05
+        }
+      },
+      "near_boundary": {
+        "n": 20,
+        "gpt_majority_vote_accuracy": {
+          "n": 20,
+          "n_correct": 20,
+          "accuracy": 1.0,
+          "wilson_ci_lower": 0.8388748419471806,
+          "wilson_ci_upper": 1.0
+        },
+        "deterministic_baseline_accuracy": {
+          "n": 20,
+          "n_correct": 17,
+          "accuracy": 0.85,
+          "wilson_ci_lower": 0.639581135259243,
+          "wilson_ci_upper": 0.9476312541037835
+        },
+        "absolute_difference_percentage_points": 15.000000000000002,
+        "mcnemar": {
+          "b": 3,
+          "c": 0,
+          "n_discordant": 3,
+          "p_value": 0.25
+        },
+        "paired_bootstrap_accuracy_diff": {
+          "mean_diff": 0.15,
+          "ci_lower": 0.0,
+          "ci_upper": 0.3,
+          "n": 20,
+          "n_resamples": 10000,
+          "seed": 20260818,
+          "alpha": 0.05
+        }
+      }
+    },
+    "paired_items": [
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_01",
+        "capability": "causal_ate",
+        "category": "biomedical_domain",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_02",
+        "capability": "causal_ate",
+        "category": "biomedical_domain",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_03",
+        "capability": "causal_ate",
+        "category": "biomedical_domain",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_04",
+        "capability": "causal_ate",
+        "category": "biomedical_domain",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_05",
+        "capability": "causal_ate",
+        "category": "biomedical_domain",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "linear_regression",
+        "gpt_majority_correct": false,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "linear_regression",
+          "linear_regression",
+          "linear_regression"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_06",
+        "capability": "causal_ate",
+        "category": "biomedical_domain",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_07",
+        "capability": "causal_ate",
+        "category": "biomedical_domain",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_08",
+        "capability": "causal_ate",
+        "category": "biomedical_domain",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_09",
+        "capability": "causal_ate",
+        "category": "biomedical_domain",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_biomedical_domain_10",
+        "capability": "causal_ate",
+        "category": "biomedical_domain",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_01",
+        "capability": "causal_ate",
+        "category": "explicit_method",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_02",
+        "capability": "causal_ate",
+        "category": "explicit_method",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_03",
+        "capability": "causal_ate",
+        "category": "explicit_method",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_04",
+        "capability": "causal_ate",
+        "category": "explicit_method",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_05",
+        "capability": "causal_ate",
+        "category": "explicit_method",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_06",
+        "capability": "causal_ate",
+        "category": "explicit_method",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_07",
+        "capability": "causal_ate",
+        "category": "explicit_method",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_08",
+        "capability": "causal_ate",
+        "category": "explicit_method",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_09",
+        "capability": "causal_ate",
+        "category": "explicit_method",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_explicit_method_10",
+        "capability": "causal_ate",
+        "category": "explicit_method",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_01",
+        "capability": "causal_ate",
+        "category": "formal_estimand",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_02",
+        "capability": "causal_ate",
+        "category": "formal_estimand",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_03",
+        "capability": "causal_ate",
+        "category": "formal_estimand",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_04",
+        "capability": "causal_ate",
+        "category": "formal_estimand",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_05",
+        "capability": "causal_ate",
+        "category": "formal_estimand",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_06",
+        "capability": "causal_ate",
+        "category": "formal_estimand",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_07",
+        "capability": "causal_ate",
+        "category": "formal_estimand",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_08",
+        "capability": "causal_ate",
+        "category": "formal_estimand",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_09",
+        "capability": "causal_ate",
+        "category": "formal_estimand",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_formal_estimand_10",
+        "capability": "causal_ate",
+        "category": "formal_estimand",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_01",
+        "capability": "causal_ate",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_02",
+        "capability": "causal_ate",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_03",
+        "capability": "causal_ate",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "linear_regression",
+        "gpt_majority_correct": false,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "linear_regression",
+          "linear_regression",
+          "linear_regression"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_04",
+        "capability": "causal_ate",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_05",
+        "capability": "causal_ate",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_06",
+        "capability": "causal_ate",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_07",
+        "capability": "causal_ate",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_08",
+        "capability": "causal_ate",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_09",
+        "capability": "causal_ate",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_indirect_colloquial_10",
+        "capability": "causal_ate",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_01",
+        "capability": "causal_ate",
+        "category": "near_boundary",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_02",
+        "capability": "causal_ate",
+        "category": "near_boundary",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_03",
+        "capability": "causal_ate",
+        "category": "near_boundary",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_04",
+        "capability": "causal_ate",
+        "category": "near_boundary",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_05",
+        "capability": "causal_ate",
+        "category": "near_boundary",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_06",
+        "capability": "causal_ate",
+        "category": "near_boundary",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_07",
+        "capability": "causal_ate",
+        "category": "near_boundary",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_08",
+        "capability": "causal_ate",
+        "category": "near_boundary",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_09",
+        "capability": "causal_ate",
+        "category": "near_boundary",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_near_boundary_10",
+        "capability": "causal_ate",
+        "category": "near_boundary",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_01",
+        "capability": "causal_ate",
+        "category": "noisy_verbose",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_02",
+        "capability": "causal_ate",
+        "category": "noisy_verbose",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_03",
+        "capability": "causal_ate",
+        "category": "noisy_verbose",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_04",
+        "capability": "causal_ate",
+        "category": "noisy_verbose",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_05",
+        "capability": "causal_ate",
+        "category": "noisy_verbose",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_06",
+        "capability": "causal_ate",
+        "category": "noisy_verbose",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_07",
+        "capability": "causal_ate",
+        "category": "noisy_verbose",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_08",
+        "capability": "causal_ate",
+        "category": "noisy_verbose",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_09",
+        "capability": "causal_ate",
+        "category": "noisy_verbose",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_causal_ate_noisy_verbose_10",
+        "capability": "causal_ate",
+        "category": "noisy_verbose",
+        "gold_capability_id": "causal_ate",
+        "gpt_majority_label": "causal_ate",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "causal_ate",
+          "causal_ate",
+          "causal_ate"
+        ],
+        "deterministic_label": "causal_ate",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_01",
+        "capability": "survival_adjusted_curves",
+        "category": "biomedical_domain",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_02",
+        "capability": "survival_adjusted_curves",
+        "category": "biomedical_domain",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_03",
+        "capability": "survival_adjusted_curves",
+        "category": "biomedical_domain",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_04",
+        "capability": "survival_adjusted_curves",
+        "category": "biomedical_domain",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_05",
+        "capability": "survival_adjusted_curves",
+        "category": "biomedical_domain",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_06",
+        "capability": "survival_adjusted_curves",
+        "category": "biomedical_domain",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_07",
+        "capability": "survival_adjusted_curves",
+        "category": "biomedical_domain",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_08",
+        "capability": "survival_adjusted_curves",
+        "category": "biomedical_domain",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_09",
+        "capability": "survival_adjusted_curves",
+        "category": "biomedical_domain",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_biomedical_domain_10",
+        "capability": "survival_adjusted_curves",
+        "category": "biomedical_domain",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_01",
+        "capability": "survival_adjusted_curves",
+        "category": "explicit_method",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_02",
+        "capability": "survival_adjusted_curves",
+        "category": "explicit_method",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_03",
+        "capability": "survival_adjusted_curves",
+        "category": "explicit_method",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_04",
+        "capability": "survival_adjusted_curves",
+        "category": "explicit_method",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_05",
+        "capability": "survival_adjusted_curves",
+        "category": "explicit_method",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_06",
+        "capability": "survival_adjusted_curves",
+        "category": "explicit_method",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_07",
+        "capability": "survival_adjusted_curves",
+        "category": "explicit_method",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_08",
+        "capability": "survival_adjusted_curves",
+        "category": "explicit_method",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_09",
+        "capability": "survival_adjusted_curves",
+        "category": "explicit_method",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_explicit_method_10",
+        "capability": "survival_adjusted_curves",
+        "category": "explicit_method",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_01",
+        "capability": "survival_adjusted_curves",
+        "category": "formal_estimand",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_02",
+        "capability": "survival_adjusted_curves",
+        "category": "formal_estimand",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_03",
+        "capability": "survival_adjusted_curves",
+        "category": "formal_estimand",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_04",
+        "capability": "survival_adjusted_curves",
+        "category": "formal_estimand",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_05",
+        "capability": "survival_adjusted_curves",
+        "category": "formal_estimand",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_06",
+        "capability": "survival_adjusted_curves",
+        "category": "formal_estimand",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_07",
+        "capability": "survival_adjusted_curves",
+        "category": "formal_estimand",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_08",
+        "capability": "survival_adjusted_curves",
+        "category": "formal_estimand",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_09",
+        "capability": "survival_adjusted_curves",
+        "category": "formal_estimand",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_formal_estimand_10",
+        "capability": "survival_adjusted_curves",
+        "category": "formal_estimand",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_01",
+        "capability": "survival_adjusted_curves",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_02",
+        "capability": "survival_adjusted_curves",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_03",
+        "capability": "survival_adjusted_curves",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_04",
+        "capability": "survival_adjusted_curves",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_05",
+        "capability": "survival_adjusted_curves",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_06",
+        "capability": "survival_adjusted_curves",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_07",
+        "capability": "survival_adjusted_curves",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_08",
+        "capability": "survival_adjusted_curves",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_09",
+        "capability": "survival_adjusted_curves",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_indirect_colloquial_10",
+        "capability": "survival_adjusted_curves",
+        "category": "indirect_colloquial",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "summary_stats",
+        "deterministic_correct": false
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_01",
+        "capability": "survival_adjusted_curves",
+        "category": "near_boundary",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_02",
+        "capability": "survival_adjusted_curves",
+        "category": "near_boundary",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_03",
+        "capability": "survival_adjusted_curves",
+        "category": "near_boundary",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_04",
+        "capability": "survival_adjusted_curves",
+        "category": "near_boundary",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_05",
+        "capability": "survival_adjusted_curves",
+        "category": "near_boundary",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_06",
+        "capability": "survival_adjusted_curves",
+        "category": "near_boundary",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_07",
+        "capability": "survival_adjusted_curves",
+        "category": "near_boundary",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_08",
+        "capability": "survival_adjusted_curves",
+        "category": "near_boundary",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_09",
+        "capability": "survival_adjusted_curves",
+        "category": "near_boundary",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_near_boundary_10",
+        "capability": "survival_adjusted_curves",
+        "category": "near_boundary",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_01",
+        "capability": "survival_adjusted_curves",
+        "category": "noisy_verbose",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_02",
+        "capability": "survival_adjusted_curves",
+        "category": "noisy_verbose",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_03",
+        "capability": "survival_adjusted_curves",
+        "category": "noisy_verbose",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_04",
+        "capability": "survival_adjusted_curves",
+        "category": "noisy_verbose",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_05",
+        "capability": "survival_adjusted_curves",
+        "category": "noisy_verbose",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_06",
+        "capability": "survival_adjusted_curves",
+        "category": "noisy_verbose",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_07",
+        "capability": "survival_adjusted_curves",
+        "category": "noisy_verbose",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_08",
+        "capability": "survival_adjusted_curves",
+        "category": "noisy_verbose",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_09",
+        "capability": "survival_adjusted_curves",
+        "category": "noisy_verbose",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      },
+      {
+        "prompt_id": "sup_survival_noisy_verbose_10",
+        "capability": "survival_adjusted_curves",
+        "category": "noisy_verbose",
+        "gold_capability_id": "survival_adjusted_curves",
+        "gpt_majority_label": "survival_adjusted_curves",
+        "gpt_majority_correct": true,
+        "gpt_majority_is_clean": true,
+        "gpt_repeat_labels": [
+          "survival_adjusted_curves",
+          "survival_adjusted_curves",
+          "survival_adjusted_curves"
+        ],
+        "deterministic_label": "survival_adjusted_curves",
+        "deterministic_correct": true
+      }
+    ]
+  },
+  "live_run_summaries": {
+    "router_supported": {
+      "n_calls": 360,
+      "n_api_success": 360,
+      "n_api_failure": 0,
+      "n_fallback_or_likely_fallback": 0,
+      "n_model_substituted": 0,
+      "requested_models": [
+        "gpt-5.4"
+      ],
+      "returned_models_observed": [
+        "gpt-5.4-2026-03-05"
+      ],
+      "n_duplicate_prompt_repeat_keys": 0
+    },
+    "planner_supported": {
+      "n_calls": 360,
+      "n_api_success": 360,
+      "n_api_failure": 0,
+      "n_fallback_or_likely_fallback": 0,
+      "n_model_substituted": 0,
+      "requested_models": [
+        "gpt-5.4"
+      ],
+      "returned_models_observed": [
+        "gpt-5.4-2026-03-05"
+      ],
+      "n_duplicate_prompt_repeat_keys": 0
+    },
+    "router_challenge": {
+      "n_calls": 30,
+      "n_api_success": 30,
+      "n_api_failure": 0,
+      "n_fallback_or_likely_fallback": 0,
+      "n_model_substituted": 0,
+      "requested_models": [
+        "gpt-5.4"
+      ],
+      "returned_models_observed": [
+        "gpt-5.4-2026-03-05"
+      ]
+    },
+    "planner_challenge": {
+      "n_calls": 30,
+      "n_api_success": 30,
+      "n_api_failure": 0,
+      "n_fallback_or_likely_fallback": 0,
+      "n_model_substituted": 0,
+      "requested_models": [
+        "gpt-5.4"
+      ],
+      "returned_models_observed": [
+        "gpt-5.4-2026-03-05"
+      ]
+    }
+  },
+  "challenge_descriptive": {
+    "note": "Descriptive only -- no challenge prompt has a single correct gold capability_id by design, so no accuracy/abstention/safety score is computed here. See EVALUATION_PROTOCOL.md 'Challenge set scoring'.",
+    "n_router_calls": 30,
+    "n_planner_calls": 30,
+    "n_router_fallback": 0,
+    "n_router_api_failure": 0,
+    "n_planner_likely_fallback_by_content_match": 0,
+    "n_planner_api_failure": 0,
+    "router_predicted_capability_distribution_by_challenge_type": {
+      "underspecified": {
+        "causal_ate": 9,
+        "summary_stats": 1
+      },
+      "unsupported_method": {
+        "linear_regression": 1,
+        "causal_ate": 8,
+        "logistic_regression": 1
+      },
+      "out_of_scope_mixed": {
+        "hello_world": 7,
+        "linear_regression": 1,
+        "summary_stats": 1,
+        "causal_ate": 1
+      }
+    },
+    "planner_recommended_tool_distribution_by_challenge_type": {
+      "underspecified": {
+        "causal_ate": 9,
+        "survival_adjusted_curves": 1
+      },
+      "unsupported_method": {
+        "causal_ate": 10
+      },
+      "out_of_scope_mixed": {
+        "summary_stats": 8,
+        "linear_regression": 1,
+        "causal_ate": 1
+      }
+    },
+    "router_detail": [
+      {
+        "prompt_id": "chal_out_of_scope_mixed_01",
+        "challenge_type": "out_of_scope_mixed",
+        "predicted_capability_id": "hello_world",
+        "reason": "The user asks for weather information, which does not match any analytical capability provided. Among the allowed options, only the generic demo capability is the closest fallback.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Entirely unrelated to any registered capability; a correct system declines rather than forcing a capability_id."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_02",
+        "challenge_type": "out_of_scope_mixed",
+        "predicted_capability_id": "hello_world",
+        "reason": "The user requests creative writing, which does not match the analytical dataset capabilities. Among the allowed options, hello_world is the only non-analytic fallback/demo capability.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Creative writing request, not a data-analysis request; no registered capability applies."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_03",
+        "challenge_type": "out_of_scope_mixed",
+        "predicted_capability_id": "hello_world",
+        "reason": "The user requests a simple language translation, which does not match any analysis/modeling capability. Among the allowed options, the only non-analytic fallback/demo capability is hello_world.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Translation request, unrelated to any registered capability."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_04",
+        "challenge_type": "out_of_scope_mixed",
+        "predicted_capability_id": "linear_regression",
+        "reason": "The actionable analytical part of the request is to fit a regression of outcome on treatment in study.csv, which matches linear_regression. The email request is outside the allowed capabilities, so select the single best matching capability for the regression task.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Mixed intent: the email-sending portion is out of scope for any registered capability, even though the regression portion alone would be in scope; a correct system should not silently drop the out-of-scope half."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_05",
+        "challenge_type": "out_of_scope_mixed",
+        "predicted_capability_id": "hello_world",
+        "reason": "The user asks for a general cooking recipe, which does not match any analytical/statistical capability. Among the allowed options, hello_world is the only non-analytic fallback/demo capability.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Entirely unrelated to any registered capability."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_06",
+        "challenge_type": "out_of_scope_mixed",
+        "predicted_capability_id": "summary_stats",
+        "reason": "The request includes summarizing outcomes.csv, which matches dataset summary statistics/EDA. Flight booking is unsupported, so choose the single applicable capability for the actionable data task.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Mixed intent: flight booking is entirely out of scope; only the summarize-outcomes.csv portion loosely maps to summary_stats, so no single capability_id correctly answers the whole request."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_07",
+        "challenge_type": "out_of_scope_mixed",
+        "predicted_capability_id": "hello_world",
+        "reason": "The user requests code review for a Python function, which does not match any analysis/modeling capability provided. Among the allowed options, hello_world is the only non-analytic fallback.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "General code review request, unrelated to any registered capability."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_08",
+        "challenge_type": "out_of_scope_mixed",
+        "predicted_capability_id": "hello_world",
+        "reason": "The user asks a general knowledge question that does not match any analytical capability; among the allowed options, hello_world is the only non-analytic fallback.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "General trivia question, unrelated to any registered capability."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_09",
+        "challenge_type": "out_of_scope_mixed",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The request contains two tasks, but only one capability can be chosen. Among the allowed capabilities, only estimating the average treatment effect of a drug on an outcome in study.csv matches a listed capability. No reminder-setting capability is available.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Mixed intent: the reminder-setting portion is entirely out of scope even though the ATE portion alone would map to causal_ate; a correct system should not silently drop the out-of-scope half."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_10",
+        "challenge_type": "out_of_scope_mixed",
+        "predicted_capability_id": "hello_world",
+        "reason": "The user requests investment advice, which is outside the scope of the available data-analysis and causal-inference capabilities. Since no listed capability fits financial advice, the only non-domain-specific option is hello_world.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Financial advice request, unrelated to any registered capability."
+      },
+      {
+        "prompt_id": "chal_underspecified_01",
+        "challenge_type": "underspecified",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The user asks to analyze the effect of a treatment on outcomes, which is a general causal treatment-effect request best matched to estimating an average treatment effect rather than regression, EDA, or survival-curve-specific analysis.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "No single capability_id is correct: causal_ate, survival_adjusted_curves, binary_edrip, linear_regression, and logistic_regression are all defensible without knowing the outcome type, time structure, or requested output format."
+      },
+      {
+        "prompt_id": "chal_underspecified_02",
+        "challenge_type": "underspecified",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The user asks whether the treatment worked, which implies estimating an overall treatment-versus-control causal effect. This is a standard average treatment effect question, and there is no explicit indication that the outcome is binary, continuous-model fitting, survival curves, or simple EDA.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Worked' is undefined: could mean a single ATE, an adjusted survival comparison, or a regression association; column names give no outcome-type or time-structure signal."
+      },
+      {
+        "prompt_id": "chal_underspecified_03",
+        "challenge_type": "underspecified",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The user asks for the impact of a drug in a clinical trial dataset, which is a general treatment-versus-control causal effect question best matched to estimating an average treatment effect.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "No outcome type, time structure, or requested output (single estimate vs. curve) is given, so causal_ate and survival_adjusted_curves are equally plausible."
+      },
+      {
+        "prompt_id": "chal_underspecified_04",
+        "challenge_type": "underspecified",
+        "predicted_capability_id": "summary_stats",
+        "reason": "The request is ambiguous and only asks to compare two treatment groups over the study period without explicitly requesting a causal effect estimate, regression model, or survival curves. The safest fit is exploratory dataset comparison/EDA on the CSV.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Over the study period' hints at survival, but 'compare the two groups' without an outcome or event definition could equally resolve to causal_ate; no time/event/group fields are named."
+      },
+      {
+        "prompt_id": "chal_underspecified_05",
+        "challenge_type": "underspecified",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The user requests a generic causal analysis without specifying binary-outcome specialized estimation or survival curves, so the general-purpose average treatment effect method is the best fit.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Causal analysis' matches causal_ate, survival_adjusted_curves, and binary_edrip descriptions equally; no capability_id is uniquely correct."
+      },
+      {
+        "prompt_id": "chal_underspecified_06",
+        "challenge_type": "underspecified",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The user asks whether drug X makes a difference for patients versus not taking it, which is a standard treatment-versus-control causal effect question seeking an overall effect estimate. There is no indication of survival curves, binary-outcome specialized estimation, regression-only modeling, or simple EDA.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "No outcome variable, time structure, or requested output form is specified, leaving causal_ate and survival_adjusted_curves both defensible."
+      },
+      {
+        "prompt_id": "chal_underspecified_07",
+        "challenge_type": "underspecified",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The user asks to adjust for confounding and interpret what the treatment group data shows, which most closely matches a general causal treatment-versus-control effect estimation request. There is no explicit mention of binary outcome, regression modeling, survival curves, or simple EDA.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Adjust for confounding' matches every registered causal capability (causal_ate, survival_adjusted_curves, binary_edrip); no distinguishing outcome or time information is present."
+      },
+      {
+        "prompt_id": "chal_underspecified_08",
+        "challenge_type": "underspecified",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The user asks for the difference between treated and untreated groups, which implies estimating an overall treatment-versus-control effect. This is a standard causal effect request, not explicitly survival curves, binary-outcome specialized EDRIP, regression modeling, or simple summary statistics.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Cancer outcomes' could be a binary response, a continuous tumor measurement, or a time-to-event endpoint; the request does not disambiguate causal_ate vs survival_adjusted_curves."
+      },
+      {
+        "prompt_id": "chal_underspecified_09",
+        "challenge_type": "underspecified",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The user requests a single adjusted causal effect estimate from treatment_data.csv. This matches general-purpose average treatment effect estimation with covariate adjustment, not survival curves, regression-only prediction, or the specialized binary-outcome EDRIP method since no binary-outcome emphasis is given.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Causal effect estimate, adjusted properly' could mean an ATE, a binary_edrip-style doubly robust estimate, or (if the estimate is over time) a survival curve; no outcome or time field is named."
+      },
+      {
+        "prompt_id": "chal_underspecified_10",
+        "challenge_type": "underspecified",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The user asks whether an intervention helped and wants baseline differences between groups accounted for, which is a standard causal treatment-versus-control effect estimation request. They do not specify a binary outcome, regression modeling task, or survival curves, so the general-purpose adjusted average treatment effect method is the best fit.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Help' and 'account for baseline differences' are consistent with causal_ate, survival_adjusted_curves, or binary_edrip; no outcome type or time-to-event structure is specified."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_01",
+        "challenge_type": "unsupported_method",
+        "predicted_capability_id": "linear_regression",
+        "reason": "The request is for estimating the effect of statin uptake on a continuous outcome (cholesterol). There is no instrumental-variables-specific capability available, so the closest available modeling option for a continuous outcome is linear_regression.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "No registered capability implements instrumental-variables estimation; a correct system would decline or flag as unsupported rather than silently substituting causal_ate."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_02",
+        "challenge_type": "unsupported_method",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The request is for estimating a causal effect of eligibility at a cutoff on an outcome. There is no dedicated regression discontinuity capability available, and the closest allowed option for treatment effect estimation is the general-purpose causal_ate tool.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Regression discontinuity is not implemented by any registered capability; none of the 7 tools correctly answers this."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_03",
+        "challenge_type": "unsupported_method",
+        "predicted_capability_id": "logistic_regression",
+        "reason": "The request is to estimate a difference-in-differences model on readmission rates, which are typically binary. Among the available options, logistic_regression is the best fit for modeling a binary outcome using treated/control and pre/post indicators (and their interaction) as covariates. No dedicated DID capability is available.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Difference-in-differences panel estimation is not implemented; no registered capability correctly answers this."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_04",
+        "challenge_type": "unsupported_method",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The request is to estimate the effect of a policy intervention on an outcome using panel data. Synthetic control is a causal effect estimation task, and among the available options, causal_ate is the closest general-purpose capability for estimating an overall treatment effect. Other options are for regression, EDA, binary-specific methods, or survival curves.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Synthetic control methods are not implemented by any registered capability."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_05",
+        "challenge_type": "unsupported_method",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The request is for a causal effect decomposition, but no mediation-specific capability is available. Among the allowed options, causal_ate is the closest causal inference tool for estimating treatment effects; the other options are for regression, EDA, binary specialized estimation, survival curves, or a demo.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Mediation analysis (natural direct/indirect effect decomposition) is not implemented by any registered capability."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_06",
+        "challenge_type": "unsupported_method",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The request is for causal treatment effect estimation. Although it specifically asks for a causal forest and heterogeneous treatment effects, no dedicated HTE/causal forest capability is available. Among the allowed options, causal_ate is the closest causal inference capability for estimating treatment effects; regression, summary, binary-specific, and survival-curve tools are less appropriate.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Heterogeneous treatment effect estimation via causal forests is not implemented; causal_ate only estimates a single average effect, not subgroup-varying effects."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_07",
+        "challenge_type": "unsupported_method",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The request is for causal effect estimation of treatment timing on mortality, not summary statistics, regression-only modeling, binary-outcome specialized EDRIP, or survival curve visualization. Among the available options, causal_ate is the closest general-purpose causal inference capability, even though the requested parametric g-formula for time-varying treatment is more specialized than the listed tools.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Time-varying treatment g-computation / target trial emulation is not implemented; causal_ate only handles a single point-in-time treatment assignment."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_08",
+        "challenge_type": "unsupported_method",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The user requests estimation of the causal effect of an exposure on an outcome. Among the available options, causal_ate is the closest general-purpose causal inference capability for estimating an overall treatment effect. Other options are for binary-outcome specialized estimation, regression, summary statistics, or survival curves, and there is no dedicated front-door capability available.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Front-door adjustment is not implemented by any registered capability, all of which rely on backdoor/covariate adjustment."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_09",
+        "challenge_type": "unsupported_method",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The user requests estimation of a matched-sample average treatment effect using propensity score matching. Among the available capabilities, causal_ate is the general-purpose causal effect estimation option for a single overall treatment effect; the other options are for regression, EDA, binary specialized EDRIP, survival curves, or demo only.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Nearest-neighbor caliper matching as a distinct estimation algorithm is not implemented; the registered causal_ate tool uses covariate adjustment/weighting, not matching."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_10",
+        "challenge_type": "unsupported_method",
+        "predicted_capability_id": "causal_ate",
+        "reason": "The request is for causal effect estimation of a treatment/exposure using inverse probability weighting in a marginal structural model. Among the available options, causal_ate is the closest general-purpose causal inference capability for estimating an overall treatment effect; the survival-curves tool is only for explicit survival curve requests, and the regression/EDA tools do not match the causal MSM request.",
+        "fallback_detected": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Time-varying-exposure marginal structural models with censoring weights are not implemented; the registered survival tool only supports a single fixed baseline group assignment."
+      }
+    ],
+    "planner_detail": [
+      {
+        "prompt_id": "chal_out_of_scope_mixed_01",
+        "challenge_type": "out_of_scope_mixed",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "reasoning": "The user is asking for a weather forecast rather than a statistical analysis, so no supported statistical tool is appropriate; default to unknown with the fallback tool.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Entirely unrelated to any registered capability; a correct system declines rather than forcing a capability_id."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_02",
+        "challenge_type": "out_of_scope_mixed",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "reasoning": "The request is creative and does not specify an analytical objective, estimand, outcome, or model; default to unknown with the fallback tool.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Creative writing request, not a data-analysis request; no registered capability applies."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_03",
+        "challenge_type": "out_of_scope_mixed",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "reasoning": "The user requests language translation rather than statistical analysis, so no analysis tool is applicable; defaulting to the fallback tool.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Translation request, unrelated to any registered capability."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_04",
+        "challenge_type": "out_of_scope_mixed",
+        "recommended_tool": "linear_regression",
+        "task_type": "regression",
+        "outcome_type": "unknown",
+        "reasoning": "The actionable statistical request is to fit a regression of outcome on treatment; the email request is non-statistical and out of scope. With unspecified outcome scale, a basic regression routing choice is linear_regression.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Mixed intent: the email-sending portion is out of scope for any registered capability, even though the regression portion alone would be in scope; a correct system should not silently drop the out-of-scope half."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_05",
+        "challenge_type": "out_of_scope_mixed",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "reasoning": "The request is unrelated to statistical analysis or causal inference, so no analysis tool is appropriate; default to the fallback tool.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Entirely unrelated to any registered capability."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_06",
+        "challenge_type": "out_of_scope_mixed",
+        "recommended_tool": "summary_stats",
+        "task_type": "descriptive",
+        "outcome_type": "unknown",
+        "reasoning": "The user requests a dataset summary, which is a descriptive task best routed to summary statistics.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Mixed intent: flight booking is entirely out of scope; only the summarize-outcomes.csv portion loosely maps to summary_stats, so no single capability_id correctly answers the whole request."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_07",
+        "challenge_type": "out_of_scope_mixed",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "reasoning": "The user asks to review a Python function for bugs, which is outside the supported statistical analysis routing tasks. Defaulting to unknown with the fallback tool.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "General code review request, unrelated to any registered capability."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_08",
+        "challenge_type": "out_of_scope_mixed",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "reasoning": "This is a factual lookup question rather than a statistical analysis request, so no specialized analysis tool is appropriate.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "General trivia question, unrelated to any registered capability."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_09",
+        "challenge_type": "out_of_scope_mixed",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The statistical request is a causal treatment effect question asking for the ATE of a drug on an outcome, so causal_ate is the best match; the reminder request is non-analytic and not relevant for tool routing.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Mixed intent: the reminder-setting portion is entirely out of scope even though the ATE portion alone would map to causal_ate; a correct system should not silently drop the out-of-scope half."
+      },
+      {
+        "prompt_id": "chal_out_of_scope_mixed_10",
+        "challenge_type": "out_of_scope_mixed",
+        "recommended_tool": "summary_stats",
+        "task_type": "unknown",
+        "outcome_type": "unknown",
+        "reasoning": "The request is not a statistical analysis task and does not specify data, outcomes, or a causal/regression/survival objective; default to unknown with a generic summary-oriented route.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Financial advice request, unrelated to any registered capability."
+      },
+      {
+        "prompt_id": "chal_underspecified_01",
+        "challenge_type": "underspecified",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The request asks for the effect of a treatment on outcomes, which is a causal effect question best routed to an ATE estimation tool.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "No single capability_id is correct: causal_ate, survival_adjusted_curves, binary_edrip, linear_regression, and logistic_regression are all defensible without knowing the outcome type, time structure, or requested output format."
+      },
+      {
+        "prompt_id": "chal_underspecified_02",
+        "challenge_type": "underspecified",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The request is to determine whether treatment worked using treatment and outcome columns, which maps most directly to estimating a causal treatment effect.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Worked' is undefined: could mean a single ATE, an adjusted survival comparison, or a regression association; column names give no outcome-type or time-structure signal."
+      },
+      {
+        "prompt_id": "chal_underspecified_03",
+        "challenge_type": "underspecified",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The user asks for the impact of a drug, which implies estimating a treatment effect comparing treated versus control; outcome type is not specified, so causal ATE is the best general routing choice.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "No outcome type, time structure, or requested output (single estimate vs. curve) is given, so causal_ate and survival_adjusted_curves are equally plausible."
+      },
+      {
+        "prompt_id": "chal_underspecified_04",
+        "challenge_type": "underspecified",
+        "recommended_tool": "survival_adjusted_curves",
+        "task_type": "survival",
+        "outcome_type": "time_to_event",
+        "reasoning": "The request asks to compare two treatment groups over the study period, which implies follow-up over time and is best handled as a survival comparison.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Over the study period' hints at survival, but 'compare the two groups' without an outcome or event definition could equally resolve to causal_ate; no time/event/group fields are named."
+      },
+      {
+        "prompt_id": "chal_underspecified_05",
+        "challenge_type": "underspecified",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The request explicitly asks for causal analysis, so the appropriate routing is to estimate a treatment effect, most naturally the ATE, using a causal effect tool.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Causal analysis' matches causal_ate, survival_adjusted_curves, and binary_edrip descriptions equally; no capability_id is uniquely correct."
+      },
+      {
+        "prompt_id": "chal_underspecified_06",
+        "challenge_type": "underspecified",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The question asks whether drug X makes a difference versus not taking it, which is a treatment effect question best framed as estimating a causal average treatment effect rather than simple description.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "No outcome variable, time structure, or requested output form is specified, leaving causal_ate and survival_adjusted_curves both defensible."
+      },
+      {
+        "prompt_id": "chal_underspecified_07",
+        "challenge_type": "underspecified",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The request explicitly asks to adjust for confounding and interpret treatment group results, which is a causal treatment effect question best handled by an ATE estimation tool.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Adjust for confounding' matches every registered causal capability (causal_ate, survival_adjusted_curves, binary_edrip); no distinguishing outcome or time information is present."
+      },
+      {
+        "prompt_id": "chal_underspecified_08",
+        "challenge_type": "underspecified",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The request asks for the difference between treated and untreated groups, which is best framed as an average treatment effect comparison rather than pure description.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Cancer outcomes' could be a binary response, a continuous tumor measurement, or a time-to-event endpoint; the request does not disambiguate causal_ate vs survival_adjusted_curves."
+      },
+      {
+        "prompt_id": "chal_underspecified_09",
+        "challenge_type": "underspecified",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The request explicitly asks for a causal effect estimate with proper adjustment, which maps directly to estimating an ATE using a causal inference tool.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Causal effect estimate, adjusted properly' could mean an ATE, a binary_edrip-style doubly robust estimate, or (if the estimate is over time) a survival curve; no outcome or time field is named."
+      },
+      {
+        "prompt_id": "chal_underspecified_10",
+        "challenge_type": "underspecified",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The user asks whether the intervention helped and explicitly requests adjustment for baseline group differences, which implies a causal treatment effect estimation problem rather than simple descriptive comparison.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "'Help' and 'account for baseline differences' are consistent with causal_ate, survival_adjusted_curves, or binary_edrip; no outcome type or time-to-event structure is specified."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_01",
+        "challenge_type": "unsupported_method",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "continuous",
+        "reasoning": "The request is for a causal treatment effect with endogeneity addressed via an instrumental variable; the estimand is an IV-based causal effect of statin uptake on a continuous outcome.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "No registered capability implements instrumental-variables estimation; a correct system would decline or flag as unsupported rather than silently substituting causal_ate."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_02",
+        "challenge_type": "unsupported_method",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The request is for a causal effect at a policy eligibility threshold, which is a regression discontinuity estimand. Among available tools, causal_ate is the closest match for estimating a treatment effect, though the design specifically relies on the age cutoff.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Regression discontinuity is not implemented by any registered capability; none of the 7 tools correctly answers this."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_03",
+        "challenge_type": "unsupported_method",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "continuous",
+        "reasoning": "The request is to estimate a causal policy effect using treated/control and pre/post structure, which corresponds to a difference-in-differences estimand and is best routed as a causal effect analysis.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Difference-in-differences panel estimation is not implemented; no registered capability correctly answers this."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_04",
+        "challenge_type": "unsupported_method",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "continuous",
+        "reasoning": "The request is to estimate a policy's causal effect using a synthetic control design on panel data, so the statistical goal is causal effect estimation with a continuous outcome.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Synthetic control methods are not implemented by any registered capability."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_05",
+        "challenge_type": "unsupported_method",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The request is for causal decomposition of an intervention effect into mediated and direct components, which is a causal effect task centered on treatment and outcome with adherence as mediator. Among available tools, causal_ate is the closest match for causal effect estimation.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Mediation analysis (natural direct/indirect effect decomposition) is not implemented by any registered capability."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_06",
+        "challenge_type": "unsupported_method",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The request is to estimate heterogeneous causal effects, which is a causal inference task focused on subgroup-specific treatment effects. A causal effect tool is the closest match because it uses treatment, outcome, and covariates to estimate treatment effects, even though the specific method requested is a causal forest.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Heterogeneous treatment effect estimation via causal forests is not implemented; causal_ate only estimates a single average effect, not subgroup-varying effects."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_07",
+        "challenge_type": "unsupported_method",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "time_to_event",
+        "reasoning": "The request is a causal target trial emulation with time-varying treatment and mortality outcome. The estimand is a causal effect under dynamic treatment strategies; among available tools, causal_ate is the closest match for causal effect estimation, though the full parametric g-formula requires longitudinal structure and time-varying confounders.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Time-varying treatment g-computation / target trial emulation is not implemented; causal_ate only handles a single point-in-time treatment assignment."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_08",
+        "challenge_type": "unsupported_method",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The request is explicitly causal and asks for front-door identification of the exposure effect using a mediator under unmeasured exposure-outcome confounding, so the best routing is a causal effect estimation tool.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Front-door adjustment is not implemented by any registered capability, all of which rely on backdoor/covariate adjustment."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_09",
+        "challenge_type": "unsupported_method",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The request is for a causal treatment effect estimated via propensity score nearest-neighbor caliper matching rather than weighting, so the appropriate routing is a causal effect tool that can estimate an effect after matching.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Nearest-neighbor caliper matching as a distinct estimation algorithm is not implemented; the registered causal_ate tool uses covariate adjustment/weighting, not matching."
+      },
+      {
+        "prompt_id": "chal_unsupported_method_10",
+        "challenge_type": "unsupported_method",
+        "recommended_tool": "causal_ate",
+        "task_type": "causal_effect",
+        "outcome_type": "unknown",
+        "reasoning": "The request is explicitly for a causal effect analysis using a marginal structural model with inverse probability of treatment and censoring weights for longitudinal time-varying treatment data, so the closest routing choice is a causal ATE tool.",
+        "likely_fallback_by_content_match": false,
+        "api_call_succeeded": true,
+        "returned_models": [
+          "gpt-5.4-2026-03-05"
+        ],
+        "expected_behavior": "Time-varying-exposure marginal structural models with censoring weights are not implemented; the registered survival tool only supports a single fixed baseline group assignment."
+      }
+    ]
+  },
+  "challenge_router_prediction_distribution": {
+    "underspecified": {
+      "causal_ate": 9,
+      "summary_stats": 1
+    },
+    "unsupported_method": {
+      "linear_regression": 1,
+      "causal_ate": 8,
+      "logistic_regression": 1
+    },
+    "out_of_scope_mixed": {
+      "hello_world": 7,
+      "linear_regression": 1,
+      "summary_stats": 1,
+      "causal_ate": 1
+    }
+  },
+  "challenge_planner_recommended_tool_distribution": {
+    "underspecified": {
+      "causal_ate": 9,
+      "survival_adjusted_curves": 1
+    },
+    "unsupported_method": {
+      "causal_ate": 10
+    },
+    "out_of_scope_mixed": {
+      "summary_stats": 8,
+      "linear_regression": 1,
+      "causal_ate": 1
+    }
+  }
+}

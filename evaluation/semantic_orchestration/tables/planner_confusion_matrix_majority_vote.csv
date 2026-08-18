@@ -1,0 +1,8 @@
+gold,binary_edrip,causal_ate,hello_world,linear_regression,logistic_regression,summary_stats,survival_adjusted_curves
+binary_edrip,0,0,0,0,0,0,0
+causal_ate,0,58,0,2,0,0,0
+hello_world,0,0,0,0,0,0,0
+linear_regression,0,0,0,0,0,0,0
+logistic_regression,0,0,0,0,0,0,0
+summary_stats,0,0,0,0,0,0,0
+survival_adjusted_curves,0,0,0,0,0,0,60

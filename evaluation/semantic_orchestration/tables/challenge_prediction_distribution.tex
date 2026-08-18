@@ -1,0 +1,26 @@
+\begin{table}[ht]
+\centering
+\caption{Challenge-set predicted-label distribution by challenge\_type (descriptive only)}
+\label{tab:challenge_prediction_distribution}
+\begin{tabular}{llll}
+\toprule
+component & challenge\_type & predicted\_label & count \\
+\midrule
+router & underspecified & causal\_ate & 9 \\
+router & underspecified & summary\_stats & 1 \\
+router & unsupported\_method & causal\_ate & 8 \\
+router & unsupported\_method & linear\_regression & 1 \\
+router & unsupported\_method & logistic\_regression & 1 \\
+router & out\_of\_scope\_mixed & hello\_world & 7 \\
+router & out\_of\_scope\_mixed & linear\_regression & 1 \\
+router & out\_of\_scope\_mixed & summary\_stats & 1 \\
+router & out\_of\_scope\_mixed & causal\_ate & 1 \\
+planner & underspecified & causal\_ate & 9 \\
+planner & underspecified & survival\_adjusted\_curves & 1 \\
+planner & unsupported\_method & causal\_ate & 10 \\
+planner & out\_of\_scope\_mixed & summary\_stats & 8 \\
+planner & out\_of\_scope\_mixed & linear\_regression & 1 \\
+planner & out\_of\_scope\_mixed & causal\_ate & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}

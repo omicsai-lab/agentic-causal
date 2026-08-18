@@ -1,0 +1,15 @@
+\begin{table}[ht]
+\centering
+\caption{Live GPT-5.4 evaluation call outcomes: successes, failures, fallbacks, model identifiers}
+\label{tab:live_run_summary}
+\begin{tabular}{llllllll}
+\toprule
+component & n\_calls & n\_api\_success & n\_api\_failure & n\_fallback\_or\_likely\_fallback & n\_model\_substituted & requested\_models & returned\_models\_observed \\
+\midrule
+router\_supported & 360 & 360 & 0 & 0 & 0 & gpt-5.4 & gpt-5.4-2026-03-05 \\
+planner\_supported & 360 & 360 & 0 & 0 & 0 & gpt-5.4 & gpt-5.4-2026-03-05 \\
+router\_challenge & 30 & 30 & 0 & 0 & 0 & gpt-5.4 & gpt-5.4-2026-03-05 \\
+planner\_challenge & 30 & 30 & 0 & 0 & 0 & gpt-5.4 & gpt-5.4-2026-03-05 \\
+\bottomrule
+\end{tabular}
+\end{table}

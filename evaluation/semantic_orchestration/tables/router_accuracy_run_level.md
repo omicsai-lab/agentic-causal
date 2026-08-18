@@ -1,0 +1,26 @@
+| cell | n | n_correct | accuracy | wilson_ci_lower | wilson_ci_upper |
+|---|---|---|---|---|---|
+| overall | 360 | 354 | 0.983333 | 0.964121 | 0.99234 |
+| capability=causal_ate | 180 | 174 | 0.966667 | 0.929196 | 0.984635 |
+| capability=survival_adjusted_curves | 180 | 180 | 1.0 | 0.979105 | 1.0 |
+| category=biomedical_domain | 60 | 57 | 0.95 | 0.862995 | 0.98285 |
+| category=explicit_method | 60 | 60 | 1.0 | 0.939828 | 1.0 |
+| category=formal_estimand | 60 | 60 | 1.0 | 0.939828 | 1.0 |
+| category=indirect_colloquial | 60 | 57 | 0.95 | 0.862995 | 0.98285 |
+| category=near_boundary | 60 | 60 | 1.0 | 0.939828 | 1.0 |
+| category=noisy_verbose | 60 | 60 | 1.0 | 0.939828 | 1.0 |
+| causal_ate::biomedical_domain | 30 | 27 | 0.9 | 0.743789 | 0.9654 |
+| causal_ate::explicit_method | 30 | 30 | 1.0 | 0.886487 | 1.0 |
+| causal_ate::formal_estimand | 30 | 30 | 1.0 | 0.886487 | 1.0 |
+| causal_ate::indirect_colloquial | 30 | 27 | 0.9 | 0.743789 | 0.9654 |
+| causal_ate::near_boundary | 30 | 30 | 1.0 | 0.886487 | 1.0 |
+| causal_ate::noisy_verbose | 30 | 30 | 1.0 | 0.886487 | 1.0 |
+| survival_adjusted_curves::biomedical_domain | 30 | 30 | 1.0 | 0.886487 | 1.0 |
+| survival_adjusted_curves::explicit_method | 30 | 30 | 1.0 | 0.886487 | 1.0 |
+| survival_adjusted_curves::formal_estimand | 30 | 30 | 1.0 | 0.886487 | 1.0 |
+| survival_adjusted_curves::indirect_colloquial | 30 | 30 | 1.0 | 0.886487 | 1.0 |
+| survival_adjusted_curves::near_boundary | 30 | 30 | 1.0 | 0.886487 | 1.0 |
+| survival_adjusted_curves::noisy_verbose | 30 | 30 | 1.0 | 0.886487 | 1.0 |
+| repeat=1 | 120 | 118 | 0.983333 | 0.941264 | 0.995417 |
+| repeat=2 | 120 | 118 | 0.983333 | 0.941264 | 0.995417 |
+| repeat=3 | 120 | 118 | 0.983333 | 0.941264 | 0.995417 |

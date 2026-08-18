@@ -1,0 +1,39 @@
+\begin{table}[ht]
+\centering
+\caption{Planner structured-field accuracy, run level (n=360 calls)}
+\label{tab:planner_structured_field_accuracy}
+\begin{tabular}{llllll}
+\toprule
+cell & n & n\_correct & accuracy & wilson\_ci\_lower & wilson\_ci\_upper \\
+\midrule
+recommended\_tool & 360 & 354 & 0.983333 & 0.964121 & 0.99234 \\
+task\_type & 360 & 354 & 0.983333 & 0.964121 & 0.99234 \\
+outcome\_type & 360 & 357 & 0.991667 & 0.975789 & 0.997162 \\
+all\_fields\_correct & 360 & 351 & 0.975 & 0.953177 & 0.986793 \\
+capability=causal\_ate::recommended\_tool & 180 & 174 & 0.966667 & 0.929196 & 0.984635 \\
+capability=causal\_ate::task\_type & 180 & 174 & 0.966667 & 0.929196 & 0.984635 \\
+capability=causal\_ate::outcome\_type & 180 & 177 & 0.983333 & 0.952152 & 0.994316 \\
+capability=survival\_adjusted\_curves::recommended\_tool & 180 & 180 & 1.0 & 0.979105 & 1.0 \\
+capability=survival\_adjusted\_curves::task\_type & 180 & 180 & 1.0 & 0.979105 & 1.0 \\
+capability=survival\_adjusted\_curves::outcome\_type & 180 & 180 & 1.0 & 0.979105 & 1.0 \\
+category=biomedical\_domain::recommended\_tool & 60 & 57 & 0.95 & 0.862995 & 0.98285 \\
+category=biomedical\_domain::task\_type & 60 & 57 & 0.95 & 0.862995 & 0.98285 \\
+category=biomedical\_domain::outcome\_type & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=explicit\_method::recommended\_tool & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=explicit\_method::task\_type & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=explicit\_method::outcome\_type & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=formal\_estimand::recommended\_tool & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=formal\_estimand::task\_type & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=formal\_estimand::outcome\_type & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=indirect\_colloquial::recommended\_tool & 60 & 57 & 0.95 & 0.862995 & 0.98285 \\
+category=indirect\_colloquial::task\_type & 60 & 57 & 0.95 & 0.862995 & 0.98285 \\
+category=indirect\_colloquial::outcome\_type & 60 & 57 & 0.95 & 0.862995 & 0.98285 \\
+category=near\_boundary::recommended\_tool & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=near\_boundary::task\_type & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=near\_boundary::outcome\_type & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=noisy\_verbose::recommended\_tool & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=noisy\_verbose::task\_type & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=noisy\_verbose::outcome\_type & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+\bottomrule
+\end{tabular}
+\end{table}

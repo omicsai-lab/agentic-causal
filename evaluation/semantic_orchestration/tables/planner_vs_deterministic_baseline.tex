@@ -1,0 +1,20 @@
+\begin{table}[ht]
+\centering
+\caption{GPT-5.4 planner (majority vote) vs. deterministic \_fallback\_plan() baseline, recommended\_tool accuracy}
+\label{tab:planner_vs_deterministic_baseline}
+\begin{tabular}{llllllllllllllll}
+\toprule
+cell & n & gpt\_majority\_accuracy & gpt\_ci\_lower & gpt\_ci\_upper & deterministic\_accuracy & det\_ci\_lower & det\_ci\_upper & absolute\_diff\_pp & mcnemar\_b & mcnemar\_c & mcnemar\_p\_value & bootstrap\_mean\_diff & bootstrap\_ci\_lower & bootstrap\_ci\_upper & bootstrap\_seed \\
+\midrule
+overall & 120 & 0.983333 & 0.941264 & 0.995417 & 0.741667 & 0.656715 & 0.811626 & 24.166667 & 29 & 0 & 0.0 & 0.241667 & 0.166667 & 0.316667 & 20260818 \\
+capability=causal\_ate & 60 & 0.966667 & 0.886362 & 0.990811 & 0.633333 & 0.50683 & 0.743791 & 33.333333 & 20 & 0 & 2e-06 & 0.333333 & 0.216667 & 0.45 & 20260818 \\
+capability=survival\_adjusted\_curves & 60 & 1.0 & 0.939828 & 1.0 & 0.85 & 0.738854 & 0.919026 & 15.0 & 9 & 0 & 0.003906 & 0.15 & 0.066667 & 0.25 & 20260818 \\
+category=explicit\_method & 20 & 1.0 & 0.838875 & 1.0 & 1.0 & 0.838875 & 1.0 & 0.0 & 0 & 0 & 1.0 & 0.0 & 0.0 & 0.0 & 20260818 \\
+category=formal\_estimand & 20 & 1.0 & 0.838875 & 1.0 & 0.95 & 0.763869 & 0.991119 & 5.0 & 1 & 0 & 1.0 & 0.05 & 0.0 & 0.15 & 20260818 \\
+category=biomedical\_domain & 20 & 0.95 & 0.763869 & 0.991119 & 0.4 & 0.218807 & 0.613418 & 55.0 & 11 & 0 & 0.000977 & 0.55 & 0.35 & 0.75 & 20260818 \\
+category=indirect\_colloquial & 20 & 0.95 & 0.763869 & 0.991119 & 0.25 & 0.111862 & 0.468701 & 70.0 & 14 & 0 & 0.000122 & 0.7 & 0.5 & 0.9 & 20260818 \\
+category=noisy\_verbose & 20 & 1.0 & 0.838875 & 1.0 & 1.0 & 0.838875 & 1.0 & 0.0 & 0 & 0 & 1.0 & 0.0 & 0.0 & 0.0 & 20260818 \\
+category=near\_boundary & 20 & 1.0 & 0.838875 & 1.0 & 0.85 & 0.639581 & 0.947631 & 15.0 & 3 & 0 & 0.25 & 0.15 & 0.0 & 0.3 & 20260818 \\
+\bottomrule
+\end{tabular}
+\end{table}

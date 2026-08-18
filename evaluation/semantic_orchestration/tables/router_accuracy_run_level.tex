@@ -1,0 +1,35 @@
+\begin{table}[ht]
+\centering
+\caption{Router accuracy, run level (n=360 calls, 3 repeats x 120 prompts)}
+\label{tab:router_accuracy_run_level}
+\begin{tabular}{llllll}
+\toprule
+cell & n & n\_correct & accuracy & wilson\_ci\_lower & wilson\_ci\_upper \\
+\midrule
+overall & 360 & 354 & 0.983333 & 0.964121 & 0.99234 \\
+capability=causal\_ate & 180 & 174 & 0.966667 & 0.929196 & 0.984635 \\
+capability=survival\_adjusted\_curves & 180 & 180 & 1.0 & 0.979105 & 1.0 \\
+category=biomedical\_domain & 60 & 57 & 0.95 & 0.862995 & 0.98285 \\
+category=explicit\_method & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=formal\_estimand & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=indirect\_colloquial & 60 & 57 & 0.95 & 0.862995 & 0.98285 \\
+category=near\_boundary & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+category=noisy\_verbose & 60 & 60 & 1.0 & 0.939828 & 1.0 \\
+causal\_ate::biomedical\_domain & 30 & 27 & 0.9 & 0.743789 & 0.9654 \\
+causal\_ate::explicit\_method & 30 & 30 & 1.0 & 0.886487 & 1.0 \\
+causal\_ate::formal\_estimand & 30 & 30 & 1.0 & 0.886487 & 1.0 \\
+causal\_ate::indirect\_colloquial & 30 & 27 & 0.9 & 0.743789 & 0.9654 \\
+causal\_ate::near\_boundary & 30 & 30 & 1.0 & 0.886487 & 1.0 \\
+causal\_ate::noisy\_verbose & 30 & 30 & 1.0 & 0.886487 & 1.0 \\
+survival\_adjusted\_curves::biomedical\_domain & 30 & 30 & 1.0 & 0.886487 & 1.0 \\
+survival\_adjusted\_curves::explicit\_method & 30 & 30 & 1.0 & 0.886487 & 1.0 \\
+survival\_adjusted\_curves::formal\_estimand & 30 & 30 & 1.0 & 0.886487 & 1.0 \\
+survival\_adjusted\_curves::indirect\_colloquial & 30 & 30 & 1.0 & 0.886487 & 1.0 \\
+survival\_adjusted\_curves::near\_boundary & 30 & 30 & 1.0 & 0.886487 & 1.0 \\
+survival\_adjusted\_curves::noisy\_verbose & 30 & 30 & 1.0 & 0.886487 & 1.0 \\
+repeat=1 & 120 & 118 & 0.983333 & 0.941264 & 0.995417 \\
+repeat=2 & 120 & 118 & 0.983333 & 0.941264 & 0.995417 \\
+repeat=3 & 120 & 118 & 0.983333 & 0.941264 & 0.995417 \\
+\bottomrule
+\end{tabular}
+\end{table}
