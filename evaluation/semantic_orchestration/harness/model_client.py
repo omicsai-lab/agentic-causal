@@ -20,6 +20,7 @@ disk.
 from __future__ import annotations
 
 import importlib
+import re
 import sys
 import time
 from contextlib import contextmanager
@@ -36,6 +37,28 @@ from evaluation.semantic_orchestration.harness.config import (  # noqa: E402
     TEMPERATURE,
     ROUTER_FALLBACK_REASON_MARKERS,
 )
+
+# Dated-snapshot suffix, e.g. "-2026-03-05". Matched against whatever
+# follows the requested model id in a returned model string.
+_DATED_SNAPSHOT_SUFFIX_RE = re.compile(r"^-\d{4}-\d{2}-\d{2}$")
+
+
+def is_same_model(requested: str, returned: str) -> bool:
+    """
+    True if `returned` counts as the same model as `requested` for
+    model-substitution purposes: an exact match, or a dated snapshot of
+    the requested model (requested="gpt-5.4", returned=
+    "gpt-5.4-2026-03-05"). Any other suffix (e.g. "-mini", "-nano",
+    "-pro") or a different model family entirely is substitution.
+    """
+    if not requested or not returned:
+        return requested == returned
+    if returned == requested:
+        return True
+    if returned.startswith(requested):
+        suffix = returned[len(requested):]
+        return bool(_DATED_SNAPSHOT_SUFFIX_RE.match(suffix))
+    return False
 
 
 @dataclass
@@ -57,7 +80,7 @@ class CallTelemetry:
     def model_substituted(self) -> bool:
         if not self.returned_models:
             return False
-        return any(m != self.requested_model for m in self.returned_models if m)
+        return any(not is_same_model(self.requested_model, m) for m in self.returned_models if m)
 
 
 class _RecordingCompletions:

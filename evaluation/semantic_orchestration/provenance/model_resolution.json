@@ -1,0 +1,14 @@
+{
+  "timestamp_utc": "2026-08-18T22:21:39.704733+00:00",
+  "requested_model": "gpt-5.4",
+  "returned_models": [
+    "gpt-5.4-2026-03-05"
+  ],
+  "model_substituted": false,
+  "per_returned_model": [
+    {
+      "returned": "gpt-5.4-2026-03-05",
+      "same_model_as_requested": true
+    }
+  ]
+}

@@ -11,16 +11,41 @@ Usage:
 
 from __future__ import annotations
 
+import json
 import os
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
 from evaluation.semantic_orchestration.harness.config import REQUESTED_MODEL  # noqa: E402
-from evaluation.semantic_orchestration.harness.model_client import call_router  # noqa: E402
+from evaluation.semantic_orchestration.harness.model_client import call_router, is_same_model  # noqa: E402
 
 PREFLIGHT_PROMPT = "Estimate the average treatment effect of drug A vs placebo on outcome in trial.csv."
+
+PROVENANCE_MODEL_RESOLUTION_PATH = Path(__file__).resolve().parents[1] / "provenance" / "model_resolution.json"
+
+
+def _record_model_resolution_provenance(result) -> Path:
+    """
+    Persist exactly which model snapshot the API returned (e.g.
+    "gpt-5.4-2026-03-05") for `REQUESTED_MODEL`, independent of the
+    pass/fail verdict, so the resolved snapshot is on record even for a
+    borderline or failing preflight.
+    """
+    record = {
+        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+        "requested_model": REQUESTED_MODEL,
+        "returned_models": result.telemetry.returned_models,
+        "model_substituted": result.telemetry.model_substituted,
+        "per_returned_model": [
+            {"returned": m, "same_model_as_requested": is_same_model(REQUESTED_MODEL, m)}
+            for m in result.telemetry.returned_models
+        ],
+    }
+    PROVENANCE_MODEL_RESOLUTION_PATH.write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return PROVENANCE_MODEL_RESOLUTION_PATH
 
 
 def main() -> int:
@@ -30,6 +55,10 @@ def main() -> int:
         return 2
 
     result = call_router(prompt_id="preflight", request_text=PREFLIGHT_PROMPT, repeat_index=0, model=REQUESTED_MODEL)
+
+    if result.telemetry.attempted and result.telemetry.returned_models:
+        prov_path = _record_model_resolution_provenance(result)
+        print(f"  model resolution recorded: {prov_path} (returned_models={result.telemetry.returned_models!r})")
 
     if result.harness_error:
         print(f"PREFLIGHT: FAILED -- uncaught error calling router with model={REQUESTED_MODEL!r}: {result.harness_error}")
